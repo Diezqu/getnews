@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}AI 每日早报{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  {% block head_extra %}{% endblock %}
+  <style>
+    :root {
+      --paper:    #f6f2ea;
+      --paper2:   #ffffff;
+      --paper3:   #f0ebe0;
+      --border:   #ddd5c4;
+      --border2:  #c8bfae;
+      --navy:     #1e3557;
+      --navy2:    #2a4a76;
+      --coral:    #c94428;
+      --coral2:   #e05c3a;
+      --green:    #2a7d4f;
+      --gold:     #b8872a;
+      --text:     #1a1410;
+      --text2:    #6b5e52;
+      --text3:    #a0917f;
+      --tag-bg:   #eee8db;
+      --shadow:   0 1px 3px rgba(30,25,18,0.08), 0 4px 12px rgba(30,25,18,0.04);
+      --shadow-lg:0 2px 8px rgba(30,25,18,0.10), 0 8px 24px rgba(30,25,18,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      line-height: 1.65;
+      min-width: 1200px;
+    }
+    a { color: var(--navy); text-decoration: none; }
+    a:hover { color: var(--coral); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ─── Masthead ─── */
+    .masthead {
+      background: var(--navy);
+      padding: 0 32px;
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      border-bottom: 3px solid var(--coral);
+    }
+    .masthead-brand {
+      padding: 20px 28px 20px 0;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .masthead-brand h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 700; color: #fff;
+      letter-spacing: -0.5px; line-height: 1.1;
+    }
+    .masthead-brand .tagline {
+      font-size: 11px; color: rgba(255,255,255,0.5);
+      font-weight: 400; letter-spacing: 2px;
+      text-transform: uppercase; margin-top: 3px;
+    }
+    .masthead-meta {
+      padding: 20px 0 20px 28px;
+      display: flex; flex-direction: column; justify-content: center; gap: 6px;
+    }
+    .masthead-date {
+      font-size: 13px; color: rgba(255,255,255,0.75);
+      font-weight: 500; letter-spacing: 0.5px;
+    }
+    .masthead-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .masthead-pill {
+      font-size: 11px; padding: 2px 10px; border-radius: 2px;
+      font-weight: 600; letter-spacing: 0.3px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.06);
+    }
+    .masthead-pill.papers { border-color: rgba(201,68,40,0.6);  color: #f4a58f; background: rgba(201,68,40,0.15); }
+    .masthead-pill.repos  { border-color: rgba(42,125,79,0.6);  color: #7ed4a8; background: rgba(42,125,79,0.15); }
+    .masthead-pill.jobs   { border-color: rgba(184,135,42,0.6); color: #f0cc7a; background: rgba(184,135,42,0.15); }
+
+    /* ─── Section title strip ─── */
+    .section-eyebrow {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+    }
+    .section-eyebrow::before, .section-eyebrow::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    .section-eyebrow span {
+      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--coral); white-space: nowrap;
+    }
+
+    /* ─── Card ─── */
+    .card {
+      background: var(--paper2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .card-header {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--paper2);
+    }
+    .card-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px; font-weight: 600;
+      color: var(--navy); letter-spacing: -0.2px;
+    }
+    .card-badge {
+      font-size: 10px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; padding: 2px 8px; border-radius: 2px;
+    }
+    .badge-coral { background: rgba(201,68,40,0.10); color: var(--coral); border: 1px solid rgba(201,68,40,0.2); }
+    .badge-navy  { background: rgba(30,53,87,0.08);  color: var(--navy);  border: 1px solid rgba(30,53,87,0.15); }
+    .badge-green { background: rgba(42,125,79,0.08); color: var(--green); border: 1px solid rgba(42,125,79,0.2); }
+    .badge-gold  { background: rgba(184,135,42,0.10);color: var(--gold);  border: 1px solid rgba(184,135,42,0.2); }
+
+    /* ─── Tag chip ─── */
+    .tag {
+      font-size: 10px; font-weight: 500;
+      padding: 2px 8px; border-radius: 2px;
+      background: var(--tag-bg); color: var(--text2);
+      border: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      text-align: center;
+      padding: 18px;
+      color: var(--text3); font-size: 11px;
+      border-top: 1px solid var(--border);
+      background: var(--paper2);
+      letter-spacing: 0.5px;
+    }
+    .footer a { color: var(--navy); }
+
+    {% block extra_styles %}{% endblock %}
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">
+    <h1>{% block masthead_title %}🤖 AI 每日早报{% endblock %}</h1>
+    <div class="tagline">Intelligence · Research · Signal</div>
+  </div>
+  <div class="masthead-meta">
+    <div class="masthead-date">{% block masthead_date %}{{ date_str }} &nbsp;·&nbsp; {{ weekday_str }}{% endblock %}</div>
+    {% block masthead_pills %}{% endblock %}
+  </div>
+</header>
+
+{% block body %}{% endblock %}
+
+<div class="footer">
+  {% block footer %}
+  AI Pipeline 自动生成 &nbsp;·&nbsp; {{ generated_at }} &nbsp;·&nbsp; <a href="./archive.html">归档</a> &nbsp;·&nbsp; <a href="https://github.com/Diezqu/getnews" target="_blank">GitHub 仓库</a>
+  {% endblock %}
+</div>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>
