@@ -1,0 +1,37 @@
+{# GitHub repo card. Inputs: items (list[Item]). #}
+<style>
+  .repo-item { padding: 14px 18px; border-bottom: 1px solid var(--paper3); transition: background 0.15s; }
+  .repo-item:hover { background: rgba(30,53,87,0.02); }
+  .repo-item:last-child { border-bottom: none; }
+  .repo-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 5px; }
+  .repo-title { font-size: 13px; font-weight: 600; color: var(--text); }
+  .repo-title a { color: inherit; }
+  .repo-title a:hover { color: var(--navy); }
+  .repo-stars {
+    font-size: 12px; font-weight: 700; font-family: 'DM Mono', monospace;
+    color: var(--gold); white-space: nowrap; flex-shrink: 0;
+  }
+  .repo-desc { font-size: 12px; color: var(--text2); line-height: 1.55; margin-bottom: 6px; }
+  .repo-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>GitHub 新兴仓库</h2>
+    <span class="card-badge badge-green">快速涨星</span>
+  </div>
+  {% for item in items %}
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></div>
+      {% if item.stars > 0 %}<div class="repo-stars">★ {{ item.stars | format_stars }}</div>{% endif %}
+    </div>
+    <div class="repo-desc">{{ item.summary if item.summary else item.raw_content[:160] }}</div>
+    <div class="repo-tags">
+      {% for tag in item.tags[:3] %}<span class="tag">{{ tag }}</span>{% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <div class="repo-item" style="color:var(--text3);font-size:12px;">今日暂无 GitHub 数据</div>
+  {% endfor %}
+</div>

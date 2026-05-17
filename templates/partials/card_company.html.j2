@@ -1,0 +1,25 @@
+{# 国内 AI 公司动态卡片. Inputs: items (list[Item]). #}
+<div class="card">
+  <div class="card-header">
+    <h2>国内 AI 公司动态</h2>
+    <span class="card-badge badge-gold">官博 / 媒体</span>
+  </div>
+  {% for item in items %}
+  <div class="job-item">
+    <div class="job-title"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></div>
+    {% if item.tags or item.published_at %}
+    <div class="job-meta">
+      {% if item.tags %}{{ item.tags[0] }}{% endif %}
+      {% if item.published_at %} &nbsp;·&nbsp; {{ item.published_at[:10] }}{% endif %}
+    </div>
+    {% endif %}
+    <div class="job-body">{{ item.summary if item.summary else item.raw_content[:200] }}</div>
+    <div class="job-footer">
+      {% for tag in item.tags[1:5] %}<span class="tag">{{ tag }}</span>{% endfor %}
+      <span class="score-chip {% if item.score >= 8 %}high{% endif %}">{{ "%.1f"|format(item.score) }}</span>
+    </div>
+  </div>
+  {% else %}
+  <div class="job-item" style="color:var(--text3);font-size:12px;">今日聚合器未匹配到目标公司动态</div>
+  {% endfor %}
+</div>

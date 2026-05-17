@@ -1,0 +1,22 @@
+{# 7-day keyword frequency chart. Inputs: trend_labels (list[str]), trend_series (dict[str, list[int]]). #}
+<style>
+  .chart-wrap { padding: 16px 18px; }
+  #trendChart { max-height: 220px; }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>关键词热度趋势</h2>
+    <span class="card-badge badge-gold">过去 7 天</span>
+  </div>
+  <div class="chart-wrap">
+    <canvas id="trendChart"></canvas>
+  </div>
+</div>
+
+<script>
+window.__TREND__ = {
+  labels: {{ trend_labels | tojson }},
+  series: {{ trend_series | tojson }}
+};
+</script>

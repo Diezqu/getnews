@@ -1,0 +1,22 @@
+{# AI Coding 工具采用信号卡片. Inputs: items (list[Item]). #}
+<div class="card">
+  <div class="card-header">
+    <h2>AI Coding 工具信号</h2>
+    <span class="card-badge badge-coral">采用动向</span>
+  </div>
+  {% for item in items %}
+  <div class="job-item">
+    <div class="job-title"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></div>
+    <div class="job-meta">
+      {% if item.tags %}{{ item.tags[-1] }}{% endif %}
+      {% if item.stars %} &nbsp;·&nbsp; {{ item.stars }} pts{% endif %}
+    </div>
+    <div class="job-body">{{ item.summary if item.summary else item.raw_content[:180] }}</div>
+    <div class="job-footer">
+      {% for tag in item.tags[:3] %}<span class="tag">{{ tag }}</span>{% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <div class="job-item" style="color:var(--text3);font-size:12px;">今日 HN/HF 中未检出工具采用信号</div>
+  {% endfor %}
+</div>

@@ -1,0 +1,69 @@
+{# Paper card — used for both arXiv (badge=navy) and HF (badge=green).
+   Inputs: card_title (str), card_badge_label (str), card_badge_class (str), items (list[Item]),
+           show_upvotes (bool, default false). #}
+<style>
+  .paper-item {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--paper3);
+    transition: background 0.15s;
+  }
+  .paper-item:hover { background: rgba(30,53,87,0.02); }
+  .paper-item:last-child { border-bottom: none; }
+  .paper-title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.45; margin-bottom: 4px; }
+  .paper-title a { color: inherit; }
+  .paper-title a:hover { color: var(--navy); text-decoration: none; }
+  .paper-meta {
+    font-size: 11px; color: var(--text3);
+    margin-bottom: 6px; font-family: 'DM Mono', monospace;
+  }
+  .paper-abstract { font-size: 12.5px; color: var(--text2); line-height: 1.6; }
+  .paper-footer { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .score-chip {
+    font-size: 10px; font-weight: 700; font-family: 'DM Mono', monospace;
+    padding: 2px 7px; border-radius: 2px;
+    background: rgba(30,53,87,0.08); color: var(--navy);
+    border: 1px solid rgba(30,53,87,0.15);
+    margin-left: auto;
+  }
+  .score-chip.high {
+    background: rgba(201,68,40,0.10); color: var(--coral);
+    border-color: rgba(201,68,40,0.2);
+  }
+  .upvote-chip {
+    font-size: 10px; font-weight: 700;
+    padding: 2px 7px; border-radius: 2px;
+    background: rgba(42,125,79,0.08); color: var(--green);
+    border: 1px solid rgba(42,125,79,0.2);
+    margin-left: auto;
+  }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>{{ card_title }}</h2>
+    <span class="card-badge {{ card_badge_class }}">{{ card_badge_label }}</span>
+  </div>
+  {% for item in items %}
+  <div class="paper-item">
+    <div class="paper-title"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></div>
+    {% if item.authors or item.published_at or item.stars %}
+    <div class="paper-meta">
+      {% if item.authors %}{{ item.authors[:3]|join(' · ') }}{% if item.authors|length > 3 %} et al.{% endif %}{% endif %}
+      {% if item.published_at %} &nbsp;·&nbsp; {{ item.published_at[:10] }}{% endif %}
+      {% if show_upvotes and item.stars %} &nbsp;·&nbsp; {{ item.stars }} upvotes{% endif %}
+    </div>
+    {% endif %}
+    <div class="paper-abstract">{{ item.summary if item.summary else item.raw_content[:240] }}</div>
+    <div class="paper-footer">
+      {% for tag in item.tags[:4] %}<span class="tag">{{ tag }}</span>{% endfor %}
+      {% if show_upvotes and item.stars %}
+        <span class="upvote-chip">{{ item.stars }} 👍</span>
+      {% else %}
+        <span class="score-chip {% if item.score >= 8 %}high{% endif %}">{{ "%.1f"|format(item.score) }}</span>
+      {% endif %}
+    </div>
+  </div>
+  {% else %}
+  <div class="paper-item" style="color:var(--text3);font-size:12px;">今日暂无数据</div>
+  {% endfor %}
+</div>

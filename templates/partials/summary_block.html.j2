@@ -1,0 +1,62 @@
+{# Top "今日总 Summary" — drops in below the masthead. Renders the headline +
+   two-column 3+3 bullet list. Inputs: summary (dict from pipeline/summarizer). #}
+<style>
+  .today-summary {
+    background: var(--paper2);
+    border-left: 3px solid var(--navy);
+    border-radius: 0 4px 4px 0;
+    margin: 24px 32px 0;
+    padding: 20px 28px 22px;
+    box-shadow: var(--shadow);
+  }
+  .today-summary .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--coral); line-height: 1.35;
+    margin-bottom: 14px;
+  }
+  .today-summary .divider {
+    border-top: 1px solid var(--border); margin-bottom: 16px;
+  }
+  .today-summary .ts-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+  .today-summary .ts-col h3 {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text3); margin-bottom: 10px;
+  }
+  .today-summary .ts-col h3.learn { border-bottom: 2px solid var(--green); padding-bottom: 4px; display: inline-block; }
+  .today-summary .ts-col h3.job   { border-bottom: 2px solid var(--gold);  padding-bottom: 4px; display: inline-block; }
+  .today-summary .ts-col ul { list-style: none; }
+  .today-summary .ts-col li {
+    font-size: 13px; color: var(--text);
+    padding: 6px 0 6px 16px; position: relative;
+    border-bottom: 1px dashed var(--paper3);
+    line-height: 1.5;
+  }
+  .today-summary .ts-col li:last-child { border-bottom: none; }
+  .today-summary .ts-col li::before {
+    content: '▸'; position: absolute; left: 0; top: 5px;
+    color: var(--coral); font-size: 11px;
+  }
+</style>
+
+<section class="today-summary">
+  <div class="headline">💡 {{ summary.headline }}</div>
+  <div class="divider"></div>
+  <div class="ts-grid">
+    <div class="ts-col">
+      <h3 class="learn">📚 AI 趋势</h3>
+      <ul>
+        {% for line in summary.ai_trends %}<li>{{ line }}</li>{% endfor %}
+      </ul>
+    </div>
+    <div class="ts-col">
+      <h3 class="job">💼 求职信号</h3>
+      <ul>
+        {% for line in summary.job_signals %}<li>{{ line }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
