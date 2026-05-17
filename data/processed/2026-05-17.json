@@ -1,0 +1,870 @@
+[
+  {
+    "id": "201fe558a473",
+    "source": "github",
+    "title": "esengine/DeepSeek-Reasonix",
+    "url": "https://github.com/esengine/DeepSeek-Reasonix",
+    "summary": "",
+    "raw_abstract": "DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.",
+    "score": 10.0,
+    "tags": [
+      "TS",
+      "agent",
+      "agent-framework",
+      "ai-agent",
+      "ai-coding"
+    ],
+    "stars": 3731,
+    "authors": [],
+    "published_at": "2026-05-17T15:55:14Z"
+  },
+  {
+    "id": "4edadf24dd32",
+    "source": "github",
+    "title": "cosmicstack-labs/mercury-agent",
+    "url": "https://github.com/cosmicstack-labs/mercury-agent",
+    "summary": "",
+    "raw_abstract": "Soul-driven AI agent with permission-hardened tools, token budgets, and multi-channel access. Runs 24/7 from CLI or Telegram.",
+    "score": 10.0,
+    "tags": [
+      "TS",
+      "ai-agent",
+      "ai-assistant",
+      "llm"
+    ],
+    "stars": 2241,
+    "authors": [],
+    "published_at": "2026-05-10T16:32:16Z"
+  },
+  {
+    "id": "cc0e764f3ac4",
+    "source": "github",
+    "title": "GammaLabTechnologies/harmonist",
+    "url": "https://github.com/GammaLabTechnologies/harmonist",
+    "summary": "",
+    "raw_abstract": "Portable AI agent orchestration with mechanical protocol enforcement. 186 agents, zero runtime dependencies.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "agent-framework",
+      "agent-system",
+      "ai-agents",
+      "claude-code"
+    ],
+    "stars": 1743,
+    "authors": [],
+    "published_at": "2026-04-23T05:48:48Z"
+  },
+  {
+    "id": "7d1ea1d6ba1a",
+    "source": "github",
+    "title": "WenyuChiou/awesome-agentic-ai-zh",
+    "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh",
+    "summary": "",
+    "raw_abstract": "A structured, trilingual (繁中 / 简中 / English) learning roadmap for agentic AI — from LLM basics to multi-agent systems. 8 stages · 145+ curated projects · hands-on exercises. 中文 AI agent 學習地圖。",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "agentic-ai",
+      "ai-agents",
+      "awesome-list",
+      "claude-code"
+    ],
+    "stars": 1507,
+    "authors": [],
+    "published_at": "2026-05-17T19:43:48Z"
+  },
+  {
+    "id": "38bcf597b6f3",
+    "source": "github",
+    "title": "StartupHakk/OpenMonoAgent.ai",
+    "url": "https://github.com/StartupHakk/OpenMonoAgent.ai",
+    "summary": "",
+    "raw_abstract": "(BETA) AI shouldn't have a meter. Unlimited tokens. Forever. Your machine. Your agent. Use it from anywhere. Terminal-native coding agent powered by local LLMs — 100% open source, free forever, and installed with a single command. Proudly built on C#/.NET, because AI tooling should be infrastructure, not a subscription.",
+    "score": 10.0,
+    "tags": [
+      "C#"
+    ],
+    "stars": 1101,
+    "authors": [],
+    "published_at": "2026-05-15T18:30:00Z"
+  },
+  {
+    "id": "4ff2ea89060b",
+    "source": "github",
+    "title": "future-agi/future-agi",
+    "url": "https://github.com/future-agi/future-agi",
+    "summary": "",
+    "raw_abstract": "Open-source, end-to-end platform for evaluating, observing, and improving LLM and AI agent applications. Tracing · Evals · Simulations · Datasets · Gateway · Guardrails. Self-hostable. Apache 2.0.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai",
+      "ai-gateway",
+      "evals",
+      "llm"
+    ],
+    "stars": 980,
+    "authors": [],
+    "published_at": "2026-05-17T20:42:40Z"
+  },
+  {
+    "id": "b7230149790b",
+    "source": "github",
+    "title": "jmerelnyc/Photo-agents",
+    "url": "https://github.com/jmerelnyc/Photo-agents",
+    "summary": "",
+    "raw_abstract": "Autonomous self-evolving agents. Vision-grounded layered memory and self-written skills for LLM agents that operate your computer.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "agent-memory",
+      "ai-agents",
+      "autonomous-agents",
+      "computer-use"
+    ],
+    "stars": 934,
+    "authors": [],
+    "published_at": "2026-05-15T07:36:35Z"
+  },
+  {
+    "id": "8db4c0d6a381",
+    "source": "github",
+    "title": "nduckmink/arkon",
+    "url": "https://github.com/nduckmink/arkon",
+    "summary": "",
+    "raw_abstract": "Arkon: Enterprise AI Knowledge Hub & MCP Server. Self-hosted knowledge base for teams to manage RAG contexts, access policies, and AI skills. Connect Claude and other LLMs via Model Context Protocol (MCP) for automated, secure organizational knowledge integration.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "enterprise-ai",
+      "knowledge-base-embeddings",
+      "knowledge-based-systems",
+      "knowledge-bases"
+    ],
+    "stars": 734,
+    "authors": [],
+    "published_at": "2026-05-17T17:08:59Z"
+  },
+  {
+    "id": "b88a884ba836",
+    "source": "github",
+    "title": "simonlin1212/TradingAgents-astock",
+    "url": "https://github.com/simonlin1212/TradingAgents-astock",
+    "summary": "",
+    "raw_abstract": "A股多Agent投研框架 — 适配A股数据源(龙虎榜/游资/解禁等)，7位分析师基于A股规则的辩论决策，基于TradingAgents深度改造，适配大A。A-share multi-agent investment research framework — 7 AI analysts, bull/bear debate, risk assessment。",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 314,
+    "authors": [],
+    "published_at": "2026-05-17T09:27:52Z"
+  },
+  {
+    "id": "787bad15eeb7",
+    "source": "github",
+    "title": "KSroido/Kagi-Session2API-MCP",
+    "url": "https://github.com/KSroido/Kagi-Session2API-MCP",
+    "summary": "",
+    "raw_abstract": "Free Kagi Search MCP server — access search and summarizer via session tokens, no API key needed. Works with Claude Desktop, Cursor, Windsurf, Hermes and any MCP client.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-agent",
+      "ai-coding",
+      "claude-desktop",
+      "cursor"
+    ],
+    "stars": 135,
+    "authors": [],
+    "published_at": "2026-05-03T07:29:54Z"
+  },
+  {
+    "id": "4ad58d0ad003",
+    "source": "github",
+    "title": "elara-labs/code-context-engine",
+    "url": "https://github.com/elara-labs/code-context-engine",
+    "summary": "",
+    "raw_abstract": "Save 94% on AI coding tokens. Index your codebase, agents search instead of reading files. Works with Claude Code, Codex, Copilot, Cursor, Gemini CLI. Local MCP server, free, open source.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-coding",
+      "claude",
+      "claude-code",
+      "code-indexing"
+    ],
+    "stars": 122,
+    "authors": [],
+    "published_at": "2026-05-16T20:14:07Z"
+  },
+  {
+    "id": "e17bc81b90b4",
+    "source": "github",
+    "title": "Rath-Team/OpenRath",
+    "url": "https://github.com/Rath-Team/OpenRath",
+    "summary": "",
+    "raw_abstract": "A opensource, torch-like api framework for dynamic multi-agent workflow.",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 117,
+    "authors": [],
+    "published_at": "2026-05-16T13:25:48Z"
+  },
+  {
+    "id": "f8f00f110b11",
+    "source": "github",
+    "title": "Yang1999code/controllable-agent",
+    "url": "https://github.com/Yang1999code/controllable-agent",
+    "summary": "",
+    "raw_abstract": "20-interface AI agent framework with 3-layer architecture, multi-agent delegation, and self-evolution.",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 105,
+    "authors": [],
+    "published_at": "2026-05-04T12:16:55Z"
+  },
+  {
+    "id": "2ff0cae491cf",
+    "source": "github",
+    "title": "rohanmistry231/Claude-OS",
+    "url": "https://github.com/rohanmistry231/Claude-OS",
+    "summary": "",
+    "raw_abstract": "A concise Claude reference bundle for developers, covering commands, MCP servers, plugins, tools, workflows, and agent frameworks in one place. Designed for fast discovery and practical integration.",
+    "score": 10.0,
+    "tags": [
+      "agent-frameworks",
+      "claude",
+      "claude-code",
+      "claude-mcp-server"
+    ],
+    "stars": 81,
+    "authors": [],
+    "published_at": "2026-04-29T07:43:09Z"
+  },
+  {
+    "id": "f72c183ef398",
+    "source": "github",
+    "title": "wanghuan9/skill-manager",
+    "url": "https://github.com/wanghuan9/skill-manager",
+    "summary": "",
+    "raw_abstract": "SkillDock 是一个桌面控制中心，用于管理 AI Skills 和 MCP servers，支持 Git-aware 更新，并同步到 Claude Code、Codex、Cursor、Windsurf、Gemini CLI、GitHub Copilot 等工具。 SkillDock is a desktop control center for managing AI Skills and MCP servers, with Git-aware updates and sync for Claude Code, Codex, Cursor, Windsurf, Gemini CLI, GitHub Copilot, and more.",
+    "score": 10.0,
+    "tags": [
+      "agent-skills",
+      "ai-coding-agents",
+      "ai-skills",
+      "claude-code"
+    ],
+    "stars": 80,
+    "authors": [],
+    "published_at": "2026-05-15T15:07:52Z"
+  },
+  {
+    "id": "767bc1424568",
+    "source": "github",
+    "title": "OpenOSINT/OpenOSINT",
+    "url": "https://github.com/OpenOSINT/OpenOSINT",
+    "summary": "",
+    "raw_abstract": "AI-powered OSINT agent with interactive REPL, MCP server, and CLI. 9 tools. Works with Claude, GPT-4, or local models. For authorized security research only.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-agent",
+      "anthropic",
+      "claude",
+      "cli"
+    ],
+    "stars": 77,
+    "authors": [],
+    "published_at": "2026-05-17T14:57:30Z"
+  },
+  {
+    "id": "65c9ff023770",
+    "source": "github",
+    "title": "EliasOulkadi/shokunin",
+    "url": "https://github.com/EliasOulkadi/shokunin",
+    "summary": "",
+    "raw_abstract": "職人 Shokunin 62 AI agent skills for OpenCode, Claude Code, Cursor, Windsurf. ChromaDB memory, MCP servers, declarative self-updates. Multi-model, open source, zero cost.",
+    "score": 10.0,
+    "tags": [
+      "HTML",
+      "ai-agent-skills",
+      "ai-engineering",
+      "ai-memory",
+      "chromadb"
+    ],
+    "stars": 67,
+    "authors": [],
+    "published_at": "2026-05-16T21:39:38Z"
+  },
+  {
+    "id": "8112d5cf1371",
+    "source": "github",
+    "title": "adrian803/LingXi",
+    "url": "https://github.com/adrian803/LingXi",
+    "summary": "",
+    "raw_abstract": "LingXi: multi-agent CTF and pentest framework originated from Tencent Security Hackathon",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ctf",
+      "cybersecurity",
+      "docker",
+      "fastapi"
+    ],
+    "stars": 37,
+    "authors": [],
+    "published_at": "2026-04-30T01:45:18Z"
+  },
+  {
+    "id": "2557685d1b02",
+    "source": "github",
+    "title": "slime-n/slime-n",
+    "url": "https://github.com/slime-n/slime-n",
+    "summary": "",
+    "raw_abstract": "A Multi-Policy, Multi-Agent RL Training Framework",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 28,
+    "authors": [],
+    "published_at": "2026-05-17T10:08:22Z"
+  },
+  {
+    "id": "0920343858fb",
+    "source": "github",
+    "title": "datallmhub/agentflow4j",
+    "url": "https://github.com/datallmhub/agentflow4j",
+    "summary": "",
+    "raw_abstract": "Multi-agent orchestration framework on top of Spring AI",
+    "score": 10.0,
+    "tags": [
+      "Java",
+      "agentic-ai",
+      "agentic-workflow",
+      "java",
+      "llm-orchestration"
+    ],
+    "stars": 23,
+    "authors": [],
+    "published_at": "2026-05-16T21:41:19Z"
+  },
+  {
+    "id": "51424e7e0a7c",
+    "source": "github",
+    "title": "nitaybz/ginnie-agents",
+    "url": "https://github.com/nitaybz/ginnie-agents",
+    "summary": "",
+    "raw_abstract": "Open-source framework for building autonomous multi-agent Slack teams on Claude Code + Max",
+    "score": 10.0,
+    "tags": [
+      "TS"
+    ],
+    "stars": 14,
+    "authors": [],
+    "published_at": "2026-05-11T04:38:58Z"
+  },
+  {
+    "id": "db3d987be640",
+    "source": "github",
+    "title": "DYZYYDS/GeneX-AI",
+    "url": "https://github.com/DYZYYDS/GeneX-AI",
+    "summary": "",
+    "raw_abstract": "A general-purpose computational biology framework integrating LLM multi-agent reasoning with deterministic physical and ecological solvers.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-for-science",
+      "bioinformatics",
+      "computational-biology",
+      "crispr"
+    ],
+    "stars": 14,
+    "authors": [],
+    "published_at": "2026-05-12T15:04:40Z"
+  },
+  {
+    "id": "77613966f45a",
+    "source": "github",
+    "title": "EimanTahir027/MCP-powered-Agentic-RAG",
+    "url": "https://github.com/EimanTahir027/MCP-powered-Agentic-RAG",
+    "summary": "",
+    "raw_abstract": "An MCP-powered agentic RAG system that transcribes, indexes, and intelligently queries audio content using advanced retrieval-augmented generation.",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 9,
+    "authors": [],
+    "published_at": "2026-04-22T16:20:16Z"
+  },
+  {
+    "id": "ac0caac00911",
+    "source": "github",
+    "title": "bettyguo/local-deep-research",
+    "url": "https://github.com/bettyguo/local-deep-research",
+    "summary": "",
+    "raw_abstract": "local-llm ollama llama-cpp vllm deep-research research-agent rag retrieval-augmented-generation agent llm-agent local-first privacy offline qwen searxng faiss bm25 python cli ai-research llm-tooling",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 7,
+    "authors": [],
+    "published_at": "2026-05-14T03:45:42Z"
+  },
+  {
+    "id": "3c683dcb8f36",
+    "source": "github",
+    "title": "opensquilla/opensquilla",
+    "url": "https://github.com/opensquilla/opensquilla",
+    "summary": "",
+    "raw_abstract": "OpenSquilla — Token-Efficient AI Agent with same budget, higher intelligence density",
+    "score": 9.94,
+    "tags": [
+      "Python",
+      "agent",
+      "ai",
+      "ai-agents",
+      "deep-learning"
+    ],
+    "stars": 967,
+    "authors": [],
+    "published_at": "2026-05-15T20:52:39Z"
+  },
+  {
+    "id": "231648a60e60",
+    "source": "github",
+    "title": "kyutai-labs/moshi-rag",
+    "url": "https://github.com/kyutai-labs/moshi-rag",
+    "summary": "",
+    "raw_abstract": "MoshiRAG is a compact full-duplex speech language model augmented with asynchronous knowledge retrieval to improve factuality without sacrificing real-time interactivity.",
+    "score": 9.22,
+    "tags": [
+      "Rust"
+    ],
+    "stars": 84,
+    "authors": [],
+    "published_at": "2026-04-28T16:18:06Z"
+  },
+  {
+    "id": "15a4b8632a85",
+    "source": "github",
+    "title": "btopn/OpenInsider-MCP",
+    "url": "https://github.com/btopn/OpenInsider-MCP",
+    "summary": "",
+    "raw_abstract": "MCP server that exposes live insider trading data to any LLM.",
+    "score": 9.2,
+    "tags": [
+      "TS",
+      "claude",
+      "insider-trading",
+      "mcp",
+      "nodejs"
+    ],
+    "stars": 81,
+    "authors": [],
+    "published_at": "2026-04-28T18:52:32Z"
+  },
+  {
+    "id": "f32fe05877f9",
+    "source": "github",
+    "title": "jmerelnyc/rag-forge",
+    "url": "https://github.com/jmerelnyc/rag-forge",
+    "summary": "",
+    "raw_abstract": "Framework for fine-tuning LLMs on retrieval-augmented generation tasks",
+    "score": 8.65,
+    "tags": [
+      "Python",
+      "fine-tuning",
+      "llm",
+      "machine-learning",
+      "natural-language-processing"
+    ],
+    "stars": 9,
+    "authors": [],
+    "published_at": "2026-05-01T09:18:33Z"
+  },
+  {
+    "id": "901ab29002b5",
+    "source": "github",
+    "title": "skhalidmahmud/RAG-Knowledge-Engine",
+    "url": "https://github.com/skhalidmahmud/RAG-Knowledge-Engine",
+    "summary": "",
+    "raw_abstract": "Advanced RAG (Retrieval-Augmented Generation) system for private document intelligence. Uses OpenAI GPT-4o and Vector Databases to provide zero-hallucination chat insights.",
+    "score": 8.47,
+    "tags": [
+      "knowledge-base",
+      "langchain",
+      "llm",
+      "nlp"
+    ],
+    "stars": 18,
+    "authors": [],
+    "published_at": "2026-05-07T12:36:53Z"
+  },
+  {
+    "id": "961cb55e75c3",
+    "source": "github",
+    "title": "Sirishakrishna/-Enterprise-GraphRAG-Architecture",
+    "url": "https://github.com/Sirishakrishna/-Enterprise-GraphRAG-Architecture",
+    "summary": "",
+    "raw_abstract": "\"Production-grade Retrieval-Augmented Generation pipeline using Knowledge Graphs (Neo4j) and LLMs to eliminate hallucinations.\"",
+    "score": 8.15,
+    "tags": [
+      "Python"
+    ],
+    "stars": 9,
+    "authors": [],
+    "published_at": "2026-04-23T09:43:02Z"
+  },
+  {
+    "id": "751459e5ddee",
+    "source": "github",
+    "title": "SudeshDahale/DocuMind-AI",
+    "url": "https://github.com/SudeshDahale/DocuMind-AI",
+    "summary": "",
+    "raw_abstract": "AI-powered Document Intelligence Platform that allows users to upload PDFs, extract insights, generate summaries, and ask contextual questions using Retrieval-Augmented Generation (RAG) and LLMs. Built with FastAPI, vector search, and modern AI workflows.",
+    "score": 8.04,
+    "tags": [
+      "Python"
+    ],
+    "stars": 7,
+    "authors": [],
+    "published_at": "2026-05-12T16:53:20Z"
+  },
+  {
+    "id": "0000e677aabd",
+    "source": "hackernews",
+    "title": "Show HN: Semble – Code search for agents that uses 98% fewer tokens than grep",
+    "url": "https://github.com/MinishLab/semble",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 7.81,
+    "tags": [],
+    "stars": 36,
+    "authors": [],
+    "published_at": "2026-05-17T15:37:07Z"
+  },
+  {
+    "id": "a78c73525080",
+    "source": "github",
+    "title": "GasolSun36/PyRAG",
+    "url": "https://github.com/GasolSun36/PyRAG",
+    "summary": "",
+    "raw_abstract": "Retrieval is CheapShow Me the Code: Executable Multi-Hop Reasoning for Retrieval-Augmented Generation",
+    "score": 7.52,
+    "tags": [
+      "Python"
+    ],
+    "stars": 20,
+    "authors": [],
+    "published_at": "2026-05-14T03:43:51Z"
+  },
+  {
+    "id": "fe8b2867a4ba",
+    "source": "hackernews",
+    "title": "Show HN: Find the best local LLM for your hardware, ranked by benchmarks",
+    "url": "https://github.com/Andyyyy64/whichllm",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 7.32,
+    "tags": [],
+    "stars": 283,
+    "authors": [],
+    "published_at": "2026-05-15T09:19:24Z"
+  },
+  {
+    "id": "caee05cfbb70",
+    "source": "hackernews",
+    "title": "DeepSeek-V4-Flash means LLM steering is interesting again",
+    "url": "https://www.seangoedecke.com/steering-vectors/",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 6.78,
+    "tags": [],
+    "stars": 258,
+    "authors": [],
+    "published_at": "2026-05-16T14:58:16Z"
+  },
+  {
+    "id": "c4c958787373",
+    "source": "hackernews",
+    "title": "Project Gutenberg – keeps getting better",
+    "url": "https://www.gutenberg.org/",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 6.54,
+    "tags": [],
+    "stars": 1198,
+    "authors": [],
+    "published_at": "2026-05-15T16:15:36Z"
+  },
+  {
+    "id": "1e51f89750fc",
+    "source": "hackernews",
+    "title": "UK sovereign LLM inference",
+    "url": "https://relax.ai/docs",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 6.34,
+    "tags": [],
+    "stars": 107,
+    "authors": [],
+    "published_at": "2026-05-15T09:27:26Z"
+  },
+  {
+    "id": "e45aa4cd4935",
+    "source": "hackernews",
+    "title": "LLM Policy for Rust Compiler",
+    "url": "https://github.com/rust-lang/rust-forge/pull/1040",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 6.3,
+    "tags": [],
+    "stars": 98,
+    "authors": [],
+    "published_at": "2026-05-14T23:37:21Z"
+  },
+  {
+    "id": "7d55e8947ed9",
+    "source": "hackernews",
+    "title": "Radicle: Sovereign {code forge} built on Git",
+    "url": "https://radicle.dev/",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.79,
+    "tags": [],
+    "stars": 264,
+    "authors": [],
+    "published_at": "2026-05-15T12:07:55Z"
+  },
+  {
+    "id": "40ecb4e0d9cf",
+    "source": "hackernews",
+    "title": "Apple Silicon costs more than OpenRouter",
+    "url": "https://www.williamangel.net/blog/2026/05/17/offline-llm-energy-use.html",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.78,
+    "tags": [],
+    "stars": 260,
+    "authors": [],
+    "published_at": "2026-05-17T12:09:23Z"
+  },
+  {
+    "id": "c56afd357413",
+    "source": "hackernews",
+    "title": "How Claude Code works in large codebases",
+    "url": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.74,
+    "tags": [],
+    "stars": 241,
+    "authors": [],
+    "published_at": "2026-05-15T04:15:31Z"
+  },
+  {
+    "id": "f9dce15376a0",
+    "source": "hackernews",
+    "title": "Access to frontier AI will soon be limited by economic and security constraints",
+    "url": "https://writing.antonleicht.me/p/cut-off",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.71,
+    "tags": [],
+    "stars": 225,
+    "authors": [],
+    "published_at": "2026-05-15T01:08:04Z"
+  },
+  {
+    "id": "2ccaa2149b8f",
+    "source": "hackernews",
+    "title": "Claude for Legal",
+    "url": "https://github.com/anthropics/claude-for-legal",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.7,
+    "tags": [],
+    "stars": 220,
+    "authors": [],
+    "published_at": "2026-05-14T21:05:05Z"
+  },
+  {
+    "id": "359ec31aff75",
+    "source": "hackernews",
+    "title": "Power Tools Got Worse on Purpose. Who Owns DeWalt, Craftsman, and Milwaukee?",
+    "url": "https://www.worseonpurpose.com/p/your-power-tools-got-worse-on-purpose",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.57,
+    "tags": [],
+    "stars": 171,
+    "authors": [],
+    "published_at": "2026-05-15T12:15:16Z"
+  },
+  {
+    "id": "cbf53dfc8307",
+    "source": "hackernews",
+    "title": "Show HN: Epiq – Distributed Git based issue tracker TUI",
+    "url": "https://ljtn.github.io/epiq/",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.54,
+    "tags": [],
+    "stars": 88,
+    "authors": [],
+    "published_at": "2026-05-16T00:18:03Z"
+  },
+  {
+    "id": "82510c343d73",
+    "source": "hackernews",
+    "title": "A Meta employee gets real about the horror of working there",
+    "url": "https://sfstandard.com/pacific-standard-time/2026/05/15/meta-employee-gets-real-horror-working-right-now/",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.31,
+    "tags": [],
+    "stars": 101,
+    "authors": [],
+    "published_at": "2026-05-16T12:19:46Z"
+  },
+  {
+    "id": "ba32e1b23732",
+    "source": "hackernews",
+    "title": "How diamonds are made",
+    "url": "https://diamond.jaydip.me/",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.14,
+    "tags": [],
+    "stars": 71,
+    "authors": [],
+    "published_at": "2026-05-15T23:18:39Z"
+  },
+  {
+    "id": "08dbb227f2ae",
+    "source": "hackernews",
+    "title": "Show HN: GlycemicGPT – Open-source AI-powered diabetes management",
+    "url": "https://github.com/GlycemicGPT/GlycemicGPT",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.09,
+    "tags": [],
+    "stars": 64,
+    "authors": [],
+    "published_at": "2026-05-15T04:48:23Z"
+  },
+  {
+    "id": "016560933b8f",
+    "source": "hackernews",
+    "title": "Git Is Not Fine",
+    "url": "https://www.billjings.com/posts/title/git-is-not-fine/",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.07,
+    "tags": [],
+    "stars": 62,
+    "authors": [],
+    "published_at": "2026-05-15T17:51:09Z"
+  },
+  {
+    "id": "c6d6a40f26d4",
+    "source": "hackernews",
+    "title": "Elevated error rates on Opus 4.7",
+    "url": "https://status.claude.com/incidents/8z7l5zcy0v3b",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 5.04,
+    "tags": [],
+    "stars": 58,
+    "authors": [],
+    "published_at": "2026-05-15T00:22:53Z"
+  },
+  {
+    "id": "673744c74474",
+    "source": "hackernews",
+    "title": "The latest X algorithm has been published to GitHub",
+    "url": "https://twitter.com/elonmusk/status/2055277918633562153",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 4.97,
+    "tags": [],
+    "stars": 50,
+    "authors": [],
+    "published_at": "2026-05-17T03:31:29Z"
+  },
+  {
+    "id": "82932405fc76",
+    "source": "hackernews",
+    "title": "New Linux LPE, 5.10 and above (ptrace_may_access mm-NULL + pidfd_getfd)",
+    "url": "https://github.com/0xdeadbeefnetwork/ssh-keysign-pwn",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 4.87,
+    "tags": [],
+    "stars": 41,
+    "authors": [],
+    "published_at": "2026-05-15T01:02:09Z"
+  },
+  {
+    "id": "50fbbb34b61b",
+    "source": "hackernews",
+    "title": "I tried to make Claude make me money on open-source bounties",
+    "url": "https://github.com/ztc00/algora-scout/blob/main/POST.md",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 4.82,
+    "tags": [],
+    "stars": 37,
+    "authors": [],
+    "published_at": "2026-05-16T22:13:54Z"
+  },
+  {
+    "id": "5a4bbbdc3bea",
+    "source": "hackernews",
+    "title": "How to buy cheap Claude tokens in China",
+    "url": "https://www.chinatalk.media/p/how-to-buy-cheap-claude-tokens-in",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 4.76,
+    "tags": [],
+    "stars": 33,
+    "authors": [],
+    "published_at": "2026-05-17T02:11:57Z"
+  },
+  {
+    "id": "8a0563be704c",
+    "source": "hackernews",
+    "title": "Show HN: Codiff, a local diff review tool",
+    "url": "https://github.com/nkzw-tech/codiff/releases",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 4.63,
+    "tags": [],
+    "stars": 25,
+    "authors": [],
+    "published_at": "2026-05-17T05:30:14Z"
+  },
+  {
+    "id": "89812516f51d",
+    "source": "hackernews",
+    "title": "I spent my whole career building passive income. Here's what I got wrong",
+    "url": "https://dariusforoux.com/i-spent-my-whole-career-building-passive-income-heres-what-i-got-wrong/",
+    "summary": "",
+    "raw_abstract": "",
+    "score": 4.55,
+    "tags": [],
+    "stars": 21,
+    "authors": [],
+    "published_at": "2026-05-16T13:56:19Z"
+  }
+]

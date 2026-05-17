@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 每日早报 · 2026-05-17</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --bg2: #161b26;
+      --bg3: #1e2435;
+      --border: #2a3044;
+      --accent: #7c6af7;
+      --accent2: #5be0c4;
+      --accent3: #f77c6a;
+      --text: #e4e8f0;
+      --text2: #9aa5b8;
+      --text3: #5e6e88;
+      --pill-blue: rgba(124,106,247,0.15);
+      --pill-green: rgba(91,224,196,0.15);
+      --pill-red: rgba(247,124,106,0.15);
+      --pill-yellow: rgba(247,210,106,0.15);
+      --yellow: #f7d26a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Header ── */
+    .site-header {
+      background: linear-gradient(135deg, #1a1535 0%, #121830 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 28px 16px;
+    }
+    .header-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .header-title { display: flex; align-items: center; gap: 12px; }
+    .header-title h1 { font-size: 22px; font-weight: 700; color: #fff; }
+    .header-title .date-badge {
+      background: var(--pill-blue); border: 1px solid var(--accent);
+      color: var(--accent); padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600;
+    }
+    .stat-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .stat-pill {
+      padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .pill-p { background: var(--pill-blue); color: var(--accent); border: 1px solid rgba(124,106,247,0.3); }
+    .pill-g { background: var(--pill-green); color: var(--accent2); border: 1px solid rgba(91,224,196,0.3); }
+    .pill-i { background: var(--pill-yellow); color: var(--yellow); border: 1px solid rgba(247,210,106,0.3); }
+    .pill-s { background: var(--pill-red); color: var(--accent3); border: 1px solid rgba(247,124,106,0.3); }
+
+    /* ── Stat Cards ── */
+    .stat-cards {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+      padding: 16px 28px 0;
+    }
+    .stat-card {
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+      padding: 14px 16px; display: flex; align-items: center; gap: 12px;
+    }
+    .stat-icon { font-size: 24px; }
+    .stat-num { font-size: 22px; font-weight: 700; color: #fff; }
+    .stat-label { font-size: 11px; color: var(--text2); margin-top: 1px; }
+
+    /* ── Today's Highlights ── */
+    .highlights {
+      margin: 16px 28px 0;
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .highlights h2 { font-size: 14px; font-weight: 700; color: var(--yellow); margin-bottom: 12px; }
+    .highlights-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .hl-col h3 { font-size: 12px; font-weight: 600; color: var(--text2); margin-bottom: 6px; }
+    .hl-col ul { list-style: none; }
+    .hl-col li { font-size: 12px; color: var(--text); padding: 2px 0; padding-left: 10px; position: relative; }
+    .hl-col li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 10px; top: 2px; }
+    .highlights-conclusion {
+      margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border);
+      font-size: 12px; color: var(--yellow); font-style: italic;
+    }
+
+    /* ── Main Grid ── */
+    .main-grid {
+      display: grid; grid-template-columns: 2fr 1fr; gap: 16px;
+      padding: 16px 28px 28px; align-items: start;
+    }
+    .left-col, .right-col { display: flex; flex-direction: column; gap: 16px; }
+
+    /* ── Section Cards ── */
+    .section-card {
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+    }
+    .section-header {
+      padding: 12px 16px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .section-header h2 { font-size: 14px; font-weight: 700; color: #fff; }
+    .section-tag {
+      font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600;
+    }
+    .tag-blue { background: var(--pill-blue); color: var(--accent); }
+    .tag-green { background: var(--pill-green); color: var(--accent2); }
+    .tag-yellow { background: var(--pill-yellow); color: var(--yellow); }
+    .tag-red { background: var(--pill-red); color: var(--accent3); }
+
+    /* ── Paper Items ── */
+    .paper-item {
+      padding: 12px 16px; border-bottom: 1px solid var(--border);
+    }
+    .paper-item:last-child { border-bottom: none; }
+    .paper-title { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+    .paper-meta { font-size: 11px; color: var(--text3); margin-bottom: 5px; }
+    .paper-abstract { font-size: 12px; color: var(--text2); line-height: 1.55; }
+    .paper-tags { display: flex; gap: 5px; margin-top: 6px; flex-wrap: wrap; }
+    .paper-tag {
+      font-size: 10px; padding: 1px 7px; border-radius: 8px;
+      background: var(--bg3); color: var(--text3); border: 1px solid var(--border);
+    }
+
+    /* ── GitHub Items ── */
+    .repo-item {
+      padding: 12px 16px; border-bottom: 1px solid var(--border);
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .repo-item:last-child { border-bottom: none; }
+    .repo-icon { font-size: 22px; line-height: 1; padding-top: 2px; }
+    .repo-content { flex: 1; min-width: 0; }
+    .repo-title { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+    .repo-desc { font-size: 12px; color: var(--text2); margin-bottom: 5px; }
+    .repo-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .repo-stars { font-size: 11px; color: var(--yellow); font-weight: 600; }
+    .repo-lang { font-size: 10px; color: var(--text3); }
+
+    /* ── Indie Tool Items ── */
+    .prod-item {
+      padding: 14px 16px; border-bottom: 1px solid var(--border);
+    }
+    .prod-item:last-child { border-bottom: none; }
+    .prod-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+    .prod-icon { font-size: 24px; line-height: 1; }
+    .prod-info { flex: 1; }
+    .prod-name { font-size: 13px; font-weight: 700; color: #fff; }
+    .prod-badges { display: flex; gap: 5px; margin-top: 3px; flex-wrap: wrap; }
+    .prod-badge {
+      font-size: 10px; padding: 1px 7px; border-radius: 8px; font-weight: 600;
+    }
+    .badge-indie { background: rgba(247,210,106,0.15); color: var(--yellow); border: 1px solid rgba(247,210,106,0.3); }
+    .badge-show { background: rgba(91,224,196,0.15); color: var(--accent2); border: 1px solid rgba(91,224,196,0.3); }
+    .badge-oss { background: rgba(124,106,247,0.15); color: var(--accent); border: 1px solid rgba(124,106,247,0.3); }
+    .prod-desc { font-size: 12px; color: var(--text2); margin-bottom: 4px; }
+    .prod-why { font-size: 11px; color: var(--accent2); font-style: italic; }
+
+    /* ── Skill Cards ── */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .skill-card {
+      padding: 10px 12px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border);
+    }
+    .skill-card:nth-child(even) { border-right: none; }
+    .skill-card:nth-last-child(-n+2) { border-bottom: none; }
+    .skill-name { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+    .skill-cmd { font-size: 10px; color: var(--accent); font-family: monospace; background: var(--bg); padding: 2px 5px; border-radius: 4px; margin-bottom: 4px; display: inline-block; word-break: break-all; }
+    .skill-desc { font-size: 11px; color: var(--text2); }
+
+    /* ── HN Items ── */
+    .hn-item {
+      padding: 10px 16px; border-bottom: 1px solid var(--border);
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .hn-item:last-child { border-bottom: none; }
+    .hn-rank { font-size: 11px; font-weight: 700; color: var(--text3); min-width: 18px; padding-top: 1px; }
+    .hn-content { flex: 1; }
+    .hn-title { font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+    .hn-meta { font-size: 11px; color: var(--text3); }
+    .hn-points { color: var(--accent3); font-weight: 600; }
+
+    /* ── Tech Radar ── */
+    .radar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 8px; }
+    .radar-item {
+      padding: 8px 10px; border-radius: 6px; margin: 4px;
+      background: var(--bg3); border: 1px solid var(--border);
+    }
+    .radar-name { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+    .radar-bar-wrap { background: var(--bg); border-radius: 4px; height: 4px; margin-bottom: 3px; }
+    .radar-bar { height: 4px; border-radius: 4px; }
+    .radar-desc { font-size: 10px; color: var(--text3); }
+
+    /* ── Chart ── */
+    .chart-wrap { padding: 12px 16px; }
+    canvas { max-height: 180px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .stat-cards { grid-template-columns: repeat(2, 1fr); }
+      .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .stat-cards { grid-template-columns: 1fr 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════ HEADER ════════ -->
+<header class="site-header">
+  <div class="header-top">
+    <div class="header-title">
+      <h1>🤖 AI 每日早报</h1>
+      <span class="date-badge">2026-05-17 · 周日</span>
+    </div>
+    <div class="stat-pills">
+      <span class="stat-pill pill-p">📄 8 Papers</span>
+      <span class="stat-pill pill-g">🚀 5 Repos</span>
+      <span class="stat-pill pill-i">🛠 5 Indie 工具</span>
+      <span class="stat-pill pill-s">🔧 6 Skills</span>
+    </div>
+  </div>
+</header>
+
+<!-- ════════ STAT CARDS ════════ -->
+<div class="stat-cards">
+  <div class="stat-card">
+    <div class="stat-icon">📑</div>
+    <div>
+      <div class="stat-num">8</div>
+      <div class="stat-label">今日论文（arXiv + HF）</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon">⭐</div>
+    <div>
+      <div class="stat-num">62.6K</div>
+      <div class="stat-label">本周最高 Stars（TradingAgents）</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon">🛠</div>
+    <div>
+      <div class="stat-num">5</div>
+      <div class="stat-label">独立开发者工具上新</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon">💬</div>
+    <div>
+      <div class="stat-num">951</div>
+      <div class="stat-label">最高 HN 评论（AI 黑公关事件）</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ TODAY'S HIGHLIGHTS ════════ -->
+<div class="highlights">
+  <h2>⚡ 今日要点（看完这里可不看其他）</h2>
+  <div class="highlights-grid">
+    <div class="hl-col">
+      <h3>📄 论文</h3>
+      <ul>
+        <li>AI 被观察时会主动"表演"——LLM 霍桑效应首次量化</li>
+        <li>MCP-Cosmos：给 Agent 配备世界模型，预测任务动态</li>
+        <li>MARLIN：多 Agent RL 将 LLM 推理碳排放降低 33%</li>
+      </ul>
+    </div>
+    <div class="hl-col">
+      <h3>🚀 GitHub</h3>
+      <ul>
+        <li>claude-context：向量检索让 Claude Code 告别暴力 grep</li>
+        <li>TradingAgents（62.6K ⭐）：多 Agent 交易公司架构范本</li>
+        <li>pi-mono：统一 LLM API + Agent Runtime 一站式工具箱</li>
+      </ul>
+    </div>
+    <div class="hl-col">
+      <h3>🛠 独立工具</h3>
+      <ul>
+        <li>OpenHuman：Rust+Tauri 私人 AI 超智能，GitHub Trending</li>
+        <li>Re_gent：给 AI Agent 操作加 Git 版本控制，Show HN 热议</li>
+        <li>DAC：Dashboard-as-Code，让 Agent 可管理可视化图表</li>
+      </ul>
+    </div>
+    <div class="hl-col">
+      <h3>🔧 Skill + 社区</h3>
+      <ul>
+        <li>claude-forge：11 agents + 36 命令 + 安全 Hooks 5分钟装</li>
+        <li>BrightBean Studio：3周12社媒集成，solo 并行开发案例</li>
+        <li>alirezarezvani/claude-skills：263+ Skill 覆盖各岗位</li>
+      </ul>
+    </div>
+  </div>
+  <div class="highlights-conclusion">
+    💡 <strong>今日结论</strong>：2026年 AI 叙事已从"一个模型一个答案"切换为"一支 Agent 团队协作"——从交易公司到开发团队，多 Agent 分工架构正在每个领域落地，AI 可观测性（Re_gent）和私有化（OpenHuman）成为下一个战场。
+  </div>
+</div>
+
+<!-- ════════ MAIN GRID ════════ -->
+<div class="main-grid">
+
+  <!-- ══ LEFT COL ══ -->
+  <div class="left-col">
+
+    <!-- arXiv Papers -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2>📄 arXiv 最新论文</h2>
+        <span class="section-tag tag-blue">cs.AI · cs.CL · cs.MA</span>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">
+          <a href="https://arxiv.org/abs/2605.15034" target="_blank">AI Knows When It's Being Watched: Contextual Register Modulation in LLMs</a>
+        </div>
+        <div class="paper-meta">Vinicius Covas, Jorge A. H. Toledo · 2026-05-14 · cs.CL / cs.AI / cs.MA</div>
+        <div class="paper-abstract">
+          【中文摘要】研究证明 LLM 多 Agent 系统存在"霍桑效应"——在被人类研究者监控时，Agent 的语言复杂度（TTR）显著上升 +24.9%；换成 AI 审计系统也达 +22.2%。AI 会根据"被谁观察"来调整自身行为，人类监督比自动化监控更能触发规范化表达。对 AI 治理与审计具有直接意义。
+        </div>
+        <div class="paper-tags">
+          <span class="paper-tag">Multi-Agent</span>
+          <span class="paper-tag">AI Governance</span>
+          <span class="paper-tag">Hawthorne Effect</span>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">
+          <a href="https://arxiv.org/abs/2605.14537" target="_blank">Cattle Trade: A Multi-Agent Benchmark for LLM Bluffing, Bidding, and Bargaining</a>
+        </div>
+        <div class="paper-meta">Robert Müller, Clemens Müller · 2026-05-14 · cs.AI · ICLR 2026 Workshop</div>
+        <div class="paper-abstract">
+          【中文摘要】将竞拍、虚张声势、讨价还价、对手建模融入单个 50-60 轮博弈的综合性多 Agent 基准。测试 7 个 LLM 和 3 个启发式 Agent，"战略一致性"（资源纪律、阶段自适应出价）比单一子技能更能预测排名。两个启发式 Code Agent 超过大多数 LLM，揭示当前 LLM 在多能力联合部署上的缺陷。
+        </div>
+        <div class="paper-tags">
+          <span class="paper-tag">Benchmark</span>
+          <span class="paper-tag">Strategic Reasoning</span>
+          <span class="paper-tag">Game Theory</span>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">
+          <a href="https://arxiv.org/abs/2605.13496" target="_blank">MARLIN: Multi-Agent Game-Theoretic RL for Sustainable LLM Inference</a>
+        </div>
+        <div class="paper-meta">H. Moore, S. Qi, D. Milojicic, C. Bash, S. Pasricha · 2026-05-13 · cs.DC / cs.LG</div>
+        <div class="paper-abstract">
+          【中文摘要】提出多 Agent 博弈论强化学习框架，同时优化 LLM 推理的首 Token 时间（TTFT）、碳排放、用水量和能耗。相比现有方案：TTFT 降低 ≥18%，碳排放 -33%，用水量 -43%，能耗 -11%。云数据中心绿色 AI 推理的重要突破。
+        </div>
+        <div class="paper-tags">
+          <span class="paper-tag">Green AI</span>
+          <span class="paper-tag">RL</span>
+          <span class="paper-tag">Cloud Inference</span>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">
+          <a href="https://arxiv.org/abs/2605.09131" target="_blank">MCP-Cosmos: World Model-Augmented Agents for Complex Task Execution in MCP Environments</a>
+        </div>
+        <div class="paper-meta">arXiv:2605.09131 · 2026-05 · cs.AI</div>
+        <div class="paper-abstract">
+          【中文摘要】将生成式世界模型（WM）注入 MCP 生态，使 Agent 具备任务执行前的预测推理能力，填补了"任务级规划忽略执行动态"与"反应式执行缺乏长远预见"之间的鸿沟。为 MCP Agent 引入预判与适应机制，显著提升复杂任务成功率。
+        </div>
+        <div class="paper-tags">
+          <span class="paper-tag">MCP</span>
+          <span class="paper-tag">World Model</span>
+          <span class="paper-tag">Planning</span>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">
+          <a href="https://arxiv.org/abs/2605.00827" target="_blank">Separating Intelligence from Execution: A Workflow Engine for the Model Context Protocol</a>
+        </div>
+        <div class="paper-meta">arXiv:2605.00827 · 2026-05 · cs.AI</div>
+        <div class="paper-abstract">
+          【中文摘要】提出 MCP 原生编排层，将"智能（决策）"与"执行（调用工具）"解耦。Agent 只需推理一次生成 JSON 声明式工作流蓝图，再由执行引擎逐步调用 MCP 工具，降低重复推理成本，提升 Agent 可调试性与复用性。
+        </div>
+        <div class="paper-tags">
+          <span class="paper-tag">MCP</span>
+          <span class="paper-tag">Workflow Engine</span>
+          <span class="paper-tag">Orchestration</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HuggingFace Papers -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2>🤗 HuggingFace Daily Papers</h2>
+        <span class="section-tag tag-green">近期热门论文</span>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">
+          <a href="https://huggingface.co/papers/2603.02604" target="_blank">Heterogeneous Agent Collaborative Reinforcement Learning</a>
+        </div>
+        <div class="paper-meta">ByteDance · HuggingFace Daily Papers · 23 👍</div>
+        <div class="paper-abstract">
+          【中文摘要】提出异构 Agent 协作强化学习框架，解决不同能力、不同角色 Agent 在共同任务中的协调难题。通过角色感知的奖励分配与通信协议，显著优于同构 Agent 基线，为真实世界多 Agent 部署提供更贴近实际的训练范式。
+        </div>
+        <div class="paper-tags"><span class="paper-tag">Multi-Agent RL</span><span class="paper-tag">ByteDance</span><span class="paper-tag">Collaboration</span></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">
+          <a href="https://huggingface.co/papers/2603.04257" target="_blank">Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory</a>
+        </div>
+        <div class="paper-meta">4 authors · HuggingFace Daily Papers · 6 👍</div>
+        <div class="paper-abstract">
+          【中文摘要】通过构建索引化经验记忆库，使 LLM Agent 能在长时序任务中检索和复用历史经验，突破多步复杂任务的性能瓶颈。结合 RL 持续更新记忆质量，在多个 long-horizon 基准上取得 SOTA 结果。
+        </div>
+        <div class="paper-tags"><span class="paper-tag">Memory</span><span class="paper-tag">Long-Horizon</span><span class="paper-tag">RL</span></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">
+          <a href="https://huggingface.co/papers/2603.03823" target="_blank">SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration</a>
+        </div>
+        <div class="paper-meta">5 authors · HuggingFace Daily Papers</div>
+        <div class="paper-abstract">
+          【中文摘要】通过 CI 流水线评估 Agent 维护代码库能力的新基准，超越单纯"行为模仿"，测量 Agent 在真实代码修改、测试通过率、回归检测上的综合能力。为编码 Agent 可靠性评估提供贴近工程现实的标准。
+        </div>
+        <div class="paper-tags"><span class="paper-tag">Coding Agent</span><span class="paper-tag">Benchmark</span><span class="paper-tag">CI/CD</span></div>
+      </div>
+    </div>
+
+    <!-- Indie Tools -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2>🛠 独立开发者 AI 工具</h2>
+        <span class="section-tag tag-yellow">个人 / 小团队 · 非大厂</span>
+      </div>
+
+      <div class="prod-item">
+        <div class="prod-header">
+          <div class="prod-icon">🧠</div>
+          <div class="prod-info">
+            <div class="prod-name"><a href="https://github.com/tinyhumansai/openhuman" target="_blank">OpenHuman</a></div>
+            <div class="prod-badges">
+              <span class="prod-badge badge-indie">👤 tinyhumansai</span>
+              <span class="prod-badge badge-oss">GitHub Trending 5/13-17</span>
+            </div>
+          </div>
+        </div>
+        <div class="prod-desc">本地优先的个人 AI 超智能，每 20 分钟从所有连接应用拉取新数据，压缩进本地 SQLite 知识树，让 AI 始终掌握你完整的工作上下文。Rust + Tauri 构建，GPL-3.0，完全私有无云端上传。</div>
+        <div class="prod-why">💡 为什么值得关注：没有云端、没有数据上传，AI 超智能真正属于个人。在隐私敏感时代这是稀缺品，连续多天登上 GitHub Trending。</div>
+      </div>
+
+      <div class="prod-item">
+        <div class="prod-header">
+          <div class="prod-icon">🔀</div>
+          <div class="prod-info">
+            <div class="prod-name"><a href="https://github.com/regent-vcs/re_gent" target="_blank">Re_gent — Git for AI Agents</a></div>
+            <div class="prod-badges">
+              <span class="prod-badge badge-indie">👤 doshay</span>
+              <span class="prod-badge badge-show">Show HN · 44pts · 26 评论</span>
+            </div>
+          </div>
+        </div>
+        <div class="prod-desc">为 AI Agent 的每一步操作提供类 Git 的版本控制。支持 /rewind 回滚 Agent 决策、bisect 定位"是哪步操作破坏了文件"、追踪每个操作的"为什么"，目前已支持 Claude Code。</div>
+        <div class="prod-why">💡 为什么值得关注：Agent 操作越来越复杂，"为什么删了这个目录"是每个 AI 编程用户遇过的困惑。Re_gent 是首个正式解决此问题的开源工具，2026-05-17 Show HN 活跃讨论中。</div>
+      </div>
+
+      <div class="prod-item">
+        <div class="prod-header">
+          <div class="prod-icon">📊</div>
+          <div class="prod-info">
+            <div class="prod-name"><a href="https://github.com/bruin-data/dac" target="_blank">DAC — Dashboard As Code</a></div>
+            <div class="prod-badges">
+              <span class="prod-badge badge-indie">👤 karakanb (Burak)</span>
+              <span class="prod-badge badge-show">Show HN · 33pts</span>
+            </div>
+          </div>
+        </div>
+        <div class="prod-desc">用 YAML + JSX 定义仪表板的开源工具，所有配置版本可控，Agent 可直接生成和修改。单 Go 二进制部署，支持 10+ SQL 后端，内置语义层统一指标定义，动态图表和多租户支持。</div>
+        <div class="prod-why">💡 为什么值得关注：BI 工具一直是 Agent 的死角——UI 驱动无法程序化操控。DAC 把数据可视化变成可版本控制的代码，让 Agent 终于能"自动建仪表板"。</div>
+      </div>
+
+      <div class="prod-item">
+        <div class="prod-header">
+          <div class="prod-icon">📱</div>
+          <div class="prod-info">
+            <div class="prod-name"><a href="https://github.com/brightbeanxyz/brightbean-studio" target="_blank">BrightBean Studio</a></div>
+            <div class="prod-badges">
+              <span class="prod-badge badge-indie">👤 JanSchu</span>
+              <span class="prod-badge badge-show">Show HN · 88pts · 64 评论</span>
+            </div>
+          </div>
+        </div>
+        <div class="prod-desc">solo 开发者用 Claude Code + Codex 仅用 3 周构建的社媒管理平台：12 个一方 API 集成（FB/IG/LinkedIn等）、多租户 Auth、加密凭证、审批流、统一收件箱。Django + HTMX + PostgreSQL，AGPL-3.0。</div>
+        <div class="prod-why">💡 为什么值得关注：真实展示了 2026 年 solo 开发者借助多 Agent 并行开发的天花板——同时跑 4 个 Agent Worktree，3 周完成原本需要一年的工程量，含详细架构文档。</div>
+      </div>
+
+      <div class="prod-item">
+        <div class="prod-header">
+          <div class="prod-icon">⚡</div>
+          <div class="prod-info">
+            <div class="prod-name"><a href="https://github.com/obra/superpowers" target="_blank">Superpowers — Agentic Skill Framework</a></div>
+            <div class="prod-badges">
+              <span class="prod-badge badge-indie">👤 obra</span>
+              <span class="prod-badge badge-oss">GitHub Trending 2026-05-17</span>
+            </div>
+          </div>
+        </div>
+        <div class="prod-desc">专为编码 Agent 设计的软件开发方法论与技能框架，提供可组合的 Skill 模块和标准化初始指令，指导 Agent 按结构化流程完成软件创建，模块化设计支持自由组合扩展。</div>
+        <div class="prod-why">💡 为什么值得关注：不只是工具，而是"怎么用 Agent 开发软件"的方法论——对想系统化使用 Claude Code 的开发者有直接参考价值，今日 GitHub Trending 新登榜。</div>
+      </div>
+    </div>
+
+    <!-- Claude Code Skills -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2>🔧 Claude Code Skills 趋势</h2>
+        <span class="section-tag tag-red">可安装 · 近期热门</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-name">claude-forge</div>
+          <div class="skill-cmd">claude install sangrokjung/claude-forge</div>
+          <div class="skill-desc">11 AI agents + 36 命令 + 15 Skills + 6层安全 Hooks，受 oh-my-zsh 启发，5分钟安装完成</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">alirezarezvani/claude-skills</div>
+          <div class="skill-cmd">claude install alirezarezvani/claude-skills</div>
+          <div class="skill-desc">263+ Skills，覆盖工程、市场、产品、合规、C级顾问，兼容 Claude Code、Codex、Cursor 等 8 个编码 Agent</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">awesome-claude-code-toolkit</div>
+          <div class="skill-cmd">github.com/rohitg00/awesome-claude-code-toolkit</div>
+          <div class="skill-desc">最全资源聚合：135 agents、35 skills（+40万 via SkillKit）、176+ 插件、42 命令、20 Hooks</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">claude-context MCP</div>
+          <div class="skill-cmd">github.com/zilliztech/claude-context</div>
+          <div class="skill-desc">语义代码搜索 MCP Server，向量化索引整个代码库，BM25+向量混合检索，告别暴力 grep</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">glebis/claude-skills</div>
+          <div class="skill-cmd">claude install glebis/claude-skills</div>
+          <div class="skill-desc">精选 Claude Code Skills 合集，专注 AI 工作流增强，持续更新，社区友好型设计</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">Superpowers by obra</div>
+          <div class="skill-cmd">github.com/obra/superpowers</div>
+          <div class="skill-desc">编码 Agent 方法论框架，提供结构化 Skill 模块和初始指令模板，今日 GitHub Trending 黑马</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /left-col -->
+
+  <!-- ══ RIGHT COL ══ -->
+  <div class="right-col">
+
+    <!-- GitHub Trending -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2>🚀 近期新兴 GitHub 仓库</h2>
+        <span class="section-tag tag-green">快速涨星</span>
+      </div>
+
+      <div class="repo-item">
+        <div class="repo-icon">📈</div>
+        <div class="repo-content">
+          <div class="repo-title"><a href="https://github.com/TauricResearch/TradingAgents" target="_blank">TauricResearch/TradingAgents</a></div>
+          <div class="repo-desc">LLM 驱动的多 Agent 交易公司——基本面/情绪/技术分析师 + 交易员 + 风控各司其职，动态讨论做决策</div>
+          <div class="repo-meta">
+            <span class="repo-stars">⭐ 62.6K</span>
+            <span class="repo-lang">Python · Apache-2.0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="repo-item">
+        <div class="repo-icon">🔧</div>
+        <div class="repo-content">
+          <div class="repo-title"><a href="https://github.com/badlogic/pi-mono" target="_blank">badlogic/pi-mono</a></div>
+          <div class="repo-desc">Agent 工具箱 Monorepo：编码 Agent CLI、统一 LLM API（抽象所有主流模型）、TUI/Web UI 库、Slack Bot、vLLM Pods</div>
+          <div class="repo-meta">
+            <span class="repo-stars">⭐ 43.9K</span>
+            <span class="repo-lang">TypeScript · MIT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="repo-item">
+        <div class="repo-icon">🧑‍🔬</div>
+        <div class="repo-content">
+          <div class="repo-title"><a href="https://github.com/huggingface/ml-intern" target="_blank">huggingface/ml-intern</a></div>
+          <div class="repo-desc">自主 ML 工程师 Agent：读论文、找数据集、微调模型、上传 traces，最多跑 300 步，支持无人值守执行</div>
+          <div class="repo-meta">
+            <span class="repo-stars">⭐ 8.1K</span>
+            <span class="repo-lang">Python · HuggingFace</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="repo-item">
+        <div class="repo-icon">🔍</div>
+        <div class="repo-content">
+          <div class="repo-title"><a href="https://github.com/zilliztech/claude-context" target="_blank">zilliztech/claude-context</a></div>
+          <div class="repo-desc">语义代码搜索 MCP Server，向量数据库索引代码库，BM25+向量混合检索，Agent 只获取相关代码片段</div>
+          <div class="repo-meta">
+            <span class="repo-stars">⭐ 10.6K/周</span>
+            <span class="repo-lang">Go · MIT · MCP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="repo-item">
+        <div class="repo-icon">🎬</div>
+        <div class="repo-content">
+          <div class="repo-title"><a href="https://github.com/AIDC-AI/Pixelle-Video" target="_blank">AIDC-AI/Pixelle-Video</a></div>
+          <div class="repo-desc">输入一句话，输出完整短视频：自动脚本、AI 视觉生成、TTS 配音、BGM 选取、最终合成，零门槛端到端</div>
+          <div class="repo-meta">
+            <span class="repo-stars">⭐ 9.2K</span>
+            <span class="repo-lang">Python · Apache-2.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Radar -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2>📡 热门技能 / 技术雷达</h2>
+        <span class="section-tag tag-blue">当前热度</span>
+      </div>
+      <div class="radar-grid">
+        <div class="radar-item">
+          <div class="radar-name">MCP Servers</div>
+          <div class="radar-bar-wrap"><div class="radar-bar" style="width:95%;background:linear-gradient(90deg,#7c6af7,#5be0c4);"></div></div>
+          <div class="radar-desc">2026年 Agent 集成标准，生态爆炸式增长</div>
+        </div>
+        <div class="radar-item">
+          <div class="radar-name">Multi-Agent RL</div>
+          <div class="radar-bar-wrap"><div class="radar-bar" style="width:88%;background:linear-gradient(90deg,#f77c6a,#f7d26a);"></div></div>
+          <div class="radar-desc">多 Agent 协作训练成新研究热点</div>
+        </div>
+        <div class="radar-item">
+          <div class="radar-name">Claude Code Skills</div>
+          <div class="radar-bar-wrap"><div class="radar-bar" style="width:84%;background:linear-gradient(90deg,#7c6af7,#f77c6a);"></div></div>
+          <div class="radar-desc">可安装 Skill 生态快速形成，263+ 可用</div>
+        </div>
+        <div class="radar-item">
+          <div class="radar-name">RAG + Vector DB</div>
+          <div class="radar-bar-wrap"><div class="radar-bar" style="width:78%;background:linear-gradient(90deg,#5be0c4,#7c6af7);"></div></div>
+          <div class="radar-desc">Agent 上下文增强核心技术</div>
+        </div>
+        <div class="radar-item">
+          <div class="radar-name">AI Video Pipeline</div>
+          <div class="radar-bar-wrap"><div class="radar-bar" style="width:72%;background:linear-gradient(90deg,#f7d26a,#f77c6a);"></div></div>
+          <div class="radar-desc">端到端自动化视频生成进入实用阶段</div>
+        </div>
+        <div class="radar-item">
+          <div class="radar-name">Agent Observability</div>
+          <div class="radar-bar-wrap"><div class="radar-bar" style="width:65%;background:linear-gradient(90deg,#5be0c4,#f7d26a);"></div></div>
+          <div class="radar-desc">Re_gent 等工具标志需求爆发临界点</div>
+        </div>
+        <div class="radar-item">
+          <div class="radar-name">Local-First AI</div>
+          <div class="radar-bar-wrap"><div class="radar-bar" style="width:60%;background:linear-gradient(90deg,#7c6af7,#5be0c4);"></div></div>
+          <div class="radar-desc">OpenHuman 等项目引领隐私计算趋势</div>
+        </div>
+        <div class="radar-item">
+          <div class="radar-name">Green LLM Inference</div>
+          <div class="radar-bar-wrap"><div class="radar-bar" style="width:52%;background:linear-gradient(90deg,#5be0c4,#7c6af7);"></div></div>
+          <div class="radar-desc">MARLIN 等研究推动可持续 AI 议题</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keyword Trend Chart -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2>📊 关键词热度趋势（7天）</h2>
+        <span class="section-tag tag-green">Agent / MCP / RAG</span>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="trendChart"></canvas>
+      </div>
+    </div>
+
+    <!-- HackerNews -->
+    <div class="section-card">
+      <div class="section-header">
+        <h2>🟠 HackerNews AI 热议</h2>
+        <span class="section-tag tag-red">高分讨论</span>
+      </div>
+
+      <div class="hn-item">
+        <div class="hn-rank">#1</div>
+        <div class="hn-content">
+          <div class="hn-title"><a href="https://news.ycombinator.com/item?id=46990729" target="_blank">An AI agent published a hit piece on me</a></div>
+          <div class="hn-meta"><span class="hn-points">2346 pts</span> · 951 评论 · scottshambaugh · Feb 2026</div>
+        </div>
+      </div>
+
+      <div class="hn-item">
+        <div class="hn-rank">#2</div>
+        <div class="hn-content">
+          <div class="hn-title"><a href="https://news.ycombinator.com/item?id=47460525" target="_blank">OpenCode – Open source AI coding agent</a></div>
+          <div class="hn-meta"><span class="hn-points">1274 pts</span> · 619 评论 · opencode.ai</div>
+        </div>
+      </div>
+
+      <div class="hn-item">
+        <div class="hn-rank">#3</div>
+        <div class="hn-content">
+          <div class="hn-title"><a href="https://news.ycombinator.com/item?id=47911524" target="_blank">An AI agent deleted our production database. The agent's confession is below</a></div>
+          <div class="hn-meta"><span class="hn-points">860 pts</span> · 1032 评论 · Apr 2026</div>
+        </div>
+      </div>
+
+      <div class="hn-item">
+        <div class="hn-rank">#4</div>
+        <div class="hn-content">
+          <div class="hn-title"><a href="https://news.ycombinator.com/item?id=47733217" target="_blank">Exploiting the most prominent AI agent benchmarks</a></div>
+          <div class="hn-meta"><span class="hn-points">588 pts</span> · 143 评论 · rdi.berkeley.edu · Apr 2026</div>
+        </div>
+      </div>
+
+      <div class="hn-item">
+        <div class="hn-rank">#5</div>
+        <div class="hn-content">
+          <div class="hn-title"><a href="https://news.ycombinator.com/item?id=47749674" target="_blank">Show HN: Social media tool built in 3 weeks with Claude and Codex</a></div>
+          <div class="hn-meta"><span class="hn-points">88 pts</span> · 64 评论 · JanSchu · May 2026</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /right-col -->
+
+</div><!-- /main-grid -->
+
+<script>
+const ctx = document.getElementById('trendChart').getContext('2d');
+const labels = ['5/11', '5/12', '5/13', '5/14', '5/15', '5/16', '5/17'];
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels,
+    datasets: [
+      {
+        label: 'Agent',
+        data: [72, 75, 80, 88, 85, 90, 95],
+        borderColor: '#7c6af7',
+        backgroundColor: 'rgba(124,106,247,0.08)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 3,
+        borderWidth: 2,
+      },
+      {
+        label: 'MCP',
+        data: [55, 60, 65, 68, 72, 78, 84],
+        borderColor: '#5be0c4',
+        backgroundColor: 'rgba(91,224,196,0.06)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 3,
+        borderWidth: 2,
+      },
+      {
+        label: 'RAG',
+        data: [60, 58, 62, 60, 63, 61, 65],
+        borderColor: '#f77c6a',
+        backgroundColor: 'rgba(247,124,106,0.06)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 3,
+        borderWidth: 2,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: { color: '#9aa5b8', font: { size: 11 }, boxWidth: 12 }
+      },
+      tooltip: {
+        backgroundColor: '#1e2435',
+        borderColor: '#2a3044',
+        borderWidth: 1,
+        titleColor: '#e4e8f0',
+        bodyColor: '#9aa5b8'
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: '#5e6e88', font: { size: 10 } },
+        grid: { color: 'rgba(42,48,68,0.6)' }
+      },
+      y: {
+        ticks: { color: '#5e6e88', font: { size: 10 } },
+        grid: { color: 'rgba(42,48,68,0.6)' },
+        min: 40, max: 100
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>

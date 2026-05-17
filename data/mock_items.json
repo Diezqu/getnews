@@ -1,0 +1,67 @@
+[
+  {
+    "id": "abc001",
+    "source": "arxiv",
+    "title": "AutoAgent: Fully Automatic Agent Generation from Natural Language",
+    "url": "https://arxiv.org/abs/2406.00001",
+    "summary": "提出了一种无需人工标注、完全从自然语言描述自动生成 Agent 的框架，在多个 benchmark 上超越 GPT-4 基线。关键亮点：训练数据全合成，部署成本极低。",
+    "raw_abstract": "We present AutoAgent, a framework for fully automatic agent generation...",
+    "score": 9.2,
+    "tags": ["agent", "LLM", "automation"],
+    "stars": 0,
+    "authors": ["Alice Wang", "Bob Zhang"],
+    "published_at": "2026-05-17T00:00:00Z"
+  },
+  {
+    "id": "abc002",
+    "source": "github",
+    "title": "microsoft/promptflow",
+    "url": "https://github.com/microsoft/promptflow",
+    "summary": "微软开源的 LLM 应用开发框架，支持 prompt 版本管理、流程可视化和批量测试。本周新增 MCP 协议支持，与 Claude 生态对接更顺畅。",
+    "raw_abstract": "Build high-quality LLM apps - from prototyping, testing to production deployment.",
+    "score": 7.8,
+    "tags": ["MCP", "LLM", "framework"],
+    "stars": 10200,
+    "authors": [],
+    "published_at": "2026-05-16T10:00:00Z"
+  },
+  {
+    "id": "abc003",
+    "source": "hf_papers",
+    "title": "LongAgent: Scaling Language Agents to 128k Context",
+    "url": "https://huggingface.co/papers/2406.00002",
+    "summary": "解决了 Agent 在超长上下文中注意力分散的问题，引入分层记忆机制，在 128K token 窗口下任务完成率提升 31%。",
+    "raw_abstract": "Current language agents struggle with very long contexts...",
+    "score": 8.5,
+    "tags": ["agent", "long-context", "memory"],
+    "stars": 342,
+    "authors": ["Chen Li"],
+    "published_at": "2026-05-17T00:00:00Z"
+  },
+  {
+    "id": "abc004",
+    "source": "hackernews",
+    "title": "Show HN: I built a personal AI research assistant with MCP and Claude",
+    "url": "https://news.ycombinator.com/item?id=99999",
+    "summary": "作者用 Claude MCP 协议搭建了一个个人研究助手，可以自动抓取 arXiv、做笔记、生成周报。评论区有大量实现细节讨论，值得参考。",
+    "raw_abstract": "",
+    "score": 7.1,
+    "tags": ["MCP", "agent", "claude"],
+    "stars": 0,
+    "authors": [],
+    "published_at": "2026-05-17T08:00:00Z"
+  },
+  {
+    "id": "abc005",
+    "source": "arxiv",
+    "title": "RAG-Gym: Optimizing Retrieval-Augmented Generation with Process Rewards",
+    "url": "https://arxiv.org/abs/2406.00003",
+    "summary": "将 RL 过程奖励信号引入 RAG 训练，使检索器和生成器协同优化。在 QA 基准上 F1 提升 8 个百分点，对之前的 RAG 工程有直接改进价值。",
+    "raw_abstract": "We propose RAG-Gym, a framework for jointly optimizing...",
+    "score": 6.9,
+    "tags": ["RAG", "RL", "retrieval"],
+    "stars": 0,
+    "authors": ["David Kim", "Eve Liu"],
+    "published_at": "2026-05-16T00:00:00Z"
+  }
+]
