@@ -2,529 +2,831 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI 每日早报 · 2026-05-17</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+
   <style>
     :root {
-      --bg: #0f1117; --bg2: #161b26; --bg3: #1e2435; --border: #2a3044;
-      --accent: #7c6af7; --accent2: #5be0c4; --accent3: #f77c6a;
-      --text: #e4e8f0; --text2: #9aa5b8; --text3: #5e6e88;
-      --pill-blue: rgba(124,106,247,0.15); --pill-green: rgba(91,224,196,0.15);
-      --pill-red: rgba(247,124,106,0.15); --pill-yellow: rgba(247,210,106,0.15);
-      --yellow: #f7d26a;
+      --paper:    #f6f2ea;
+      --paper2:   #ffffff;
+      --paper3:   #f0ebe0;
+      --border:   #ddd5c4;
+      --border2:  #c8bfae;
+      --navy:     #1e3557;
+      --navy2:    #2a4a76;
+      --coral:    #c94428;
+      --coral2:   #e05c3a;
+      --green:    #2a7d4f;
+      --gold:     #b8872a;
+      --text:     #1a1410;
+      --text2:    #6b5e52;
+      --text3:    #a0917f;
+      --tag-bg:   #eee8db;
+      --shadow:   0 1px 3px rgba(30,25,18,0.08), 0 4px 12px rgba(30,25,18,0.04);
+      --shadow-lg:0 2px 8px rgba(30,25,18,0.10), 0 8px 24px rgba(30,25,18,0.06);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif; font-size: 14px; line-height: 1.6; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      line-height: 1.65;
+      min-width: 1200px;
+    }
+    a { color: var(--navy); text-decoration: none; }
+    a:hover { color: var(--coral); text-decoration: underline; text-underline-offset: 2px; }
 
-    .site-header { background: linear-gradient(135deg, #1a1535 0%, #121830 100%); border-bottom: 1px solid var(--border); padding: 20px 28px 16px; }
-    .header-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .header-title { display: flex; align-items: center; gap: 12px; }
-    .header-title h1 { font-size: 22px; font-weight: 700; color: #fff; }
-    .header-title .date-badge { background: var(--pill-blue); border: 1px solid var(--accent); color: var(--accent); padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
-    .stat-pills { display: flex; gap: 8px; flex-wrap: wrap; }
-    .stat-pill { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 5px; }
-    .pill-p { background: var(--pill-blue); color: var(--accent); border: 1px solid rgba(124,106,247,0.3); }
-    .pill-g { background: var(--pill-green); color: var(--accent2); border: 1px solid rgba(91,224,196,0.3); }
-    .pill-s { background: var(--pill-red); color: var(--accent3); border: 1px solid rgba(247,124,106,0.3); }
+    /* ─── Masthead ─── */
+    .masthead {
+      background: var(--navy);
+      padding: 0 32px;
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      border-bottom: 3px solid var(--coral);
+    }
+    .masthead-brand {
+      padding: 20px 28px 20px 0;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .masthead-brand h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 700; color: #fff;
+      letter-spacing: -0.5px; line-height: 1.1;
+    }
+    .masthead-brand .tagline {
+      font-size: 11px; color: rgba(255,255,255,0.5);
+      font-weight: 400; letter-spacing: 2px;
+      text-transform: uppercase; margin-top: 3px;
+    }
+    .masthead-meta {
+      padding: 20px 0 20px 28px;
+      display: flex; flex-direction: column; justify-content: center; gap: 6px;
+    }
+    .masthead-date {
+      font-size: 13px; color: rgba(255,255,255,0.75);
+      font-weight: 500; letter-spacing: 0.5px;
+    }
+    .masthead-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .masthead-pill {
+      font-size: 11px; padding: 2px 10px; border-radius: 2px;
+      font-weight: 600; letter-spacing: 0.3px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.06);
+    }
+    .masthead-pill.papers { border-color: rgba(201,68,40,0.6);  color: #f4a58f; background: rgba(201,68,40,0.15); }
+    .masthead-pill.repos  { border-color: rgba(42,125,79,0.6);  color: #7ed4a8; background: rgba(42,125,79,0.15); }
+    .masthead-pill.jobs   { border-color: rgba(184,135,42,0.6); color: #f0cc7a; background: rgba(184,135,42,0.15); }
 
-    .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 16px 28px 0; }
-    .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
-    .stat-icon { font-size: 24px; }
-    .stat-num { font-size: 22px; font-weight: 700; color: #fff; }
-    .stat-label { font-size: 11px; color: var(--text2); margin-top: 1px; }
+    /* ─── Section title strip ─── */
+    .section-eyebrow {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+    }
+    .section-eyebrow::before, .section-eyebrow::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    .section-eyebrow span {
+      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--coral); white-space: nowrap;
+    }
 
-    .highlights { margin: 16px 28px 0; background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; }
-    .highlights h2 { font-size: 14px; font-weight: 700; color: var(--yellow); margin-bottom: 12px; }
-    .highlights-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .hl-col h3 { font-size: 12px; font-weight: 600; color: var(--text2); margin-bottom: 6px; }
-    .hl-col ul { list-style: none; }
-    .hl-col li { font-size: 12px; color: var(--text); padding: 2px 0; padding-left: 10px; position: relative; }
-    .hl-col li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 10px; top: 2px; }
-    .highlights-conclusion { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 12px; color: var(--yellow); font-style: italic; }
+    /* ─── Card ─── */
+    .card {
+      background: var(--paper2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .card-header {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--paper2);
+    }
+    .card-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px; font-weight: 600;
+      color: var(--navy); letter-spacing: -0.2px;
+    }
+    .card-badge {
+      font-size: 10px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; padding: 2px 8px; border-radius: 2px;
+    }
+    .badge-coral { background: rgba(201,68,40,0.10); color: var(--coral); border: 1px solid rgba(201,68,40,0.2); }
+    .badge-navy  { background: rgba(30,53,87,0.08);  color: var(--navy);  border: 1px solid rgba(30,53,87,0.15); }
+    .badge-green { background: rgba(42,125,79,0.08); color: var(--green); border: 1px solid rgba(42,125,79,0.2); }
+    .badge-gold  { background: rgba(184,135,42,0.10);color: var(--gold);  border: 1px solid rgba(184,135,42,0.2); }
 
-    .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; padding: 16px 28px 28px; align-items: start; }
-    .left-col, .right-col { display: flex; flex-direction: column; gap: 16px; }
+    /* ─── Tag chip ─── */
+    .tag {
+      font-size: 10px; font-weight: 500;
+      padding: 2px 8px; border-radius: 2px;
+      background: var(--tag-bg); color: var(--text2);
+      border: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+    }
 
-    .section-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-    .section-header { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-    .section-header h2 { font-size: 14px; font-weight: 700; color: #fff; }
-    .section-tag { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
-    .tag-blue { background: var(--pill-blue); color: var(--accent); }
-    .tag-green { background: var(--pill-green); color: var(--accent2); }
-    .tag-yellow { background: var(--pill-yellow); color: var(--yellow); }
-    .tag-red { background: var(--pill-red); color: var(--accent3); }
+    /* ─── Footer ─── */
+    .footer {
+      text-align: center;
+      padding: 18px;
+      color: var(--text3); font-size: 11px;
+      border-top: 1px solid var(--border);
+      background: var(--paper2);
+      letter-spacing: 0.5px;
+    }
+    .footer a { color: var(--navy); }
 
-    .paper-item { padding: 12px 16px; border-bottom: 1px solid var(--border); }
-    .paper-item:last-child { border-bottom: none; }
-    .paper-title { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 3px; }
-    .paper-meta { font-size: 11px; color: var(--text3); margin-bottom: 5px; }
-    .paper-abstract { font-size: 12px; color: var(--text2); line-height: 1.55; }
-    .paper-tags { display: flex; gap: 5px; margin-top: 6px; flex-wrap: wrap; }
-    .paper-tag { font-size: 10px; padding: 1px 7px; border-radius: 8px; background: var(--bg3); color: var(--text3); border: 1px solid var(--border); }
+    
+  .main-wrap { padding: 0 32px 32px; }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: start;
+    margin-top: 24px;
+  }
+  .left-col, .right-col { display: flex; flex-direction: column; gap: 20px; }
+  .full-row { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .card, .today-summary { animation: fadeUp 0.4s ease both; }
 
-    .repo-item { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; gap: 12px; align-items: flex-start; }
-    .repo-item:last-child { border-bottom: none; }
-    .repo-icon { font-size: 22px; line-height: 1; padding-top: 2px; }
-    .repo-content { flex: 1; min-width: 0; }
-    .repo-title { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 2px; }
-    .repo-desc { font-size: 12px; color: var(--text2); margin-bottom: 5px; }
-    .repo-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-    .repo-stars { font-size: 11px; color: var(--yellow); font-weight: 600; }
-    .repo-lang { font-size: 10px; color: var(--text3); }
-
-    .hn-item { padding: 10px 16px; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: flex-start; }
-    .hn-item:last-child { border-bottom: none; }
-    .hn-rank { font-size: 11px; font-weight: 700; color: var(--text3); min-width: 18px; padding-top: 1px; }
-    .hn-content { flex: 1; }
-    .hn-title { font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 2px; }
-    .hn-meta { font-size: 11px; color: var(--text3); }
-    .hn-points { color: var(--accent3); font-weight: 600; }
-
-    .radar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 8px; }
-    .radar-item { padding: 8px 10px; border-radius: 6px; margin: 4px; background: var(--bg3); border: 1px solid var(--border); }
-    .radar-name { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 2px; }
-    .radar-bar-wrap { background: var(--bg); border-radius: 4px; height: 4px; margin-bottom: 3px; }
-    .radar-bar { height: 4px; border-radius: 4px; }
-    .radar-desc { font-size: 10px; color: var(--text3); }
-
-    .chart-wrap { padding: 12px 16px; }
-    canvas { max-height: 180px; }
-
-    .score-badge { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 6px; background: rgba(124,106,247,0.2); color: var(--accent); margin-left: 6px; vertical-align: middle; }
-
-    .footer { text-align: center; padding: 20px; color: var(--text3); font-size: 11px; border-top: 1px solid var(--border); margin-top: 8px; }
-
-    @media (max-width: 960px) { .main-grid { grid-template-columns: 1fr; } .stat-cards { grid-template-columns: repeat(2, 1fr); } .highlights-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 600px) { .stat-cards { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
 <body>
 
-<!-- ════════ HEADER ════════ -->
-<header class="site-header">
-  <div class="header-top">
-    <div class="header-title">
-      <h1>🤖 AI 每日早报</h1>
-      <span class="date-badge">2026-05-17 · 周日</span>
-    </div>
-    <div class="stat-pills">
-      <span class="stat-pill pill-p">📄 0 Papers</span>
-      <span class="stat-pill pill-g">🚀 8 Repos</span>
-      <span class="stat-pill pill-s">🟠 8 HN</span>
-    </div>
+<header class="masthead">
+  <div class="masthead-brand">
+    <h1>🤖 AI 每日早报</h1>
+    <div class="tagline">Intelligence · Research · Signal</div>
+  </div>
+  <div class="masthead-meta">
+    <div class="masthead-date">2026-05-17 &nbsp;·&nbsp; 周日</div>
+    
+  <div class="masthead-pills">
+    <span class="masthead-pill papers">📄 0 Papers</span>
+    <span class="masthead-pill repos">🚀 8 Repos</span>
+    <span class="masthead-pill jobs">💼 2 Jobs</span>
+  </div>
+
   </div>
 </header>
 
-<!-- ════════ STAT CARDS ════════ -->
-<div class="stat-cards">
-  <div class="stat-card">
-    <div class="stat-icon">📑</div>
-    <div>
-      <div class="stat-num">0</div>
-      <div class="stat-label">今日论文（arXiv + HF）</div>
-    </div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-icon">⭐</div>
-    <div>
-      <div class="stat-num">3.7K</div>
-      <div class="stat-label">最高 Stars（DeepSeek-Reasonix）</div>
-    </div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-icon">🚀</div>
-    <div>
-      <div class="stat-num">8</div>
-      <div class="stat-label">GitHub 新兴仓库</div>
-    </div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-icon">💬</div>
-    <div>
-      <div class="stat-num">1198</div>
-      <div class="stat-label">HN 最高分（Project Gutenberg – …）</div>
-    </div>
-  </div>
-</div>
 
-<!-- ════════ TODAY'S HIGHLIGHTS ════════ -->
-<div class="highlights">
-  <h2>⚡ 今日要点（看完这里可不看其他）</h2>
-  <div class="highlights-grid">
-    <div class="hl-col">
-      <h3>📄 论文</h3>
+  
+  
+<style>
+  .today-summary {
+    background: var(--paper2);
+    border-left: 3px solid var(--navy);
+    border-radius: 0 4px 4px 0;
+    margin: 24px 32px 0;
+    padding: 20px 28px 22px;
+    box-shadow: var(--shadow);
+  }
+  .today-summary .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--coral); line-height: 1.35;
+    margin-bottom: 14px;
+  }
+  .today-summary .divider {
+    border-top: 1px solid var(--border); margin-bottom: 16px;
+  }
+  .today-summary .ts-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+  .today-summary .ts-col h3 {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text3); margin-bottom: 10px;
+  }
+  .today-summary .ts-col h3.learn { border-bottom: 2px solid var(--green); padding-bottom: 4px; display: inline-block; }
+  .today-summary .ts-col h3.job   { border-bottom: 2px solid var(--gold);  padding-bottom: 4px; display: inline-block; }
+  .today-summary .ts-col ul { list-style: none; }
+  .today-summary .ts-col li {
+    font-size: 13px; color: var(--text);
+    padding: 6px 0 6px 16px; position: relative;
+    border-bottom: 1px dashed var(--paper3);
+    line-height: 1.5;
+  }
+  .today-summary .ts-col li:last-child { border-bottom: none; }
+  .today-summary .ts-col li::before {
+    content: '▸'; position: absolute; left: 0; top: 5px;
+    color: var(--coral); font-size: 11px;
+  }
+</style>
+
+<section class="today-summary">
+  <div class="headline">💡 AI智能体编排与学习资源密集涌现，终端原生编码代理成热点</div>
+  <div class="divider"></div>
+  <div class="ts-grid">
+    <div class="ts-col">
+      <h3 class="learn">📚 AI 趋势</h3>
       <ul>
-        
+        <li>终端原生AI编码代理通过缓存优化实现长时稳定运行</li><li>多智能体编排工具实现零依赖、高扩展性协作方案</li><li>结构化三语智能体AI学习路线图覆盖8阶段145+项目</li>
       </ul>
     </div>
-    <div class="hl-col">
-      <h3>🚀 GitHub</h3>
+    <div class="ts-col">
+      <h3 class="job">💼 求职信号</h3>
       <ul>
-        
-        <li>esengine/DeepSeek-Reasonix（3.7K ⭐）</li>
-        
-        <li>cosmicstack-labs/mercury-agent（2.2K ⭐）</li>
-        
-        <li>GammaLabTechnologies/harmonist（1.7K ⭐）</li>
-        
+        <li>AI辅助编程工具聚焦大型代码库上下文感知与增量分析</li><li>基于Claude Code的技能开发工具支持多语言与实时反馈</li><li>今日数据较少</li>
       </ul>
     </div>
-    <div class="hl-col">
-      <h3>🟠 HackerNews</h3>
-      <ul>
+  </div>
+</section>
+
+  <div class="main-wrap">
+    <div class="main-grid">
+
+      <div class="left-col">
         
-        <li>Show HN: Semble – Code search for agents that uses 98% …</li>
         
-        <li>Show HN: Find the best local LLM for your hardware, ran…</li>
+          
+<style>
+  .paper-item {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--paper3);
+    transition: background 0.15s;
+  }
+  .paper-item:hover { background: rgba(30,53,87,0.02); }
+  .paper-item:last-child { border-bottom: none; }
+  .paper-title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.45; margin-bottom: 4px; }
+  .paper-title a { color: inherit; }
+  .paper-title a:hover { color: var(--navy); text-decoration: none; }
+  .paper-meta {
+    font-size: 11px; color: var(--text3);
+    margin-bottom: 6px; font-family: 'DM Mono', monospace;
+  }
+  .paper-abstract { font-size: 12.5px; color: var(--text2); line-height: 1.6; }
+  .paper-footer { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .score-chip {
+    font-size: 10px; font-weight: 700; font-family: 'DM Mono', monospace;
+    padding: 2px 7px; border-radius: 2px;
+    background: rgba(30,53,87,0.08); color: var(--navy);
+    border: 1px solid rgba(30,53,87,0.15);
+    margin-left: auto;
+  }
+  .score-chip.high {
+    background: rgba(201,68,40,0.10); color: var(--coral);
+    border-color: rgba(201,68,40,0.2);
+  }
+  .upvote-chip {
+    font-size: 10px; font-weight: 700;
+    padding: 2px 7px; border-radius: 2px;
+    background: rgba(42,125,79,0.08); color: var(--green);
+    border: 1px solid rgba(42,125,79,0.2);
+    margin-left: auto;
+  }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>arXiv 最新论文</h2>
+    <span class="card-badge badge-navy">cs.AI · cs.CL · cs.MA</span>
+  </div>
+  
+  <div class="paper-item" style="color:var(--text3);font-size:12px;">今日暂无数据</div>
+  
+</div>
         
-        <li>DeepSeek-V4-Flash means LLM steering is interesting aga…</li>
+
         
-      </ul>
+        
+          
+<style>
+  .paper-item {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--paper3);
+    transition: background 0.15s;
+  }
+  .paper-item:hover { background: rgba(30,53,87,0.02); }
+  .paper-item:last-child { border-bottom: none; }
+  .paper-title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.45; margin-bottom: 4px; }
+  .paper-title a { color: inherit; }
+  .paper-title a:hover { color: var(--navy); text-decoration: none; }
+  .paper-meta {
+    font-size: 11px; color: var(--text3);
+    margin-bottom: 6px; font-family: 'DM Mono', monospace;
+  }
+  .paper-abstract { font-size: 12.5px; color: var(--text2); line-height: 1.6; }
+  .paper-footer { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .score-chip {
+    font-size: 10px; font-weight: 700; font-family: 'DM Mono', monospace;
+    padding: 2px 7px; border-radius: 2px;
+    background: rgba(30,53,87,0.08); color: var(--navy);
+    border: 1px solid rgba(30,53,87,0.15);
+    margin-left: auto;
+  }
+  .score-chip.high {
+    background: rgba(201,68,40,0.10); color: var(--coral);
+    border-color: rgba(201,68,40,0.2);
+  }
+  .upvote-chip {
+    font-size: 10px; font-weight: 700;
+    padding: 2px 7px; border-radius: 2px;
+    background: rgba(42,125,79,0.08); color: var(--green);
+    border: 1px solid rgba(42,125,79,0.2);
+    margin-left: auto;
+  }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>HuggingFace Daily Papers</h2>
+    <span class="card-badge badge-green">今日热门</span>
+  </div>
+  
+  <div class="paper-item" style="color:var(--text3);font-size:12px;">今日暂无数据</div>
+  
+</div>
+        
+
+        
+        
+          
+<style>
+  .repo-item { padding: 14px 18px; border-bottom: 1px solid var(--paper3); transition: background 0.15s; }
+  .repo-item:hover { background: rgba(30,53,87,0.02); }
+  .repo-item:last-child { border-bottom: none; }
+  .repo-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 5px; }
+  .repo-title { font-size: 13px; font-weight: 600; color: var(--text); }
+  .repo-title a { color: inherit; }
+  .repo-title a:hover { color: var(--navy); }
+  .repo-stars {
+    font-size: 12px; font-weight: 700; font-family: 'DM Mono', monospace;
+    color: var(--gold); white-space: nowrap; flex-shrink: 0;
+  }
+  .repo-desc { font-size: 12px; color: var(--text2); line-height: 1.55; margin-bottom: 6px; }
+  .repo-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>GitHub 新兴仓库</h2>
+    <span class="card-badge badge-green">快速涨星</span>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank" rel="noopener">esengine/DeepSeek-Reasonix</a></div>
+      <div class="repo-stars">★ 3.7K</div>
     </div>
-    <div class="hl-col">
-      <h3>🔥 今日高分</h3>
-      <ul>
-        
-        <li>【GitHub】esengine/DeepSeek-Reasonix</li>
-        
-        <li>【GitHub】cosmicstack-labs/mercury-agent</li>
-        
-        <li>【GitHub】GammaLabTechnologies/harmonist</li>
-        
-      </ul>
+    <div class="repo-desc">esengine/DeepSeek-Reasonix 是一个专为终端设计的 DeepSeek 原生 AI 编码代理。其核心创新在于围绕前缀缓存稳定性进行工程优化，支持长时间持续运行而无需频繁重启。该工具通过缓存机制显著提升编码任务中的响应速度与效率，特别适合需要持久化 Agent 交互的开发场景，为 RAG 或 MCP 架构下的终端智能体提供了稳定的缓存管理参考。</div>
+    <div class="repo-tags">
+      <span class="tag">TS</span><span class="tag">agent</span><span class="tag">agent-framework</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/cosmicstack-labs/mercury-agent" target="_blank" rel="noopener">cosmicstack-labs/mercury-agent</a></div>
+      <div class="repo-stars">★ 2.2K</div>
+    </div>
+    <div class="repo-desc">Mercury-Agent 是一个基于灵魂驱动的 AI 智能体，配备权限强化工具、令牌预算和多通道访问能力。它支持从 CLI 或 Telegram 全天候运行，关键亮点在于通过精细的权限控制和资源预算管理，确保智能体在长期自主运行中的安全性与稳定性。该项目为构建可部署、可管理的 Agent 系统提供了实用参考，尤其适用于需要多端交互与资源管控的 RAG 或 MCP 场景。</div>
+    <div class="repo-tags">
+      <span class="tag">TS</span><span class="tag">ai-agent</span><span class="tag">ai-assistant</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/GammaLabTechnologies/harmonist" target="_blank" rel="noopener">GammaLabTechnologies/harmonist</a></div>
+      <div class="repo-stars">★ 1.7K</div>
+    </div>
+    <div class="repo-desc">GammaLabTechnologies/harmonist 是一个便携式 AI 智能体编排工具，通过机械协议强制实现多智能体协作。它支持 186 个智能体，且零运行时依赖。该工具在 Agent 方向提供了轻量级、高可扩展性的编排方案，适用于需要严格协议约束的多智能体系统。</div>
+    <div class="repo-tags">
+      <span class="tag">Python</span><span class="tag">agent-framework</span><span class="tag">agent-system</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/WenyuChiou/awesome-agentic-ai-zh" target="_blank" rel="noopener">WenyuChiou/awesome-agentic-ai-zh</a></div>
+      <div class="repo-stars">★ 1.5K</div>
+    </div>
+    <div class="repo-desc">这是一个结构化、三语（繁中/简中/英文）的智能体AI学习路线图，涵盖从LLM基础到多智能体系统的8个阶段。包含145+精选项目和动手练习，为学习者提供系统化的Agent开发知识体系。该资源对Agent/MCP/RAG方向的学习者具有直接参考价值，帮助构建从理论到实践的完整技能树。</div>
+    <div class="repo-tags">
+      <span class="tag">Python</span><span class="tag">agentic-ai</span><span class="tag">ai-agents</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/StartupHakk/OpenMonoAgent.ai" target="_blank" rel="noopener">StartupHakk/OpenMonoAgent.ai</a></div>
+      <div class="repo-stars">★ 1.1K</div>
+    </div>
+    <div class="repo-desc">StartupHakk/OpenMonoAgent.ai 是一个终端原生编码智能体，由本地大语言模型驱动，100% 开源且永久免费，通过单条命令即可安装。其核心亮点是提供无限令牌使用，无需订阅，支持从任何位置调用。该项目基于 C#/.NET 构建，强调 AI 工具应作为基础设施而非订阅服务，与 Agent 方向高度契合，为开发者提供了完全自主可控的本地化智能体解决方案。</div>
+    <div class="repo-tags">
+      <span class="tag">C#</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/future-agi/future-agi" target="_blank" rel="noopener">future-agi/future-agi</a></div>
+      <div class="repo-stars">★ 980</div>
+    </div>
+    <div class="repo-desc">开源端到端平台，用于评估、观测和优化大语言模型及AI智能体应用。核心功能包括追踪、评估、模拟、数据集、网关和护栏，支持自托管，采用Apache 2.0许可。该平台为Agent应用提供全生命周期管理能力，尤其适合多智能体系统的性能监控与迭代优化。</div>
+    <div class="repo-tags">
+      <span class="tag">Python</span><span class="tag">ai</span><span class="tag">ai-gateway</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/jmerelnyc/Photo-agents" target="_blank" rel="noopener">jmerelnyc/Photo-agents</a></div>
+      <div class="repo-stars">★ 935</div>
+    </div>
+    <div class="repo-desc">jmerelnyc/Photo-agents 是一个自主进化的智能体项目，基于视觉驱动的分层记忆与自编写技能，使LLM代理能直接操控计算机。关键亮点在于其自进化能力，无需人工干预即可动态扩展技能库。该项目与Agent方向高度相关，通过视觉记忆与技能自生成机制，显著提升了智能体在复杂环境中的自主适应与操作能力。</div>
+    <div class="repo-tags">
+      <span class="tag">Python</span><span class="tag">agent-memory</span><span class="tag">ai-agents</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/nduckmink/arkon" target="_blank" rel="noopener">nduckmink/arkon</a></div>
+      <div class="repo-stars">★ 734</div>
+    </div>
+    <div class="repo-desc">Arkon 是一个企业级 AI 知识中心与 MCP 服务器，支持团队自托管知识库以管理 RAG 上下文、访问策略和 AI 技能。它通过模型上下文协议（MCP）连接 Claude 等大语言模型，实现自动化、安全的组织知识集成。该工具在 Agent 和 RAG 方向的价值在于，它为多智能体系统提供了统一的知识访问层和权限控制，简化了企业级知识检索与 AI 应用的集成流程。</div>
+    <div class="repo-tags">
+      <span class="tag">Python</span><span class="tag">enterprise-ai</span><span class="tag">knowledge-base-embeddings</span>
     </div>
   </div>
   
 </div>
-
-<!-- ════════ MAIN GRID ════════ -->
-<div class="main-grid">
-
-  <!-- ══ LEFT COL ══ -->
-  <div class="left-col">
-
-    <!-- arXiv Papers -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2>📄 arXiv 最新论文</h2>
-        <span class="section-tag tag-blue">cs.AI · cs.CL · cs.MA</span>
-      </div>
-      
-      <div class="paper-item" style="color:var(--text3);font-size:12px;">今日暂无 arXiv 论文数据</div>
-      
-    </div>
-
-    <!-- HuggingFace Papers -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2>🤗 HuggingFace Daily Papers</h2>
-        <span class="section-tag tag-green">今日热门</span>
-      </div>
-      
-      <div class="paper-item" style="color:var(--text3);font-size:12px;">今日暂无 HuggingFace 论文数据</div>
-      
-    </div>
-
-    <!-- HackerNews -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2>🟠 HackerNews AI 热议</h2>
-        <span class="section-tag tag-red">高分讨论</span>
-      </div>
-      
-      <div class="hn-item">
-        <div class="hn-rank">#1</div>
-        <div class="hn-content">
-          <div class="hn-title"><a href="https://github.com/MinishLab/semble" target="_blank">Show HN: Semble – Code search for agents that uses 98% fewer tokens than grep</a></div>
-          <div class="hn-meta">
-            <span class="hn-points">36 pts</span>
-             · 2026-05-17
-          </div>
-        </div>
-      </div>
-      
-      <div class="hn-item">
-        <div class="hn-rank">#2</div>
-        <div class="hn-content">
-          <div class="hn-title"><a href="https://github.com/Andyyyy64/whichllm" target="_blank">Show HN: Find the best local LLM for your hardware, ranked by benchmarks</a></div>
-          <div class="hn-meta">
-            <span class="hn-points">283 pts</span>
-             · 2026-05-15
-          </div>
-        </div>
-      </div>
-      
-      <div class="hn-item">
-        <div class="hn-rank">#3</div>
-        <div class="hn-content">
-          <div class="hn-title"><a href="https://www.seangoedecke.com/steering-vectors/" target="_blank">DeepSeek-V4-Flash means LLM steering is interesting again</a></div>
-          <div class="hn-meta">
-            <span class="hn-points">258 pts</span>
-             · 2026-05-16
-          </div>
-        </div>
-      </div>
-      
-      <div class="hn-item">
-        <div class="hn-rank">#4</div>
-        <div class="hn-content">
-          <div class="hn-title"><a href="https://www.gutenberg.org/" target="_blank">Project Gutenberg – keeps getting better</a></div>
-          <div class="hn-meta">
-            <span class="hn-points">1198 pts</span>
-             · 2026-05-15
-          </div>
-        </div>
-      </div>
-      
-      <div class="hn-item">
-        <div class="hn-rank">#5</div>
-        <div class="hn-content">
-          <div class="hn-title"><a href="https://relax.ai/docs" target="_blank">UK sovereign LLM inference</a></div>
-          <div class="hn-meta">
-            <span class="hn-points">107 pts</span>
-             · 2026-05-15
-          </div>
-        </div>
-      </div>
-      
-      <div class="hn-item">
-        <div class="hn-rank">#6</div>
-        <div class="hn-content">
-          <div class="hn-title"><a href="https://github.com/rust-lang/rust-forge/pull/1040" target="_blank">LLM Policy for Rust Compiler</a></div>
-          <div class="hn-meta">
-            <span class="hn-points">98 pts</span>
-             · 2026-05-14
-          </div>
-        </div>
-      </div>
-      
-      <div class="hn-item">
-        <div class="hn-rank">#7</div>
-        <div class="hn-content">
-          <div class="hn-title"><a href="https://radicle.dev/" target="_blank">Radicle: Sovereign {code forge} built on Git</a></div>
-          <div class="hn-meta">
-            <span class="hn-points">264 pts</span>
-             · 2026-05-15
-          </div>
-        </div>
-      </div>
-      
-      <div class="hn-item">
-        <div class="hn-rank">#8</div>
-        <div class="hn-content">
-          <div class="hn-title"><a href="https://www.williamangel.net/blog/2026/05/17/offline-llm-energy-use.html" target="_blank">Apple Silicon costs more than OpenRouter</a></div>
-          <div class="hn-meta">
-            <span class="hn-points">260 pts</span>
-             · 2026-05-17
-          </div>
-        </div>
-      </div>
-      
-    </div>
-
-  </div><!-- /left-col -->
-
-  <!-- ══ RIGHT COL ══ -->
-  <div class="right-col">
-
-    <!-- GitHub Trending -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2>🚀 近期新兴 GitHub 仓库</h2>
-        <span class="section-tag tag-green">快速涨星</span>
-      </div>
-      
-      <div class="repo-item">
-        <div class="repo-icon">📈</div>
-        <div class="repo-content">
-          <div class="repo-title"><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank">esengine/DeepSeek-Reasonix</a></div>
-          <div class="repo-desc">DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.</div>
-          <div class="repo-meta">
-            <span class="repo-stars">⭐ 3.7K</span>
-            <span class="repo-lang">TS</span><span class="repo-lang">agent</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="repo-item">
-        <div class="repo-icon">🔧</div>
-        <div class="repo-content">
-          <div class="repo-title"><a href="https://github.com/cosmicstack-labs/mercury-agent" target="_blank">cosmicstack-labs/mercury-agent</a></div>
-          <div class="repo-desc">Soul-driven AI agent with permission-hardened tools, token budgets, and multi-channel access. Runs 24/7 from CLI or Telegram.</div>
-          <div class="repo-meta">
-            <span class="repo-stars">⭐ 2.2K</span>
-            <span class="repo-lang">TS</span><span class="repo-lang">ai-agent</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="repo-item">
-        <div class="repo-icon">🧑‍🔬</div>
-        <div class="repo-content">
-          <div class="repo-title"><a href="https://github.com/GammaLabTechnologies/harmonist" target="_blank">GammaLabTechnologies/harmonist</a></div>
-          <div class="repo-desc">Portable AI agent orchestration with mechanical protocol enforcement. 186 agents, zero runtime dependencies.</div>
-          <div class="repo-meta">
-            <span class="repo-stars">⭐ 1.7K</span>
-            <span class="repo-lang">Python</span><span class="repo-lang">agent-framework</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="repo-item">
-        <div class="repo-icon">🔍</div>
-        <div class="repo-content">
-          <div class="repo-title"><a href="https://github.com/WenyuChiou/awesome-agentic-ai-zh" target="_blank">WenyuChiou/awesome-agentic-ai-zh</a></div>
-          <div class="repo-desc">A structured, trilingual (繁中 / 简中 / English) learning roadmap for agentic AI — from LLM basics to multi-agent systems. 8 stages · 145+ curated projects · hands-on exercises. 中文 AI agent 學習地圖。</div>
-          <div class="repo-meta">
-            <span class="repo-stars">⭐ 1.5K</span>
-            <span class="repo-lang">Python</span><span class="repo-lang">agentic-ai</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="repo-item">
-        <div class="repo-icon">🎬</div>
-        <div class="repo-content">
-          <div class="repo-title"><a href="https://github.com/StartupHakk/OpenMonoAgent.ai" target="_blank">StartupHakk/OpenMonoAgent.ai</a></div>
-          <div class="repo-desc">(BETA) AI shouldn't have a meter. Unlimited tokens. Forever. Your machine. Your agent. Use it from anywhere. Terminal-native coding agent powered by local LLMs — 100% open source, free forever, and in</div>
-          <div class="repo-meta">
-            <span class="repo-stars">⭐ 1.1K</span>
-            <span class="repo-lang">C#</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="repo-item">
-        <div class="repo-icon">⚡</div>
-        <div class="repo-content">
-          <div class="repo-title"><a href="https://github.com/future-agi/future-agi" target="_blank">future-agi/future-agi</a></div>
-          <div class="repo-desc">Open-source, end-to-end platform for evaluating, observing, and improving LLM and AI agent applications. Tracing · Evals · Simulations · Datasets · Gateway · Guardrails. Self-hostable. Apache 2.0.</div>
-          <div class="repo-meta">
-            <span class="repo-stars">⭐ 980</span>
-            <span class="repo-lang">Python</span><span class="repo-lang">ai</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="repo-item">
-        <div class="repo-icon">🛠</div>
-        <div class="repo-content">
-          <div class="repo-title"><a href="https://github.com/jmerelnyc/Photo-agents" target="_blank">jmerelnyc/Photo-agents</a></div>
-          <div class="repo-desc">Autonomous self-evolving agents. Vision-grounded layered memory and self-written skills for LLM agents that operate your computer.</div>
-          <div class="repo-meta">
-            <span class="repo-stars">⭐ 934</span>
-            <span class="repo-lang">Python</span><span class="repo-lang">agent-memory</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="repo-item">
-        <div class="repo-icon">🧠</div>
-        <div class="repo-content">
-          <div class="repo-title"><a href="https://github.com/nduckmink/arkon" target="_blank">nduckmink/arkon</a></div>
-          <div class="repo-desc">Arkon: Enterprise AI Knowledge Hub & MCP Server. Self-hosted knowledge base for teams to manage RAG contexts, access policies, and AI skills. Connect Claude and other LLMs via Model Context Protocol (</div>
-          <div class="repo-meta">
-            <span class="repo-stars">⭐ 734</span>
-            <span class="repo-lang">Python</span><span class="repo-lang">enterprise-ai</span>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-
-    <!-- Tech Radar -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2>📡 技术雷达</h2>
-        <span class="section-tag tag-blue">关键词热度</span>
-      </div>
-      <div class="radar-grid">
         
-        <div class="radar-item">
-          <div class="radar-name">Agent</div>
-          <div class="radar-bar-wrap"><div class="radar-bar" style="width:95%;background:linear-gradient(90deg,#7c6af7,#5be0c4);"></div></div>
-          <div class="radar-desc">多 Agent 协作框架持续爆发</div>
-        </div>
+
         
-        <div class="radar-item">
-          <div class="radar-name">RAG</div>
-          <div class="radar-bar-wrap"><div class="radar-bar" style="width:62%;background:linear-gradient(90deg,#f77c6a,#f7d26a);"></div></div>
-          <div class="radar-desc">检索增强依然是核心技术</div>
-        </div>
         
-        <div class="radar-item">
-          <div class="radar-name">MCP</div>
-          <div class="radar-bar-wrap"><div class="radar-bar" style="width:48%;background:linear-gradient(90deg,#5be0c4,#7c6af7);"></div></div>
-          <div class="radar-desc">2026 Agent 集成标准</div>
-        </div>
-        
-        <div class="radar-item">
-          <div class="radar-name">LLM Fine-tune</div>
-          <div class="radar-bar-wrap"><div class="radar-bar" style="width:20%;background:linear-gradient(90deg,#f7d26a,#f77c6a);"></div></div>
-          <div class="radar-desc">垂直领域微调需求上升</div>
-        </div>
-        
-        <div class="radar-item">
-          <div class="radar-name">AI Safety</div>
-          <div class="radar-bar-wrap"><div class="radar-bar" style="width:20%;background:linear-gradient(90deg,#7c6af7,#f77c6a);"></div></div>
-          <div class="radar-desc">对齐与可解释性研究增加</div>
-        </div>
-        
-        <div class="radar-item">
-          <div class="radar-name">Local-First AI</div>
-          <div class="radar-bar-wrap"><div class="radar-bar" style="width:20%;background:linear-gradient(90deg,#5be0c4,#f7d26a);"></div></div>
-          <div class="radar-desc">隐私计算与离线部署</div>
-        </div>
-        
+          
+<style>
+  .hn-item {
+    padding: 10px 18px; border-bottom: 1px solid var(--paper3);
+    display: flex; gap: 12px; align-items: baseline;
+    transition: background 0.15s;
+  }
+  .hn-item:hover { background: rgba(30,53,87,0.02); }
+  .hn-item:last-child { border-bottom: none; }
+  .hn-rank {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--border2); min-width: 22px; line-height: 1; padding-top: 1px;
+  }
+  .hn-body { flex: 1; }
+  .hn-title { font-size: 12.5px; font-weight: 500; color: var(--text); line-height: 1.45; margin-bottom: 3px; }
+  .hn-title a { color: inherit; }
+  .hn-title a:hover { color: var(--navy); }
+  .hn-meta { font-size: 11px; color: var(--text3); font-family: 'DM Mono', monospace; }
+  .hn-pts { color: var(--coral); font-weight: 600; }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>HackerNews AI 热议</h2>
+    <span class="card-badge badge-coral">高分讨论</span>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">1</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://github.com/Andyyyy64/whichllm" target="_blank" rel="noopener">Show HN: Find the best local LLM for your hardware, ranked by benchmarks</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts">283 pts</span>
+         &nbsp;·&nbsp; 2026-05-15
       </div>
     </div>
-
-    <!-- Keyword Trend Chart -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2>📊 关键词热度趋势（7天）</h2>
-        <span class="section-tag tag-green">Agent / MCP / RAG</span>
-      </div>
-      <div class="chart-wrap">
-        <canvas id="trendChart"></canvas>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">2</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://www.seangoedecke.com/steering-vectors/" target="_blank" rel="noopener">DeepSeek-V4-Flash means LLM steering is interesting again</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts">261 pts</span>
+         &nbsp;·&nbsp; 2026-05-16
       </div>
     </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">3</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://www.gutenberg.org/" target="_blank" rel="noopener">Project Gutenberg – keeps getting better</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts">1204 pts</span>
+         &nbsp;·&nbsp; 2026-05-15
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">4</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://arkadiyt.com/2026/05/13/removing-the-modem-and-gps-from-my-rav4/" target="_blank" rel="noopener">Removing the modem and GPS from my 2024 RAV4 hybrid</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts">1082 pts</span>
+         &nbsp;·&nbsp; 2026-05-14
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">5</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://relax.ai/docs" target="_blank" rel="noopener">UK sovereign LLM inference</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts">107 pts</span>
+         &nbsp;·&nbsp; 2026-05-15
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">6</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://github.com/rust-lang/rust-forge/pull/1040" target="_blank" rel="noopener">LLM Policy for Rust Compiler</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts">99 pts</span>
+         &nbsp;·&nbsp; 2026-05-14
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">7</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://www.anthropic.com/news/claude-for-small-business" target="_blank" rel="noopener">Claude for Small Business</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts">538 pts</span>
+         &nbsp;·&nbsp; 2026-05-14
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">8</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://www.tomshardware.com/tech-industry/cryptocurrency/bitcoin-trader-recovers-usd400-000-using-claude-ai-after-losing-wallet-password-11-years-ago-bot-tried-3-5-trillion-passwords-before-decrypting-an-old-wallet-backup" target="_blank" rel="noopener">Bitcoin trader recovers wallet with help of Claude</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts">331 pts</span>
+         &nbsp;·&nbsp; 2026-05-14
+      </div>
+    </div>
+  </div>
+  
+</div>
+        
+      </div>
 
-  </div><!-- /right-col -->
+      <div class="right-col">
+        
+        
+          
+<style>
+  .job-item { padding: 14px 18px; border-bottom: 1px solid var(--paper3); transition: background 0.15s; }
+  .job-item:hover { background: rgba(184,135,42,0.04); }
+  .job-item:last-child { border-bottom: none; }
+  .job-title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.45; margin-bottom: 4px; }
+  .job-title a { color: inherit; }
+  .job-title a:hover { color: var(--gold); text-decoration: none; }
+  .job-meta { font-size: 11px; color: var(--text3); margin-bottom: 6px; font-family: 'DM Mono', monospace; }
+  .job-body { font-size: 12.5px; color: var(--text2); line-height: 1.6; }
+  .job-footer { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+</style>
 
-</div><!-- /main-grid -->
+<div class="card">
+  <div class="card-header">
+    <h2>牛客面经热榜</h2>
+    <span class="card-badge badge-gold">人工智能分区</span>
+  </div>
+  
+  <div class="job-item" style="color:var(--text3);font-size:12px;">RSSHub 今日无 nowcoder 数据（公共实例可能暂时不可用，明日自动重试）</div>
+  
+</div>
+        
 
-<div class="footer">
-  由 AI Pipeline 自动生成 · 2026-05-17 17:01 · <a href="./index.html">← 返回首页</a>
+        
+        
+          
+<div class="card">
+  <div class="card-header">
+    <h2>国内 AI 公司动态</h2>
+    <span class="card-badge badge-gold">官博 / 媒体</span>
+  </div>
+  
+  <div class="job-item" style="color:var(--text3);font-size:12px;">今日聚合器未匹配到目标公司动态</div>
+  
+</div>
+        
+
+        
+        
+          
+<div class="card">
+  <div class="card-header">
+    <h2>AI Coding 工具信号</h2>
+    <span class="card-badge badge-coral">采用动向</span>
+  </div>
+  
+  <div class="job-item">
+    <div class="job-title"><a href="https://github.com/DrCatHicks/learning-opportunities#coding_tool" target="_blank" rel="noopener">A Claude Code and Codex Skill for Deliberate Skill Development</a></div>
+    <div class="job-meta">
+      来源: hackernews
+       &nbsp;·&nbsp; 252 pts
+    </div>
+    <div class="job-body">这是一个基于Claude Code和Codex的技能开发工具，专注于通过刻意练习提升编程能力。它利用AI辅助生成个性化练习任务，提供实时反馈和难度自适应调整。关键亮点是支持多语言代码生成与错误分析，能显著缩短技能掌握周期。该工具与Agent方向紧密相关，通过智能体协作实现个性化学习路径规划，为RAG系统在技能知识库的检索与生成提供了实践参考。</div>
+    <div class="job-footer">
+      <span class="tag">Claude Code</span><span class="tag">来源: hackernews</span>
+    </div>
+  </div>
+  
+  <div class="job-item">
+    <div class="job-title"><a href="https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start#coding_tool" target="_blank" rel="noopener">How Claude Code works in large codebases</a></div>
+    <div class="job-meta">
+      来源: hackernews
+       &nbsp;·&nbsp; 241 pts
+    </div>
+    <div class="job-body">Claude Code 是一种面向大型代码库的智能编程助手，通过上下文感知和增量分析技术高效处理复杂项目。其关键亮点在于能自动识别代码依赖关系、模块结构及变更影响范围，显著提升代码导航与重构效率。该工具与Agent方向紧密相关，通过自主理解代码库上下文，辅助开发者进行智能代码生成与调试，减少手动搜索时间。</div>
+    <div class="job-footer">
+      <span class="tag">Claude Code</span><span class="tag">来源: hackernews</span>
+    </div>
+  </div>
+  
+</div>
+        
+
+        
+        
+          
+<style>
+  .radar-list { padding: 8px 0; }
+  .radar-row { padding: 8px 18px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--paper3); }
+  .radar-row:last-child { border-bottom: none; }
+  .radar-name { font-size: 12px; font-weight: 600; color: var(--text); min-width: 120px; }
+  .radar-track { flex: 1; height: 5px; background: var(--paper3); border-radius: 3px; overflow: hidden; }
+  .radar-fill { height: 100%; border-radius: 3px; transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .radar-pct { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--text3); min-width: 32px; text-align: right; }
+  .radar-desc { font-size: 10.5px; color: var(--text3); min-width: 140px; text-align: right; }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>技术雷达</h2>
+    <span class="card-badge badge-navy">关键词热度</span>
+  </div>
+  <div class="radar-list">
+    
+    <div class="radar-row">
+      <div class="radar-name">Agent</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:95%;background:linear-gradient(90deg,#1e3557,#2a4a76);"></div>
+      </div>
+      <div class="radar-pct">95%</div>
+      <div class="radar-desc">多 Agent 协作框架持续爆发</div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="radar-name">MCP</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:62%;background:linear-gradient(90deg,#c94428,#e05c3a);"></div>
+      </div>
+      <div class="radar-pct">62%</div>
+      <div class="radar-desc">2026 Agent 集成标准</div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="radar-name">RAG</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:62%;background:linear-gradient(90deg,#2a7d4f,#3a9d6a);"></div>
+      </div>
+      <div class="radar-pct">62%</div>
+      <div class="radar-desc">检索增强依然是核心技术</div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="radar-name">LLM Fine-tune</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:20%;background:linear-gradient(90deg,#b8872a,#d4a040);"></div>
+      </div>
+      <div class="radar-pct">20%</div>
+      <div class="radar-desc">垂直领域微调需求上升</div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="radar-name">AI Safety</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:20%;background:linear-gradient(90deg,#1e3557,#c94428);"></div>
+      </div>
+      <div class="radar-pct">20%</div>
+      <div class="radar-desc">对齐与可解释性研究增加</div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="radar-name">Local-First AI</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:20%;background:linear-gradient(90deg,#2a7d4f,#b8872a);"></div>
+      </div>
+      <div class="radar-pct">20%</div>
+      <div class="radar-desc">隐私计算与离线部署</div>
+    </div>
+    
+  </div>
+</div>
+        
+      </div>
+
+    </div>
+
+    <div class="full-row">
+      
+      <div style="grid-column: 1 / -1;">
+        
+          
+<style>
+  .chart-wrap { padding: 16px 18px; }
+  #trendChart { max-height: 220px; }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>关键词热度趋势</h2>
+    <span class="card-badge badge-gold">过去 7 天</span>
+  </div>
+  <div class="chart-wrap">
+    <canvas id="trendChart"></canvas>
+  </div>
 </div>
 
 <script>
-const ctx = document.getElementById('trendChart').getContext('2d');
-new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ["5/11", "5/12", "5/13", "5/14", "5/15", "5/16", "5/17"],
-    datasets: [
-      { label: 'Agent', data: [0, 0, 0, 0, 0, 0, 95], borderColor: '#7c6af7', backgroundColor: 'rgba(124,106,247,0.08)', tension: 0.4, fill: true, pointRadius: 3, borderWidth: 2 },
-      { label: 'MCP',   data: [0, 0, 0, 0, 0, 0, 55], borderColor: '#5be0c4', backgroundColor: 'rgba(91,224,196,0.06)',  tension: 0.4, fill: true, pointRadius: 3, borderWidth: 2 },
-      { label: 'RAG',   data: [0, 0, 0, 0, 0, 0, 60], borderColor: '#f77c6a', backgroundColor: 'rgba(247,124,106,0.06)', tension: 0.4, fill: true, pointRadius: 3, borderWidth: 2 }
-    ]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: { labels: { color: '#9aa5b8', font: { size: 11 }, boxWidth: 12 } },
-      tooltip: { backgroundColor: '#1e2435', borderColor: '#2a3044', borderWidth: 1, titleColor: '#e4e8f0', bodyColor: '#9aa5b8' }
-    },
-    scales: {
-      x: { ticks: { color: '#5e6e88', font: { size: 10 } }, grid: { color: 'rgba(42,48,68,0.6)' } },
-      y: { ticks: { color: '#5e6e88', font: { size: 10 } }, grid: { color: 'rgba(42,48,68,0.6)' }, min: 0, max: 100 }
-    }
-  }
-});
+window.__TREND__ = {
+  labels: ["5/11", "5/12", "5/13", "5/14", "5/15", "5/16", "5/17"],
+  series: {"agent": [0, 0, 0, 0, 0, 0, 95], "mcp": [0, 0, 0, 0, 0, 0, 95], "rag": [0, 0, 0, 0, 0, 0, 90]}
+};
 </script>
+        
+      </div>
+    </div>
+  </div>
+
+
+<div class="footer">
+  
+  AI Pipeline 自动生成 &nbsp;·&nbsp; 2026-05-17 23:51 &nbsp;·&nbsp; <a href="./archive.html">归档</a> &nbsp;·&nbsp; <a href="https://github.com/Diezqu/getnews" target="_blank">GitHub 仓库</a>
+  
+</div>
+
+
+<script>
+(function() {
+  const t = window.__TREND__;
+  if (!t) return;
+  const ctx = document.getElementById('trendChart').getContext('2d');
+  const colors = {
+    agent: '#1e3557', mcp: '#c94428', rag: '#2a7d4f',
+  };
+  const fillColors = {
+    agent: 'rgba(30,53,87,0.06)', mcp: 'rgba(201,68,40,0.05)', rag: 'rgba(42,125,79,0.05)',
+  };
+  const datasets = Object.keys(t.series).map(k => ({
+    label: k.toUpperCase(),
+    data: t.series[k],
+    borderColor: colors[k] || '#888',
+    backgroundColor: fillColors[k] || 'rgba(0,0,0,0.03)',
+    tension: 0.4, fill: true, pointRadius: 3, borderWidth: 2,
+    pointBackgroundColor: colors[k] || '#888',
+  }));
+  new Chart(ctx, {
+    type: 'line',
+    data: { labels: t.labels, datasets },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { labels: { color: '#6b5e52', font: { family: 'Outfit', size: 11 }, boxWidth: 12 } },
+        tooltip: {
+          backgroundColor: '#1e3557', borderColor: '#ddd5c4', borderWidth: 1,
+          titleColor: '#fff', bodyColor: 'rgba(255,255,255,0.75)',
+          titleFont: { family: 'Outfit' }, bodyFont: { family: 'Outfit' }
+        }
+      },
+      scales: {
+        x: { ticks: { color: '#a0917f', font: { family: 'Outfit', size: 10 } }, grid: { color: 'rgba(180,165,148,0.3)' } },
+        y: { ticks: { color: '#a0917f', font: { family: 'Outfit', size: 10 } }, grid: { color: 'rgba(180,165,148,0.3)' }, min: 0, max: 100 }
+      }
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

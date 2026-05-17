@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-17",
+  "generated_at": "2026-05-17T23:51:55+00:00",
+  "headline": "AI智能体编排与学习资源密集涌现，终端原生编码代理成热点",
+  "ai_trends": [
+    "终端原生AI编码代理通过缓存优化实现长时稳定运行",
+    "多智能体编排工具实现零依赖、高扩展性协作方案",
+    "结构化三语智能体AI学习路线图覆盖8阶段145+项目"
+  ],
+  "job_signals": [
+    "AI辅助编程工具聚焦大型代码库上下文感知与增量分析",
+    "基于Claude Code的技能开发工具支持多语言与实时反馈",
+    "今日数据较少"
+  ],
+  "stats": {
+    "total_items": 62,
+    "learning_count": 60,
+    "job_count": 2,
+    "top_score": 10.0,
+    "top_item_title": "esengine/DeepSeek-Reasonix"
+  }
+}
