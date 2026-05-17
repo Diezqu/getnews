@@ -12,10 +12,10 @@ def sample_learning_item() -> Item:
         id="abc123",
         source="arxiv",
         category="learning",
-        title="AutoAgent: Fully Automatic Agent Generation from NL",
+        title="Scaling Laws for Neural Language Models",
         url="https://arxiv.org/abs/2601.00001",
-        raw_content="We propose AutoAgent, a framework that builds agents from natural language. On SWE-bench it outperforms GPT-4 by 12 points.",
-        tags=["cs.AI", "cs.MA", "agent", "MCP"],
+        raw_content="We study empirical scaling laws for language model performance on the cross-entropy loss.",
+        tags=["cs.AI", "cs.CL"],
         authors=["Alice Wang", "Bob Zhang"],
         published_at="2026-05-17T00:00:00Z",
     )
