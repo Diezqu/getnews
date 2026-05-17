@@ -1,0 +1,55 @@
+{% extends "base.html.j2" %}
+
+{% block title %}AI 每日早报 · 历史归档{% endblock %}
+
+{% block masthead_title %}📚 AI 每日早报 · 归档{% endblock %}
+{% block masthead_date %}共 {{ entries|length }} 期日报{% endblock %}
+{% block masthead_pills %}{% endblock %}
+
+{% block extra_styles %}
+  .archive-wrap { padding: 32px; max-width: 1100px; margin: 0 auto; }
+  .archive-section { margin-bottom: 32px; }
+  .archive-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; color: var(--navy); margin-bottom: 12px;
+    padding-bottom: 6px; border-bottom: 2px solid var(--coral);
+    display: inline-block;
+  }
+  .archive-list { list-style: none; }
+  .archive-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--paper3);
+    display: flex; gap: 18px; align-items: baseline;
+  }
+  .archive-list li:last-child { border-bottom: none; }
+  .archive-date { font-family: 'DM Mono', monospace; color: var(--text3); min-width: 90px; }
+  .archive-headline {
+    font-size: 14px; color: var(--text);
+    flex: 1;
+  }
+  .archive-link { font-family: 'DM Mono', monospace; font-size: 11px; }
+{% endblock %}
+
+{% block body %}
+<div class="archive-wrap">
+  <section class="archive-section">
+    <h2>每日归档</h2>
+    <ul class="archive-list">
+      {% for e in entries %}
+      <li>
+        <span class="archive-date">{{ e.date }}</span>
+        <span class="archive-headline">{{ e.headline or '（无 summary）' }}</span>
+        <a class="archive-link" href="{{ e.href }}">→ 查看</a>
+      </li>
+      {% else %}
+      <li><span class="archive-headline" style="color:var(--text3);">还没有归档，请明天早 7:00 后再来。</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="archive-section">
+    <h2>周报 · 月报</h2>
+    <p style="color:var(--text3);font-size:13px;">v3 实装。<a href="../SPEC.md">详见 SPEC §12</a>。</p>
+  </section>
+</div>
+{% endblock %}
