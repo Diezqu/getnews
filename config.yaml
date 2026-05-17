@@ -1,0 +1,200 @@
+# GetNews v2 — single source of truth for weights, sources, LLM, rendering.
+# Edit this file (no code changes) to tune your daily brief.
+
+# ───────────────────────────────────────────────────────────────
+# Personalized scoring weights
+# ───────────────────────────────────────────────────────────────
+scoring:
+  source_base:                # baseline before keyword/author bonus
+    arxiv:        4.0
+    hf_papers:    4.0
+    github:       3.5
+    hackernews:   3.0
+    nowcoder:     4.0
+    china_ai:     3.5
+    coding_tool:  3.5
+
+  stars_log_weight: 0.5       # final += log(stars+1) * this
+
+  learning:
+    agent:            3.0
+    multi-agent:      3.0
+    mcp:              2.5
+    rag:              1.5
+    retrieval:        1.0
+    llm:              1.0
+    language model:   1.0
+    tool use:         1.5
+    planning:         1.0
+    memory:           1.0
+    benchmark:        0.5
+    fine-tun:         0.5
+    distributed:      0.3
+
+  job:
+    # 牛客面经高频题型
+    transformer:      3.0
+    attention:        2.5
+    rag:              2.5
+    向量数据库:        2.5
+    agent:            2.5
+    多智能体:          2.5
+    prompt:           2.0
+    vllm:             2.0
+    部署:             2.0
+    fine-tun:         2.0
+    lora:             2.0
+    分布式训练:        1.5
+    rlhf:             1.5
+    强化学习:          1.5
+    # 国内 AI 公司
+    智谱:             3.0
+    glm:              3.0
+    月之暗面:          3.0
+    kimi:             3.0
+    deepseek:         3.0
+    通义:             2.5
+    阿里:             2.5
+    字节:             2.5
+    doubao:           2.5
+    豆包:             2.5
+    minimax:          2.0
+    阶跃:             2.0
+    # AI Coding 工具
+    cursor:           2.0
+    claude code:      2.0
+    cline:            1.5
+    aider:            1.5
+    copilot:          1.0
+
+  authors:
+    bonus: 2.0
+    watchlist:
+      - anthropic
+      - deepmind
+      - openai
+      - google research
+      - meta ai
+      - stanford
+      - mit
+      - tsinghua
+      - 清华
+      - sjtu
+      - 上交
+      - andrej karpathy
+      - yann lecun
+      - yoshua bengio
+      - geoffrey hinton
+
+# ───────────────────────────────────────────────────────────────
+# Sources: toggle on/off + per-source params
+# ───────────────────────────────────────────────────────────────
+sources:
+  arxiv:
+    enabled: true
+    max_items: 30
+    categories: [cs.AI, cs.CL, cs.MA, cs.LG]
+    days_back: 2
+
+  hf_papers:
+    enabled: true
+    max_items: 15
+
+  github:
+    enabled: true
+    max_per_query: 8
+    days_back: 30
+    queries:
+      - "agent LLM"
+      - "MCP server Claude"
+      - "RAG retrieval augmented"
+      - "multi-agent framework"
+
+  hackernews:
+    enabled: true
+    max_per_query: 10
+    min_points: 20
+    days_back: 3
+    queries:
+      - "AI agent"
+      - "LLM"
+      - "Claude"
+      - "GPT"
+      - "machine learning"
+      - "MCP protocol"
+
+  nowcoder:
+    enabled: true
+    max_items: 20
+    # RSSHub route for 牛客 discuss; 639 = 人工智能/机器学习 分区
+    rsshub_routes:
+      - "/nowcoder/discuss/639"
+
+  china_ai:
+    enabled: true
+    max_items: 15
+    # Aggregator sites that cover all major Chinese AI companies in one feed.
+    # We filter by company keywords (智谱/DeepSeek/Kimi/etc) after fetch.
+    feeds:
+      - name: "机器之心"
+        url:  "https://www.jiqizhixin.com/rss"
+      - name: "量子位"
+        url:  "https://rsshub.app/qbitai"
+    target_companies:
+      - 智谱
+      - 月之暗面
+      - kimi
+      - deepseek
+      - 通义
+      - 字节
+      - doubao
+      - 豆包
+      - minimax
+      - 阶跃
+
+  coding_tool:
+    enabled: true
+    max_items: 5
+    # Derived from hackernews + hf_papers — pulled at scorer/renderer stage,
+    # not a network call. Filters items whose title/content mentions any of:
+    keywords:
+      - cursor
+      - claude code
+      - cline
+      - aider
+      - copilot
+      - windsurf
+
+# ───────────────────────────────────────────────────────────────
+# LLM
+# ───────────────────────────────────────────────────────────────
+llm:
+  provider: "deepseek"      # "deepseek" | "mock"
+  model: "deepseek-chat"
+  temperature: 0.3
+  max_tokens_summary: 250
+  max_tokens_daily: 600
+
+# ───────────────────────────────────────────────────────────────
+# Rendering
+# ───────────────────────────────────────────────────────────────
+rendering:
+  theme: "light"
+  max_per_card:
+    arxiv:        8
+    hf_papers:    5
+    github:       8
+    hackernews:   8
+    nowcoder:    10
+    china_ai:     8
+    coding_tool:  5
+  # which keywords to track on the trend chart (must overlap with scoring keys)
+  trend_keywords: [agent, mcp, rag]
+  # which keywords show up in the technology radar
+  radar_keywords:
+    - {name: "Agent",         desc: "多 Agent 协作框架持续爆发", gradient: "linear-gradient(90deg,#1e3557,#2a4a76)"}
+    - {name: "MCP",           desc: "2026 Agent 集成标准",       gradient: "linear-gradient(90deg,#c94428,#e05c3a)"}
+    - {name: "RAG",           desc: "检索增强依然是核心技术",     gradient: "linear-gradient(90deg,#2a7d4f,#3a9d6a)"}
+    - {name: "LLM Fine-tune", desc: "垂直领域微调需求上升",       gradient: "linear-gradient(90deg,#b8872a,#d4a040)"}
+    - {name: "AI Safety",     desc: "对齐与可解释性研究增加",     gradient: "linear-gradient(90deg,#1e3557,#c94428)"}
+    - {name: "Local-First AI",desc: "隐私计算与离线部署",         gradient: "linear-gradient(90deg,#2a7d4f,#b8872a)"}
