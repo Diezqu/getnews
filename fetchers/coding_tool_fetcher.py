@@ -40,7 +40,7 @@ class CodingToolFetcher(BaseFetcher):
                 source="coding_tool",
                 category="job",
                 title=src_item.title,
-                url=src_item.url,
+                url=derived_url,
                 raw_content=src_item.raw_content,
                 stars=src_item.stars,
                 tags=[m.title() for m in matched[:3]] + [f"来源: {src_item.source}"],

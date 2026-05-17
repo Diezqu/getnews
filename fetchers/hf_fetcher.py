@@ -32,7 +32,7 @@ class HFFetcher(BaseFetcher):
             paper = p.get("paper") or p
             title = paper.get("title") or p.get("title") or ""
             arxiv_id = paper.get("id") or p.get("id") or ""
-            upvotes = int(p.get("numComments") or p.get("upvotes") or 0)
+            upvotes = int(p.get("upvotes") or p.get("numComments") or 0)
             abstract = paper.get("summary") or paper.get("abstract") or ""
             url = f"https://huggingface.co/papers/{arxiv_id}" if arxiv_id else ""
             if not title or not url:
