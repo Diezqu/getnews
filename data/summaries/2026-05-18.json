@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-18",
+  "generated_at": "2026-05-18T01:11:30+00:00",
+  "headline": "AI Agent 工具爆发，终端编码与多智能体协作成焦点",
+  "ai_trends": [
+    "终端原生 AI 编码代理通过缓存优化实现长期运行",
+    "灵魂驱动智能体强化权限与令牌预算保障安全",
+    "零依赖多智能体编排工具支持 186 个智能体协作"
+  ],
+  "job_signals": [
+    "Claude Code 展示大型代码库 AI 编码助手能力",
+    "今日数据较少",
+    "今日数据较少"
+  ],
+  "stats": {
+    "total_items": 54,
+    "learning_count": 53,
+    "job_count": 1,
+    "top_score": 10.0,
+    "top_item_title": "esengine/DeepSeek-Reasonix"
+  }
+}
