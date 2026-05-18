@@ -1,14 +1,27 @@
-"""Fetch latest papers from arXiv using the arxiv.py library (3s delay, ToS-compliant)."""
-import hashlib
-from datetime import date, timedelta
+"""Fetch latest papers from arXiv using the official RSS feed via feedparser.
 
-import arxiv
+The RSS endpoint (rss.arxiv.org) is served via CDN with no observed rate
+limiting, replacing the arxiv.py API client that returns HTTP 429 on
+GitHub Actions shared IPs.
+
+Feed update cadence: daily ~04:00 UTC on weekdays; empty on weekends (normal).
+"""
+import hashlib
+import time
+from datetime import date
+
+import feedparser
 
 from fetchers.base import BaseFetcher, REGISTRY
 from pipeline.config import get_config
 from pipeline.schema import Item
 
+_RSS_BASE = "https://rss.arxiv.org/rss/"
+
 _KEYWORDS = ["agent", "multi-agent", "MCP", "RAG", "retrieval", "LLM", "language model"]
+
+# Announce types we want to keep (skip "replace" and "replace-cross")
+_KEEP_ANNOUNCE_TYPES = {"new", "cross"}
 
 
 class ArxivFetcher(BaseFetcher):
@@ -18,48 +31,74 @@ class ArxivFetcher(BaseFetcher):
     def fetch(self, target_date: date) -> list[Item]:
         cfg = get_config()["sources"]["arxiv"]
         categories = cfg.get("categories", ["cs.AI", "cs.CL", "cs.MA", "cs.LG"])
-        max_results = cfg.get("max_items", 30)
-        days_back = cfg.get("days_back", 2)
 
-        since = (target_date - timedelta(days=days_back)).strftime("%Y%m%d")
-        cat_q = " OR ".join(f"cat:{c}" for c in categories)
-        query = f"({cat_q}) AND submittedDate:[{since}0000 TO *]"
-
-        client = arxiv.Client(delay_seconds=3.0, num_retries=3)
-        search = arxiv.Search(
-            query=query,
-            max_results=max_results,
-            sort_by=arxiv.SortCriterion.SubmittedDate,
-            sort_order=arxiv.SortOrder.Descending,
-        )
+        url = _RSS_BASE + "+".join(categories)
 
         try:
-            results = list(client.results(search))
+            parsed = feedparser.parse(url)
         except Exception as e:
-            print(f"  [warn] arXiv fetch failed: {e}")
+            print(f"  [warn] arXiv RSS fetch failed: {e}")
             return []
 
-        return [_to_item(r) for r in results]
+        entries = parsed.entries
+        if not entries:
+            print("  [info] arXiv RSS feed returned 0 entries (weekend or upstream issue)")
+            return []
+
+        items = []
+        for entry in entries:
+            announce_type = entry.get("arxiv_announce_type", "new")
+            if announce_type not in _KEEP_ANNOUNCE_TYPES:
+                continue
+            items.append(_to_item(entry))
+
+        return items
 
 
-def _to_item(r: arxiv.Result) -> Item:
-    abstract = (r.summary or "").replace("\n", " ")
-    tags = list(dict.fromkeys(r.categories[:3]))
-    text_lower = (r.title + " " + abstract).lower()
+def _extract_abstract(description: str) -> str:
+    """Strip the arXiv announce header from the description to get the abstract."""
+    marker = "Abstract:"
+    idx = description.find(marker)
+    if idx != -1:
+        return description[idx + len(marker):].strip()
+    return description.strip()
+
+
+def _to_item(entry) -> Item:
+    title = entry.title.strip().replace("\n", " ")
+    url = entry.link
+    entry_id = entry.id  # oai:arXiv.org:<id>
+
+    abstract = _extract_abstract(entry.description or "")
+    abstract = abstract.replace("\n", " ")
+
+    # Authors: comma-separated string → list (up to 4)
+    authors = [a.strip() for a in entry.get("author", "").split(",") if a.strip()][:4]
+
+    # Tags: arXiv category terms (up to 3), then keyword hits
+    tags = [t["term"] for t in entry.get("tags", [])][:3]
+    text_lower = (title + " " + abstract).lower()
     for kw in _KEYWORDS:
         if kw.lower() in text_lower and kw not in tags:
             tags.append(kw)
 
+    # published_at: convert time.struct_time → ISO 8601 string
+    published_parsed = entry.published_parsed
+    if published_parsed:
+        published_at = time.strftime("%Y-%m-%dT%H:%M:%SZ", published_parsed)
+    else:
+        published_at = ""
+
     return Item(
-        id=hashlib.sha1(r.entry_id.encode()).hexdigest()[:12],
+        id=hashlib.sha1(entry_id.encode()).hexdigest()[:12],
         source="arxiv",
         category="learning",
-        title=r.title.strip().replace("\n", " "),
-        url=r.entry_id,
+        title=title,
+        url=url,
         raw_content=abstract[:500],
         tags=tags[:6],
-        authors=[a.name for a in r.authors[:4]],
-        published_at=r.published.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        authors=authors,
+        published_at=published_at,
     )
 
 
