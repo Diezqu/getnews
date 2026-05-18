@@ -23,9 +23,16 @@
 
 {% block masthead_pills %}
   <div class="masthead-pills">
-    <span class="masthead-pill papers">📄 {{ counts.papers }} Papers</span>
-    <span class="masthead-pill repos">🚀 {{ counts.repos }} Repos</span>
-    <span class="masthead-pill jobs">💼 {{ counts.jobs }} Jobs</span>
+    <span class="masthead-pill papers">📄 论文</span>
+    <span class="masthead-pill repos">🚀 仓库</span>
+    <span class="masthead-pill jobs">💼 求职</span>
+  </div>
+{% endblock %}
+
+{% block masthead_right %}
+  <div class="masthead-right">
+    <div class="masthead-weekday-deco">{{ weekday_str }}</div>
+    <div class="masthead-sources-row">arXiv · HF · GitHub · HN · 牛客 · AI</div>
   </div>
 {% endblock %}
 
