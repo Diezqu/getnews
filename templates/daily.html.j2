@@ -11,14 +11,26 @@
   .main-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 20px;
+    gap: 20px 0;
     align-items: start;
     margin-top: 24px;
   }
   .left-col, .right-col { display: flex; flex-direction: column; gap: 20px; }
+  .left-col { border-right: 1px solid var(--border); padding-right: 20px; }
+  @media (max-width: 1100px) { .left-col { border-right: none; padding-right: 0; } }
   .full-row { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-  .card, .today-summary { animation: fadeUp 0.4s ease both; }
+  .card, .today-summary { animation: fadeUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .today-summary { animation-delay: 0ms; }
+  .left-col .card:nth-child(1) { animation-delay: 40ms; }
+  .left-col .card:nth-child(2) { animation-delay: 100ms; }
+  .left-col .card:nth-child(3) { animation-delay: 160ms; }
+  .left-col .card:nth-child(4) { animation-delay: 220ms; }
+  .right-col .card:nth-child(1) { animation-delay: 70ms; }
+  .right-col .card:nth-child(2) { animation-delay: 130ms; }
+  .right-col .card:nth-child(3) { animation-delay: 190ms; }
+  .right-col .card:nth-child(4) { animation-delay: 250ms; }
+  .full-row .card { animation-delay: 280ms; }
 {% endblock %}
 
 {% block masthead_pills %}
@@ -150,6 +162,7 @@ EDITION &nbsp;·&nbsp; {{ date_str }} &nbsp;·&nbsp; AI INTELLIGENCE BRIEF &nbsp
     type: 'line',
     data: { labels: t.labels, datasets },
     options: {
+      animation: { duration: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 600 },
       responsive: true,
       plugins: {
         legend: { labels: { color: '#6b5e52', font: { family: 'Outfit', size: 11 }, boxWidth: 12 } },
@@ -160,8 +173,8 @@ EDITION &nbsp;·&nbsp; {{ date_str }} &nbsp;·&nbsp; AI INTELLIGENCE BRIEF &nbsp
         }
       },
       scales: {
-        x: { ticks: { color: '#a0917f', font: { family: 'Outfit', size: 10 } }, grid: { color: 'rgba(180,165,148,0.3)' } },
-        y: { ticks: { color: '#a0917f', font: { family: 'Outfit', size: 10 } }, grid: { color: 'rgba(180,165,148,0.3)' }, min: 0, max: 100 }
+        x: { ticks: { color: '#7a6d5c', font: { family: 'Outfit', size: 10 } }, grid: { color: 'rgba(180,165,148,0.18)' } },
+        y: { ticks: { color: '#7a6d5c', font: { family: 'Outfit', size: 10 } }, grid: { color: 'rgba(180,165,148,0.18)' }, min: 0, max: 100 }
       }
     }
   });

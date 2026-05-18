@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% block title %}AI 每日早报{% endblock %}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +23,7 @@
       --gold:     #b8872a;
       --text:     #1a1410;
       --text2:    #6b5e52;
-      --text3:    #a0917f;
+      --text3:    #7a6d5c;
       --tag-bg:   #eee8db;
       --shadow:   0 1px 3px rgba(30,25,18,0.08), 0 4px 12px rgba(30,25,18,0.04);
       --shadow-lg:0 2px 8px rgba(30,25,18,0.10), 0 8px 24px rgba(30,25,18,0.06);
@@ -35,7 +36,6 @@
       font-family: 'Outfit', sans-serif;
       font-size: 15px;
       line-height: 1.65;
-      min-width: 1200px;
     }
     a { color: var(--navy); text-decoration: none; }
     a:hover { color: var(--coral); text-decoration: underline; text-underline-offset: 2px; }
@@ -231,6 +231,33 @@
       letter-spacing: 2px;
       color: var(--text3);
       text-transform: uppercase;
+    }
+
+    /* ─── Accessibility: focus ring ─── */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* ─── Accessibility: reduced motion ─── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ─── Tabular numbers utility ─── */
+    .tabular { font-variant-numeric: tabular-nums; }
+
+    /* ─── Responsive layout ─── */
+    @media (max-width: 1100px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .masthead { flex-wrap: wrap; }
+      .masthead-right { display: none; }
+      .weather-strip { padding: 6px 16px; font-size: 10px; }
+    }
+    @media (max-width: 600px) {
+      .ts-grid { grid-template-columns: 1fr; gap: 16px; }
     }
 
     {% block extra_styles %}{% endblock %}

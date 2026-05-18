@@ -82,17 +82,18 @@ def main() -> None:
     items = dedup(items)
     print(f"  After dedup: {len(items)} items")
 
-    # ── [5/7] Persist raw processed items ──
-    raw_path = ROOT / "data" / "processed" / f"{today.isoformat()}.json"
-    raw_path.parent.mkdir(parents=True, exist_ok=True)
-    save_items(items, str(raw_path))
-
-    # ── [6/7] Summarize (per-item + daily) ──
-    print(f"[6/7] Summarizing per-item + daily synthesis (provider='{provider}')...")
+    # ── [5/7] Summarize (per-item + daily) ──
+    print(f"[5/7] Summarizing per-item + daily synthesis (provider='{provider}')...")
     items = summarize_all(items, provider=provider)
     summary = build_daily_summary(items, llm_provider=provider, target_date=today)
     summary_path = write_summary(summary)
     print(f"  Summary written: {summary_path}")
+
+    # ── [6/7] Persist processed items (with summaries) ──
+    print("[6/7] Saving processed items with summaries...")
+    raw_path = ROOT / "data" / "processed" / f"{today.isoformat()}.json"
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    save_items(items, str(raw_path))
 
     # ── [7/7] Render daily HTML + archive ──
     print("[7/7] Rendering daily HTML + archive index...")

@@ -24,7 +24,7 @@
   <div class="repo-item">
     <div class="repo-header">
       <div class="repo-title"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></div>
-      {% if item.stars > 0 %}<div class="repo-stars">★ {{ item.stars | format_stars }}</div>{% endif %}
+      {% if item.stars > 0 %}<div class="repo-stars tabular">★ {{ item.stars | format_stars }}</div>{% endif %}
     </div>
     <div class="repo-desc">{{ item.summary if item.summary else item.raw_content[:160] }}</div>
     <div class="repo-tags">

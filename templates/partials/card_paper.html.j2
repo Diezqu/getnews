@@ -57,9 +57,9 @@
     <div class="paper-footer">
       {% for tag in item.tags[:4] %}<span class="tag">{{ tag }}</span>{% endfor %}
       {% if show_upvotes and item.stars %}
-        <span class="upvote-chip">{{ item.stars }} 👍</span>
+        <span class="upvote-chip tabular">{{ item.stars }} 👍</span>
       {% else %}
-        <span class="score-chip {% if item.score >= 8 %}high{% endif %}">{{ "%.1f"|format(item.score) }}</span>
+        <span class="score-chip tabular {% if item.score >= 8 %}high{% endif %}">{{ "%.1f"|format(item.score) }}</span>
       {% endif %}
     </div>
   </div>

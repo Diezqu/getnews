@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI 每日早报 · 历史归档</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +23,7 @@
       --gold:     #b8872a;
       --text:     #1a1410;
       --text2:    #6b5e52;
-      --text3:    #a0917f;
+      --text3:    #7a6d5c;
       --tag-bg:   #eee8db;
       --shadow:   0 1px 3px rgba(30,25,18,0.08), 0 4px 12px rgba(30,25,18,0.04);
       --shadow-lg:0 2px 8px rgba(30,25,18,0.10), 0 8px 24px rgba(30,25,18,0.06);
@@ -33,9 +34,8 @@
       background: var(--paper);
       color: var(--text);
       font-family: 'Outfit', sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.65;
-      min-width: 1200px;
     }
     a { color: var(--navy); text-decoration: none; }
     a:hover { color: var(--coral); text-decoration: underline; text-underline-offset: 2px; }
@@ -47,6 +47,7 @@
       display: flex;
       align-items: stretch;
       gap: 0;
+      border-top: 3px solid var(--gold);
       border-bottom: 3px solid var(--coral);
     }
     .masthead-brand {
@@ -74,7 +75,7 @@
     }
     .masthead-pills { display: flex; gap: 8px; flex-wrap: wrap; }
     .masthead-pill {
-      font-size: 11px; padding: 2px 10px; border-radius: 2px;
+      font-size: 12px; padding: 3px 12px; border-radius: 2px;
       font-weight: 600; letter-spacing: 0.3px;
       border: 1px solid rgba(255,255,255,0.2);
       color: rgba(255,255,255,0.7);
@@ -84,6 +85,32 @@
     .masthead-pill.repos  { border-color: rgba(42,125,79,0.6);  color: #7ed4a8; background: rgba(42,125,79,0.15); }
     .masthead-pill.jobs   { border-color: rgba(184,135,42,0.6); color: #f0cc7a; background: rgba(184,135,42,0.15); }
 
+    /* ─── Masthead right decorative block ─── */
+    .masthead-right {
+      margin-left: auto;
+      padding: 16px 0 16px 32px;
+      border-left: 1px solid rgba(255,255,255,0.08);
+      display: flex; flex-direction: column;
+      align-items: flex-end; justify-content: center; gap: 6px;
+    }
+    .masthead-weekday-deco {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px; font-weight: 700;
+      color: rgba(255,255,255,0.08);
+      line-height: 1; letter-spacing: -2px;
+      user-select: none;
+    }
+    .masthead-sources-row {
+      font-size: 11px; color: rgba(255,255,255,0.3);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .masthead-vol {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; color: rgba(255,255,255,0.35);
+      letter-spacing: 2.5px; text-transform: uppercase;
+    }
+
     /* ─── Section title strip ─── */
     .section-eyebrow {
       display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
@@ -92,7 +119,7 @@
       content: ''; flex: 1; height: 1px; background: var(--border);
     }
     .section-eyebrow span {
-      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
       text-transform: uppercase; color: var(--coral); white-space: nowrap;
     }
 
@@ -105,19 +132,20 @@
       box-shadow: var(--shadow);
     }
     .card-header {
-      padding: 12px 18px;
+      padding: 22px 18px 12px;
       border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
       background: var(--paper2);
+      position: relative;
     }
     .card-header h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 17px; font-weight: 600;
+      font-size: 19px; font-weight: 600;
       color: var(--navy); letter-spacing: -0.2px;
     }
     .card-badge {
-      font-size: 10px; font-weight: 600; letter-spacing: 1px;
-      text-transform: uppercase; padding: 2px 8px; border-radius: 2px;
+      font-size: 11px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; padding: 3px 10px; border-radius: 2px;
     }
     .badge-coral { background: rgba(201,68,40,0.10); color: var(--coral); border: 1px solid rgba(201,68,40,0.2); }
     .badge-navy  { background: rgba(30,53,87,0.08);  color: var(--navy);  border: 1px solid rgba(30,53,87,0.15); }
@@ -126,7 +154,7 @@
 
     /* ─── Tag chip ─── */
     .tag {
-      font-size: 10px; font-weight: 500;
+      font-size: 11px; font-weight: 500;
       padding: 2px 8px; border-radius: 2px;
       background: var(--tag-bg); color: var(--text2);
       border: 1px solid var(--border);
@@ -136,13 +164,101 @@
     /* ─── Footer ─── */
     .footer {
       text-align: center;
-      padding: 18px;
-      color: var(--text3); font-size: 11px;
+      padding: 14px 18px;
+      color: var(--text3); font-size: 10px;
       border-top: 1px solid var(--border);
       background: var(--paper2);
+      letter-spacing: 1.5px;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    }
+    .footer a { color: var(--navy); text-transform: none; letter-spacing: 0; }
+
+    /* ─── Grain texture overlay ─── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10000;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 120px 120px;
+    }
+
+    /* ─── Weather strip ─── */
+    .weather-strip {
+      background: var(--paper3);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 32px;
+      display: flex;
+      align-items: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      color: var(--text3);
       letter-spacing: 0.5px;
     }
-    .footer a { color: var(--navy); }
+    .weather-strip .ws-sep { color: var(--border2); margin: 0 14px; }
+    .weather-strip .ws-kw { color: var(--navy2); font-weight: 600; }
+    .weather-strip .ws-count { color: var(--text2); }
+
+    /* ─── Card empty state ─── */
+    .card-empty {
+      padding: 28px 18px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--text3);
+      letter-spacing: 1px;
+    }
+
+    /* ─── Card hover: gold right accent + title shift ─── */
+    .card { transition: box-shadow 0.2s ease; }
+    .card:hover { box-shadow: var(--shadow-lg), inset -3px 0 0 var(--gold); }
+    .card-header h2 { transition: transform 0.2s ease; }
+    .card:hover .card-header h2 { transform: translateX(2px); }
+
+    /* ─── Card section eyebrow counter ─── */
+    .main-wrap { counter-reset: card-n; }
+    .card { counter-increment: card-n; }
+    .card-header::before {
+      content: "— SECTION " counter(card-n, decimal-leading-zero) " —";
+      position: absolute;
+      top: 7px; left: 18px;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--text3);
+      text-transform: uppercase;
+    }
+
+    /* ─── Accessibility: focus ring ─── */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* ─── Accessibility: reduced motion ─── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ─── Tabular numbers utility ─── */
+    .tabular { font-variant-numeric: tabular-nums; }
+
+    /* ─── Responsive layout ─── */
+    @media (max-width: 1100px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .masthead { flex-wrap: wrap; }
+      .masthead-right { display: none; }
+      .weather-strip { padding: 6px 16px; font-size: 10px; }
+    }
+    @media (max-width: 600px) {
+      .ts-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
 
     
   .archive-wrap { padding: 32px; max-width: 1100px; margin: 0 auto; }
@@ -180,6 +296,7 @@
     <div class="masthead-date">共 1 期日报</div>
     
   </div>
+  
 </header>
 
 
@@ -190,7 +307,7 @@
       
       <li>
         <span class="archive-date">2026-05-17</span>
-        <span class="archive-headline">AI智能体编排与学习资源密集涌现，终端原生编码代理成热点</span>
+        <span class="archive-headline">esengine/DeepSeek-Reasonix</span>
         <a class="archive-link" href="./2026-05-17.html">→ 查看</a>
       </li>
       
@@ -206,7 +323,7 @@
 
 <div class="footer">
   
-  AI Pipeline 自动生成 &nbsp;·&nbsp; 2026-05-17 23:51 &nbsp;·&nbsp; <a href="./archive.html">归档</a> &nbsp;·&nbsp; <a href="https://github.com/Diezqu/getnews" target="_blank">GitHub 仓库</a>
+  AI Pipeline 自动生成 &nbsp;·&nbsp; 2026-05-17 21:04 &nbsp;·&nbsp; <a href="./archive.html">归档</a> &nbsp;·&nbsp; <a href="https://github.com/Diezqu/getnews" target="_blank">GitHub 仓库</a>
   
 </div>
 
