@@ -1,4 +1,5 @@
 requests>=2.31
+arxiv>=2.0               # arXiv API client (handles 3s delay, retry, XML parsing)
 python-dotenv>=1.0
 jinja2>=3.1
 openai>=1.30          # DeepSeek 兼容 OpenAI SDK
