@@ -1,22 +1,22 @@
 {
   "date": "2026-05-18",
-  "generated_at": "2026-05-18T01:32:31+00:00",
-  "headline": "Agent 工具链爆发：终端编码代理与多智能体编排成焦点",
+  "generated_at": "2026-05-18T01:47:45+00:00",
+  "headline": "多智能体系统与长期记忆成AI研究热点，Agent工具持续涌现",
   "ai_trends": [
-    "终端原生AI编码代理优化缓存与持续运行",
-    "多智能体编排工具强调协议约束与轻量部署",
-    "结构化学习路线图覆盖LLM到多智能体系统"
+    "多模态长期记忆基准MemLens填补评估空白",
+    "多智能体系统协作与失败归因成核心挑战",
+    "Agent长期记忆失效检测与信念修正受关注"
   ],
   "job_signals": [
-    "Claude Code面向大型代码库提升开发效率",
-    "Agent方向工具与平台需求持续增长",
+    "Claude Code展示大型代码库Agent应用潜力",
+    "终端原生编码Agent工具持续开源涌现",
     "今日数据较少"
   ],
   "stats": {
-    "total_items": 54,
-    "learning_count": 53,
+    "total_items": 69,
+    "learning_count": 68,
     "job_count": 1,
     "top_score": 10.0,
-    "top_item_title": "esengine/DeepSeek-Reasonix"
+    "top_item_title": "MemLens: Benchmarking Multimodal Long-Term Memory in Large Vision-Language Models"
   }
 }

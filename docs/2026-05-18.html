@@ -376,19 +376,19 @@
 </style>
 
 <section class="today-summary">
-  <div class="headline">Agent 工具链爆发：终端编码代理与多智能体编排成焦点</div>
+  <div class="headline">多智能体系统与长期记忆成AI研究热点，Agent工具持续涌现</div>
   <div class="divider"></div>
   <div class="ts-grid">
     <div class="ts-col">
       <h3 class="learn">AI 趋势</h3>
       <ul>
-        <li>终端原生AI编码代理优化缓存与持续运行</li><li>多智能体编排工具强调协议约束与轻量部署</li><li>结构化学习路线图覆盖LLM到多智能体系统</li>
+        <li>多模态长期记忆基准MemLens填补评估空白</li><li>多智能体系统协作与失败归因成核心挑战</li><li>Agent长期记忆失效检测与信念修正受关注</li>
       </ul>
     </div>
     <div class="ts-col">
       <h3 class="job">求职信号</h3>
       <ul>
-        <li>Claude Code面向大型代码库提升开发效率</li><li>Agent方向工具与平台需求持续增长</li><li>今日数据较少</li>
+        <li>Claude Code展示大型代码库Agent应用潜力</li><li>终端原生编码Agent工具持续开源涌现</li><li>今日数据较少</li>
       </ul>
     </div>
   </div>
@@ -396,7 +396,7 @@
 
   
   <div class="weather-strip">
-    <span>📄 <span class="ws-count">0</span> 论文</span>
+    <span>📄 <span class="ws-count">5</span> 论文</span>
     <span class="ws-sep">·</span>
     <span>🚀 <span class="ws-count">8</span> 仓库</span>
     <span class="ws-sep">·</span>
@@ -508,7 +508,95 @@
     <span class="card-badge badge-green">今日热门</span>
   </div>
   
-  <div class="card-empty">—— 本期暂无来稿 ——</div>
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://huggingface.co/papers/2605.14906" target="_blank" rel="noopener">MemLens: Benchmarking Multimodal Long-Term Memory in Large Vision-Language Models</a></div>
+    
+    <div class="paper-meta">
+      Xiyu Ren · Zhaowei Wang · Yiming Du et al.
+       &nbsp;·&nbsp; 2026-05-15
+       &nbsp;·&nbsp; 4 upvotes
+    </div>
+    
+    <div class="paper-abstract">MemLens是一个用于评估大型视觉语言模型多模态长期记忆能力的基准测试，包含789个问题，覆盖五种记忆类型。它系统比较了长上下文LVLMs与记忆增强型智能体两种方法在多模态证据需求场景下的表现。该基准填补了多模态多轮对话中记忆评估的空白，对Agent和RAG方向中记忆机制的设计与优化具有重要参考价值。</div>
+    <div class="paper-footer">
+      
+      
+        <span class="upvote-chip tabular">4 👍</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://huggingface.co/papers/2605.14892" target="_blank" rel="noopener">Beyond Individual Intelligence: Surveying Collaboration, Failure Attribution, and Self-Evolution in LLM-based Multi-Agent Systems</a></div>
+    
+    <div class="paper-meta">
+      Shihao Qi · Jie Ma · Rui Xing et al.
+       &nbsp;·&nbsp; 2026-05-15
+       &nbsp;·&nbsp; 2 upvotes
+    </div>
+    
+    <div class="paper-abstract">这篇综述聚焦于基于大语言模型的多智能体系统，系统梳理了协作机制、失败归因与自我进化三大核心挑战。关键发现包括：多智能体协作虽能提升复杂任务处理能力，但错误会跨智能体与交互轮次传播，导致诊断困难且难以结构化学习。该工作为构建鲁棒的多智能体系统提供了理论框架，对Agent协作中的错误传播与自适应改进具有重要指导价值。</div>
+    <div class="paper-footer">
+      
+      
+        <span class="upvote-chip tabular">2 👍</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://huggingface.co/papers/2605.06527" target="_blank" rel="noopener">STALE: Can LLM Agents Know When Their Memories Are No Longer Valid?</a></div>
+    
+    <div class="paper-meta">
+      Hanxiang Chao · Yihan Bai · Rui Sheng et al.
+       &nbsp;·&nbsp; 2026-05-15
+       &nbsp;·&nbsp; 2 upvotes
+    </div>
+    
+    <div class="paper-abstract">STALE 提出 LLM 智能体长期记忆失效检测问题。现有基准仅测静态事实检索，忽略新证据下信念修正能力。该工作识别出隐性冲突这一关键失败模式：后续观察无需显式否定即可使先前记忆失效，需上下文推理与常识检测。为 Agent 长期记忆维护与动态知识更新提供了评估新维度，直接关联 RAG 中记忆一致性挑战。</div>
+    <div class="paper-footer">
+      
+      
+        <span class="upvote-chip tabular">2 👍</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://huggingface.co/papers/2605.10912" target="_blank" rel="noopener">WildClawBench: A Benchmark for Real-World, Long-Horizon Agent Evaluation</a></div>
+    
+    <div class="paper-meta">
+      Shuangrui Ding · Xuanlang Dai · Long Xing et al.
+       &nbsp;·&nbsp; 2026-05-15
+       &nbsp;·&nbsp; 2 upvotes
+    </div>
+    
+    <div class="paper-abstract">WildClawBench是一个面向真实世界长周期智能体评估的基准测试，包含60个由人类编写的双语多模态任务。该基准在原生运行时环境中测试智能体，覆盖命令行界面操作，关键亮点是任务周期长且贴近实际部署场景。与现有依赖合成沙箱和短周期任务的基准不同，WildClawBench直接评估智能体在真实运行时中的长周期任务完成能力，对Agent方向的长周期任务研究具有重要价值。</div>
+    <div class="paper-footer">
+      
+      
+        <span class="upvote-chip tabular">2 👍</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://huggingface.co/papers/2605.15128" target="_blank" rel="noopener">MemEye: A Visual-Centric Evaluation Framework for Multimodal Agent Memory</a></div>
+    
+    <div class="paper-meta">
+      Minghao Guo · Qingyue Jiao · Zeru Shi et al.
+       &nbsp;·&nbsp; 2026-05-15
+       &nbsp;·&nbsp; 1 upvotes
+    </div>
+    
+    <div class="paper-abstract">MemEye是一个面向多模态智能体长期记忆的视觉中心评估框架。它通过设计需要依赖细粒度视觉证据而非文本痕迹才能回答的问题，以及包含动态视觉状态变化的复杂场景，来测试智能体是否真正保留了视觉信息。该框架填补了现有评估中缺乏对视觉记忆严格检验的空白，为多模态Agent记忆系统的优化提供了关键基准。</div>
+    <div class="paper-footer">
+      
+      
+        <span class="upvote-chip tabular">1 👍</span>
+      
+    </div>
+  </div>
   
 </div>
         
@@ -543,7 +631,7 @@
       <div class="repo-title"><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank" rel="noopener">esengine/DeepSeek-Reasonix</a></div>
       <div class="repo-stars tabular">★ 3.8K</div>
     </div>
-    <div class="repo-desc">esengine/DeepSeek-Reasonix 是一个专为终端设计的 DeepSeek 原生 AI 编码代理。其核心创新在于围绕前缀缓存稳定性进行工程优化，支持长时间持续运行。该工具通过缓存机制显著提升 Agent 在终端环境下的响应效率与稳定性，对构建高效、低延迟的 AI 编码助手具有直接参考价值。</div>
+    <div class="repo-desc">esengine/DeepSeek-Reasonix 是一款专为终端设计的 DeepSeek 原生 AI 编码代理。其核心围绕前缀缓存稳定性进行工程优化，支持长时间持续运行。该工具通过高效缓存机制减少重复计算，提升编码交互的响应速度与可靠性，对 Agent 在终端场景下的持久化部署具有重要参考价值。</div>
     <div class="repo-tags">
       <span class="tag">TS</span><span class="tag">agent</span><span class="tag">agent-framework</span>
     </div>
@@ -554,7 +642,7 @@
       <div class="repo-title"><a href="https://github.com/cosmicstack-labs/mercury-agent" target="_blank" rel="noopener">cosmicstack-labs/mercury-agent</a></div>
       <div class="repo-stars tabular">★ 2.2K</div>
     </div>
-    <div class="repo-desc">Mercury Agent 是一个基于灵魂驱动的 AI 智能体，具备权限强化工具、Token 预算管理和多通道访问能力。它支持从 CLI 或 Telegram 全天候运行，关键亮点在于通过权限控制与资源预算机制提升 Agent 安全性与可控性。该项目为构建可部署于实际场景的持久化 Agent 提供了参考，尤其适用于需要多端交互与资源管理的 RAG 或 MCP 系统。</div>
+    <div class="repo-desc">这是一个名为 Mercury Agent 的 AI 智能体项目，核心特点是采用“灵魂驱动”设计，并集成了权限加固的工具、令牌预算机制和多通道访问能力。关键亮点在于它能通过 CLI 或 Telegram 实现 7x24 小时不间断运行。该项目与 Agent 方向高度相关，其权限控制和资源管理机制为构建安全、可控的长期运行智能体提供了实用参考。</div>
     <div class="repo-tags">
       <span class="tag">TS</span><span class="tag">ai-agent</span><span class="tag">ai-assistant</span>
     </div>
@@ -565,7 +653,7 @@
       <div class="repo-title"><a href="https://github.com/GammaLabTechnologies/harmonist" target="_blank" rel="noopener">GammaLabTechnologies/harmonist</a></div>
       <div class="repo-stars tabular">★ 1.8K</div>
     </div>
-    <div class="repo-desc">Harmonist 是一个便携式 AI 智能体编排工具，通过机械协议强制执行实现多智能体协作。支持 186 个智能体，零运行时依赖，具备轻量级部署优势。该工具为 Agent 系统提供了高效的协议约束与编排能力，适用于复杂多智能体任务场景。</div>
+    <div class="repo-desc">GammaLabTechnologies/harmonist 是一个便携式 AI 智能体编排工具，通过机械协议强制实现多智能体协作。它支持 186 个智能体同时运行，且零运行时依赖，显著降低了部署复杂度。该工具为 Agent 方向提供了轻量级、高可扩展性的编排方案，尤其适用于需要严格协议约束的多智能体系统。</div>
     <div class="repo-tags">
       <span class="tag">Python</span><span class="tag">agent-framework</span><span class="tag">agent-system</span>
     </div>
@@ -576,7 +664,7 @@
       <div class="repo-title"><a href="https://github.com/WenyuChiou/awesome-agentic-ai-zh" target="_blank" rel="noopener">WenyuChiou/awesome-agentic-ai-zh</a></div>
       <div class="repo-stars tabular">★ 1.5K</div>
     </div>
-    <div class="repo-desc">这是一个结构化、三语（繁中/简中/英文）的智能体AI学习路线图，涵盖从LLM基础到多智能体系统的8个阶段。包含145+精选项目和实操练习。该资源为Agent方向学习者提供了系统化的知识框架和实战路径，有助于高效掌握多智能体系统的构建与应用。</div>
+    <div class="repo-desc">这是一个结构化、三语（繁中/简中/英文）的智能体AI学习路线图，涵盖从LLM基础到多智能体系统的8个阶段，包含145+精选项目和动手练习。该资源为Agent方向提供了系统化的学习路径，适合从入门到进阶的开发者。</div>
     <div class="repo-tags">
       <span class="tag">Python</span><span class="tag">agentic-ai</span><span class="tag">ai-agents</span>
     </div>
@@ -587,7 +675,7 @@
       <div class="repo-title"><a href="https://github.com/StartupHakk/OpenMonoAgent.ai" target="_blank" rel="noopener">StartupHakk/OpenMonoAgent.ai</a></div>
       <div class="repo-stars tabular">★ 1.1K</div>
     </div>
-    <div class="repo-desc">StartupHakk/OpenMonoAgent.ai 是一个终端原生编码智能体，由本地LLM驱动，100%开源且永久免费，通过单命令安装。它提供无限token使用，无订阅限制，支持从任何位置访问，基于C#/.NET构建。该工具将AI能力转化为基础设施，与Agent方向高度契合，强调本地化、自主性和零成本运行。</div>
+    <div class="repo-desc">StartupHakk/OpenMonoAgent.ai 是一个终端原生编码智能体，由本地大语言模型驱动，100%开源且永久免费，通过单条命令即可安装。其核心亮点是提供无限令牌使用，无需订阅，完全运行在用户本地机器上。该项目基于C#/.NET构建，强调AI工具应作为基础设施而非订阅服务，与Agent方向紧密相关，为开发者提供自主可控的本地化智能体解决方案。</div>
     <div class="repo-tags">
       <span class="tag">C#</span>
     </div>
@@ -598,7 +686,7 @@
       <div class="repo-title"><a href="https://github.com/future-agi/future-agi" target="_blank" rel="noopener">future-agi/future-agi</a></div>
       <div class="repo-stars tabular">★ 980</div>
     </div>
-    <div class="repo-desc">开源端到端平台，用于评估、观测和优化大语言模型及AI智能体应用。核心功能包括追踪、评测、模拟、数据集、网关与护栏。支持自托管，采用Apache 2.0许可。该平台为Agent应用提供全链路可观测性与安全防护，助力RAG系统与多智能体协作的可靠性提升。</div>
+    <div class="repo-desc">这是一个开源的端到端平台，用于评估、观测和优化大语言模型及AI智能体应用。它集成了追踪、评估、模拟、数据集、网关和护栏等核心功能。支持自托管，采用Apache 2.0许可。该平台为Agent应用的开发与调试提供了完整的工具链，有助于提升多智能体系统的可靠性与可观测性。</div>
     <div class="repo-tags">
       <span class="tag">Python</span><span class="tag">ai</span><span class="tag">ai-gateway</span>
     </div>
@@ -609,7 +697,7 @@
       <div class="repo-title"><a href="https://github.com/jmerelnyc/Photo-agents" target="_blank" rel="noopener">jmerelnyc/Photo-agents</a></div>
       <div class="repo-stars tabular">★ 935</div>
     </div>
-    <div class="repo-desc">这是一个名为 Photo-agents 的开源项目，实现了自主进化的 LLM 智能体。其核心贡献在于视觉驱动的分层记忆与自编写技能机制，使智能体能够操作计算机。关键亮点是智能体可基于视觉输入自主构建并更新记忆层，动态生成新技能，实现持续进化。该项目为 Agent 方向提供了视觉与记忆结合的自主进化范式，显著提升了智能体在复杂环境中的适应性与操作能力。</div>
+    <div class="repo-desc">jmerelnyc/Photo-agents 是一个自主进化的智能体项目，基于视觉驱动的分层记忆与自编写技能，使LLM代理能直接操控计算机。关键亮点在于其自进化能力，无需人工干预即可动态扩展技能库。该项目为Agent方向提供了视觉与记忆深度融合的实用框架，显著提升了自主任务执行效率。</div>
     <div class="repo-tags">
       <span class="tag">Python</span><span class="tag">agent-memory</span><span class="tag">ai-agents</span>
     </div>
@@ -620,7 +708,7 @@
       <div class="repo-title"><a href="https://github.com/nduckmink/arkon" target="_blank" rel="noopener">nduckmink/arkon</a></div>
       <div class="repo-stars tabular">★ 734</div>
     </div>
-    <div class="repo-desc">Arkon 是一个企业级 AI 知识中心与 MCP 服务器，提供自托管知识库，用于管理 RAG 上下文、访问策略和 AI 技能。它通过模型上下文协议（MCP）连接 Claude 等大语言模型，实现自动化、安全的组织知识集成。该工具在 Agent 和 RAG 方向的价值在于，它为多智能体系统提供了统一的知识管理和安全访问控制，支持高效的知识检索与集成。</div>
+    <div class="repo-desc">Arkon 是一个企业级 AI 知识中心与 MCP 服务器，提供自托管知识库，用于管理 RAG 上下文、访问策略和 AI 技能。它通过模型上下文协议（MCP）连接 Claude 等大语言模型，实现自动化、安全的组织知识集成。该工具在 Agent 和 RAG 方向上，为团队提供了统一的知识管理和安全访问控制能力。</div>
     <div class="repo-tags">
       <span class="tag">Python</span><span class="tag">enterprise-ai</span><span class="tag">knowledge-base-embeddings</span>
     </div>
@@ -670,7 +758,7 @@
     <div class="hn-body">
       <div class="hn-title"><a href="https://github.com/MinishLab/semble" target="_blank" rel="noopener">Show HN: Semble – Code search for agents that uses 98% fewer tokens than grep</a></div>
       <div class="hn-meta">
-        <span class="hn-pts tabular">161 pts</span>
+        <span class="hn-pts tabular">167 pts</span>
          &nbsp;·&nbsp; 2026-05-17
       </div>
     </div>
@@ -692,7 +780,7 @@
     <div class="hn-body">
       <div class="hn-title"><a href="https://www.seangoedecke.com/steering-vectors/" target="_blank" rel="noopener">DeepSeek-V4-Flash means LLM steering is interesting again</a></div>
       <div class="hn-meta">
-        <span class="hn-pts tabular">261 pts</span>
+        <span class="hn-pts tabular">263 pts</span>
          &nbsp;·&nbsp; 2026-05-16
       </div>
     </div>
@@ -725,7 +813,7 @@
     <div class="hn-body">
       <div class="hn-title"><a href="https://www.williamangel.net/blog/2026/05/17/offline-llm-energy-use.html" target="_blank" rel="noopener">Apple Silicon costs more than OpenRouter</a></div>
       <div class="hn-meta">
-        <span class="hn-pts tabular">296 pts</span>
+        <span class="hn-pts tabular">298 pts</span>
          &nbsp;·&nbsp; 2026-05-17
       </div>
     </div>
@@ -813,7 +901,7 @@
       来源: hackernews
        &nbsp;·&nbsp; 241 pts
     </div>
-    <div class="job-body">Claude Code 是一种面向大型代码库的智能编码助手。它通过分块索引和上下文感知检索技术，在复杂项目中高效定位相关代码片段，显著提升开发效率。关键亮点包括支持百万级代码行、响应延迟低于2秒，并能精准理解项目结构。与Agent方向紧密相关，展示了AI代理在真实开发场景中处理大规模代码库的实用能力。</div>
+    <div class="job-body">Claude Code 是一种专为大型代码库设计的智能编码助手。它通过理解代码结构、上下文和依赖关系，在复杂项目中高效定位问题并提供精准建议。其亮点在于能处理数万行代码，实现快速导航与重构。与Agent方向紧密相关，展示了AI在大型代码库中自主执行任务的能力，为多智能体协作和代码理解提供了实用范例。</div>
     <div class="job-footer">
       <span class="tag">Claude Code</span><span class="tag">来源: hackernews</span>
     </div>
@@ -855,18 +943,18 @@
     <div class="radar-row">
       <div class="radar-name">MCP</div>
       <div class="radar-track">
-        <div class="radar-fill" style="width:61%;background:linear-gradient(90deg,#c94428,#e05c3a);"></div>
+        <div class="radar-fill" style="width:56%;background:linear-gradient(90deg,#c94428,#e05c3a);"></div>
       </div>
-      <div class="radar-pct">61%</div>
+      <div class="radar-pct">56%</div>
       <div class="radar-desc">2026 Agent 集成标准</div>
     </div>
     
     <div class="radar-row">
       <div class="radar-name">RAG</div>
       <div class="radar-track">
-        <div class="radar-fill" style="width:61%;background:linear-gradient(90deg,#2a7d4f,#3a9d6a);"></div>
+        <div class="radar-fill" style="width:56%;background:linear-gradient(90deg,#2a7d4f,#3a9d6a);"></div>
       </div>
-      <div class="radar-pct">61%</div>
+      <div class="radar-pct">56%</div>
       <div class="radar-desc">检索增强依然是核心技术</div>
     </div>
     
