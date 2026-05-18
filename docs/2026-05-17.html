@@ -35,7 +35,7 @@
       background: var(--paper);
       color: var(--text);
       font-family: 'Outfit', sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.65;
       min-width: 1200px;
     }
@@ -49,6 +49,7 @@
       display: flex;
       align-items: stretch;
       gap: 0;
+      border-top: 3px solid var(--gold);
       border-bottom: 3px solid var(--coral);
     }
     .masthead-brand {
@@ -76,7 +77,7 @@
     }
     .masthead-pills { display: flex; gap: 8px; flex-wrap: wrap; }
     .masthead-pill {
-      font-size: 11px; padding: 2px 10px; border-radius: 2px;
+      font-size: 12px; padding: 3px 12px; border-radius: 2px;
       font-weight: 600; letter-spacing: 0.3px;
       border: 1px solid rgba(255,255,255,0.2);
       color: rgba(255,255,255,0.7);
@@ -86,6 +87,32 @@
     .masthead-pill.repos  { border-color: rgba(42,125,79,0.6);  color: #7ed4a8; background: rgba(42,125,79,0.15); }
     .masthead-pill.jobs   { border-color: rgba(184,135,42,0.6); color: #f0cc7a; background: rgba(184,135,42,0.15); }
 
+    /* ─── Masthead right decorative block ─── */
+    .masthead-right {
+      margin-left: auto;
+      padding: 16px 0 16px 32px;
+      border-left: 1px solid rgba(255,255,255,0.08);
+      display: flex; flex-direction: column;
+      align-items: flex-end; justify-content: center; gap: 6px;
+    }
+    .masthead-weekday-deco {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px; font-weight: 700;
+      color: rgba(255,255,255,0.08);
+      line-height: 1; letter-spacing: -2px;
+      user-select: none;
+    }
+    .masthead-sources-row {
+      font-size: 11px; color: rgba(255,255,255,0.3);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .masthead-vol {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; color: rgba(255,255,255,0.35);
+      letter-spacing: 2.5px; text-transform: uppercase;
+    }
+
     /* ─── Section title strip ─── */
     .section-eyebrow {
       display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
@@ -94,7 +121,7 @@
       content: ''; flex: 1; height: 1px; background: var(--border);
     }
     .section-eyebrow span {
-      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
       text-transform: uppercase; color: var(--coral); white-space: nowrap;
     }
 
@@ -107,19 +134,20 @@
       box-shadow: var(--shadow);
     }
     .card-header {
-      padding: 12px 18px;
+      padding: 22px 18px 12px;
       border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
       background: var(--paper2);
+      position: relative;
     }
     .card-header h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 17px; font-weight: 600;
+      font-size: 19px; font-weight: 600;
       color: var(--navy); letter-spacing: -0.2px;
     }
     .card-badge {
-      font-size: 10px; font-weight: 600; letter-spacing: 1px;
-      text-transform: uppercase; padding: 2px 8px; border-radius: 2px;
+      font-size: 11px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; padding: 3px 10px; border-radius: 2px;
     }
     .badge-coral { background: rgba(201,68,40,0.10); color: var(--coral); border: 1px solid rgba(201,68,40,0.2); }
     .badge-navy  { background: rgba(30,53,87,0.08);  color: var(--navy);  border: 1px solid rgba(30,53,87,0.15); }
@@ -128,7 +156,7 @@
 
     /* ─── Tag chip ─── */
     .tag {
-      font-size: 10px; font-weight: 500;
+      font-size: 11px; font-weight: 500;
       padding: 2px 8px; border-radius: 2px;
       background: var(--tag-bg); color: var(--text2);
       border: 1px solid var(--border);
@@ -138,13 +166,74 @@
     /* ─── Footer ─── */
     .footer {
       text-align: center;
-      padding: 18px;
-      color: var(--text3); font-size: 11px;
+      padding: 14px 18px;
+      color: var(--text3); font-size: 10px;
       border-top: 1px solid var(--border);
       background: var(--paper2);
+      letter-spacing: 1.5px;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    }
+    .footer a { color: var(--navy); text-transform: none; letter-spacing: 0; }
+
+    /* ─── Grain texture overlay ─── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10000;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 120px 120px;
+    }
+
+    /* ─── Weather strip ─── */
+    .weather-strip {
+      background: var(--paper3);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 32px;
+      display: flex;
+      align-items: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      color: var(--text3);
       letter-spacing: 0.5px;
     }
-    .footer a { color: var(--navy); }
+    .weather-strip .ws-sep { color: var(--border2); margin: 0 14px; }
+    .weather-strip .ws-kw { color: var(--navy2); font-weight: 600; }
+    .weather-strip .ws-count { color: var(--text2); }
+
+    /* ─── Card empty state ─── */
+    .card-empty {
+      padding: 28px 18px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--text3);
+      letter-spacing: 1px;
+    }
+
+    /* ─── Card hover: gold right accent + title shift ─── */
+    .card { transition: box-shadow 0.2s ease; }
+    .card:hover { box-shadow: var(--shadow-lg), inset -3px 0 0 var(--gold); }
+    .card-header h2 { transition: transform 0.2s ease; }
+    .card:hover .card-header h2 { transform: translateX(2px); }
+
+    /* ─── Card section eyebrow counter ─── */
+    .main-wrap { counter-reset: card-n; }
+    .card { counter-increment: card-n; }
+    .card-header::before {
+      content: "— SECTION " counter(card-n, decimal-leading-zero) " —";
+      position: absolute;
+      top: 7px; left: 18px;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--text3);
+      text-transform: uppercase;
+    }
 
     
   .main-wrap { padding: 0 32px 32px; }
@@ -173,12 +262,19 @@
     <div class="masthead-date">2026-05-17 &nbsp;·&nbsp; 周日</div>
     
   <div class="masthead-pills">
-    <span class="masthead-pill papers">📄 0 Papers</span>
-    <span class="masthead-pill repos">🚀 8 Repos</span>
-    <span class="masthead-pill jobs">💼 2 Jobs</span>
+    <span class="masthead-pill papers">📄 论文</span>
+    <span class="masthead-pill repos">🚀 仓库</span>
+    <span class="masthead-pill jobs">💼 求职</span>
   </div>
 
   </div>
+  
+  <div class="masthead-right">
+    <div class="masthead-vol">VOL. I &nbsp;&nbsp; NO. 0517</div>
+    <div class="masthead-weekday-deco">周日</div>
+    <div class="masthead-sources-row">arXiv · HF · GitHub · HN · 牛客 · AI</div>
+  </div>
+
 </header>
 
 
@@ -195,8 +291,9 @@
   }
   .today-summary .headline {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-weight: 700;
-    color: var(--coral); line-height: 1.35;
+    font-size: 28px; font-weight: 600;
+    font-style: italic;
+    color: var(--coral); line-height: 1.3;
     margin-bottom: 14px;
   }
   .today-summary .divider {
@@ -212,38 +309,55 @@
   }
   .today-summary .ts-col h3.learn { border-bottom: 2px solid var(--green); padding-bottom: 4px; display: inline-block; }
   .today-summary .ts-col h3.job   { border-bottom: 2px solid var(--gold);  padding-bottom: 4px; display: inline-block; }
-  .today-summary .ts-col ul { list-style: none; }
+  .today-summary .ts-col ul { list-style: none; counter-reset: ts-row; }
   .today-summary .ts-col li {
     font-size: 13px; color: var(--text);
-    padding: 6px 0 6px 16px; position: relative;
-    border-bottom: 1px dashed var(--paper3);
+    padding: 6px 0 6px 30px; position: relative;
+    border-bottom: 1px solid var(--paper3);
     line-height: 1.5;
+    counter-increment: ts-row;
   }
   .today-summary .ts-col li:last-child { border-bottom: none; }
   .today-summary .ts-col li::before {
-    content: '▸'; position: absolute; left: 0; top: 5px;
-    color: var(--coral); font-size: 11px;
+    content: counter(ts-row, upper-roman) ".";
+    position: absolute; left: 0; top: 6px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px; font-style: italic;
+    color: var(--text3); min-width: 26px;
   }
 </style>
 
 <section class="today-summary">
-  <div class="headline">💡 AI智能体编排与学习资源密集涌现，终端原生编码代理成热点</div>
+  <div class="headline">AI智能体编排与学习资源密集涌现，终端原生编码代理成热点</div>
   <div class="divider"></div>
   <div class="ts-grid">
     <div class="ts-col">
-      <h3 class="learn">📚 AI 趋势</h3>
+      <h3 class="learn">AI 趋势</h3>
       <ul>
         <li>终端原生AI编码代理通过缓存优化实现长时稳定运行</li><li>多智能体编排工具实现零依赖、高扩展性协作方案</li><li>结构化三语智能体AI学习路线图覆盖8阶段145+项目</li>
       </ul>
     </div>
     <div class="ts-col">
-      <h3 class="job">💼 求职信号</h3>
+      <h3 class="job">求职信号</h3>
       <ul>
         <li>AI辅助编程工具聚焦大型代码库上下文感知与增量分析</li><li>基于Claude Code的技能开发工具支持多语言与实时反馈</li><li>今日数据较少</li>
       </ul>
     </div>
   </div>
 </section>
+
+  
+  <div class="weather-strip">
+    <span>📄 <span class="ws-count">0</span> 论文</span>
+    <span class="ws-sep">·</span>
+    <span>🚀 <span class="ws-count">8</span> 仓库</span>
+    <span class="ws-sep">·</span>
+    <span>💬 <span class="ws-count">8</span> HN</span>
+    <span class="ws-sep">·</span>
+    <span>💼 <span class="ws-count">0</span> 面经</span>
+    <span class="ws-sep">·</span>
+    <span class="ws-kw">关键词: AGENT · MCP · RAG</span>
+  </div>
 
   <div class="main-wrap">
     <div class="main-grid">
@@ -295,7 +409,7 @@
     <span class="card-badge badge-navy">cs.AI · cs.CL · cs.MA</span>
   </div>
   
-  <div class="paper-item" style="color:var(--text3);font-size:12px;">今日暂无数据</div>
+  <div class="card-empty">—— 本期暂无来稿 ——</div>
   
 </div>
         
@@ -346,7 +460,7 @@
     <span class="card-badge badge-green">今日热门</span>
   </div>
   
-  <div class="paper-item" style="color:var(--text3);font-size:12px;">今日暂无数据</div>
+  <div class="card-empty">—— 本期暂无来稿 ——</div>
   
 </div>
         
@@ -381,7 +495,7 @@
       <div class="repo-title"><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank" rel="noopener">esengine/DeepSeek-Reasonix</a></div>
       <div class="repo-stars">★ 3.7K</div>
     </div>
-    <div class="repo-desc">esengine/DeepSeek-Reasonix 是一个专为终端设计的 DeepSeek 原生 AI 编码代理。其核心创新在于围绕前缀缓存稳定性进行工程优化，支持长时间持续运行而无需频繁重启。该工具通过缓存机制显著提升编码任务中的响应速度与效率，特别适合需要持久化 Agent 交互的开发场景，为 RAG 或 MCP 架构下的终端智能体提供了稳定的缓存管理参考。</div>
+    <div class="repo-desc">DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.</div>
     <div class="repo-tags">
       <span class="tag">TS</span><span class="tag">agent</span><span class="tag">agent-framework</span>
     </div>
@@ -392,7 +506,7 @@
       <div class="repo-title"><a href="https://github.com/cosmicstack-labs/mercury-agent" target="_blank" rel="noopener">cosmicstack-labs/mercury-agent</a></div>
       <div class="repo-stars">★ 2.2K</div>
     </div>
-    <div class="repo-desc">Mercury-Agent 是一个基于灵魂驱动的 AI 智能体，配备权限强化工具、令牌预算和多通道访问能力。它支持从 CLI 或 Telegram 全天候运行，关键亮点在于通过精细的权限控制和资源预算管理，确保智能体在长期自主运行中的安全性与稳定性。该项目为构建可部署、可管理的 Agent 系统提供了实用参考，尤其适用于需要多端交互与资源管控的 RAG 或 MCP 场景。</div>
+    <div class="repo-desc">Soul-driven AI agent with permission-hardened tools, token budgets, and multi-channel access. Runs 24/7 from CLI or Telegram.</div>
     <div class="repo-tags">
       <span class="tag">TS</span><span class="tag">ai-agent</span><span class="tag">ai-assistant</span>
     </div>
@@ -403,7 +517,7 @@
       <div class="repo-title"><a href="https://github.com/GammaLabTechnologies/harmonist" target="_blank" rel="noopener">GammaLabTechnologies/harmonist</a></div>
       <div class="repo-stars">★ 1.7K</div>
     </div>
-    <div class="repo-desc">GammaLabTechnologies/harmonist 是一个便携式 AI 智能体编排工具，通过机械协议强制实现多智能体协作。它支持 186 个智能体，且零运行时依赖。该工具在 Agent 方向提供了轻量级、高可扩展性的编排方案，适用于需要严格协议约束的多智能体系统。</div>
+    <div class="repo-desc">Portable AI agent orchestration with mechanical protocol enforcement. 186 agents, zero runtime dependencies.</div>
     <div class="repo-tags">
       <span class="tag">Python</span><span class="tag">agent-framework</span><span class="tag">agent-system</span>
     </div>
@@ -414,7 +528,7 @@
       <div class="repo-title"><a href="https://github.com/WenyuChiou/awesome-agentic-ai-zh" target="_blank" rel="noopener">WenyuChiou/awesome-agentic-ai-zh</a></div>
       <div class="repo-stars">★ 1.5K</div>
     </div>
-    <div class="repo-desc">这是一个结构化、三语（繁中/简中/英文）的智能体AI学习路线图，涵盖从LLM基础到多智能体系统的8个阶段。包含145+精选项目和动手练习，为学习者提供系统化的Agent开发知识体系。该资源对Agent/MCP/RAG方向的学习者具有直接参考价值，帮助构建从理论到实践的完整技能树。</div>
+    <div class="repo-desc">A structured, trilingual (繁中 / 简中 / English) learning roadmap for agentic AI — from LLM basics to multi-agent systems. 8 stages · 145+ curated projects · hands-</div>
     <div class="repo-tags">
       <span class="tag">Python</span><span class="tag">agentic-ai</span><span class="tag">ai-agents</span>
     </div>
@@ -425,7 +539,7 @@
       <div class="repo-title"><a href="https://github.com/StartupHakk/OpenMonoAgent.ai" target="_blank" rel="noopener">StartupHakk/OpenMonoAgent.ai</a></div>
       <div class="repo-stars">★ 1.1K</div>
     </div>
-    <div class="repo-desc">StartupHakk/OpenMonoAgent.ai 是一个终端原生编码智能体，由本地大语言模型驱动，100% 开源且永久免费，通过单条命令即可安装。其核心亮点是提供无限令牌使用，无需订阅，支持从任何位置调用。该项目基于 C#/.NET 构建，强调 AI 工具应作为基础设施而非订阅服务，与 Agent 方向高度契合，为开发者提供了完全自主可控的本地化智能体解决方案。</div>
+    <div class="repo-desc">(BETA) AI shouldn't have a meter. Unlimited tokens. Forever. Your machine. Your agent. Use it from anywhere. Terminal-native coding agent powered by local LLMs </div>
     <div class="repo-tags">
       <span class="tag">C#</span>
     </div>
@@ -436,7 +550,7 @@
       <div class="repo-title"><a href="https://github.com/future-agi/future-agi" target="_blank" rel="noopener">future-agi/future-agi</a></div>
       <div class="repo-stars">★ 980</div>
     </div>
-    <div class="repo-desc">开源端到端平台，用于评估、观测和优化大语言模型及AI智能体应用。核心功能包括追踪、评估、模拟、数据集、网关和护栏，支持自托管，采用Apache 2.0许可。该平台为Agent应用提供全生命周期管理能力，尤其适合多智能体系统的性能监控与迭代优化。</div>
+    <div class="repo-desc">Open-source, end-to-end platform for evaluating, observing, and improving LLM and AI agent applications. Tracing · Evals · Simulations · Datasets · Gateway · Gu</div>
     <div class="repo-tags">
       <span class="tag">Python</span><span class="tag">ai</span><span class="tag">ai-gateway</span>
     </div>
@@ -447,7 +561,7 @@
       <div class="repo-title"><a href="https://github.com/jmerelnyc/Photo-agents" target="_blank" rel="noopener">jmerelnyc/Photo-agents</a></div>
       <div class="repo-stars">★ 935</div>
     </div>
-    <div class="repo-desc">jmerelnyc/Photo-agents 是一个自主进化的智能体项目，基于视觉驱动的分层记忆与自编写技能，使LLM代理能直接操控计算机。关键亮点在于其自进化能力，无需人工干预即可动态扩展技能库。该项目与Agent方向高度相关，通过视觉记忆与技能自生成机制，显著提升了智能体在复杂环境中的自主适应与操作能力。</div>
+    <div class="repo-desc">Autonomous self-evolving agents. Vision-grounded layered memory and self-written skills for LLM agents that operate your computer.</div>
     <div class="repo-tags">
       <span class="tag">Python</span><span class="tag">agent-memory</span><span class="tag">ai-agents</span>
     </div>
@@ -458,7 +572,7 @@
       <div class="repo-title"><a href="https://github.com/nduckmink/arkon" target="_blank" rel="noopener">nduckmink/arkon</a></div>
       <div class="repo-stars">★ 734</div>
     </div>
-    <div class="repo-desc">Arkon 是一个企业级 AI 知识中心与 MCP 服务器，支持团队自托管知识库以管理 RAG 上下文、访问策略和 AI 技能。它通过模型上下文协议（MCP）连接 Claude 等大语言模型，实现自动化、安全的组织知识集成。该工具在 Agent 和 RAG 方向的价值在于，它为多智能体系统提供了统一的知识访问层和权限控制，简化了企业级知识检索与 AI 应用的集成流程。</div>
+    <div class="repo-desc">Arkon: Enterprise AI Knowledge Hub & MCP Server. Self-hosted knowledge base for teams to manage RAG contexts, access policies, and AI skills. Connect Claude and</div>
     <div class="repo-tags">
       <span class="tag">Python</span><span class="tag">enterprise-ai</span><span class="tag">knowledge-base-embeddings</span>
     </div>
@@ -473,15 +587,20 @@
 <style>
   .hn-item {
     padding: 10px 18px; border-bottom: 1px solid var(--paper3);
-    display: flex; gap: 12px; align-items: baseline;
+    display: flex; gap: 0; align-items: baseline;
     transition: background 0.15s;
   }
   .hn-item:hover { background: rgba(30,53,87,0.02); }
   .hn-item:last-child { border-bottom: none; }
   .hn-rank {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px; font-weight: 700;
-    color: var(--border2); min-width: 22px; line-height: 1; padding-top: 1px;
+    font-size: 20px; font-weight: 600; font-style: italic;
+    color: var(--navy2);
+    min-width: 46px; line-height: 1; padding-top: 2px;
+    padding-right: 14px; margin-right: 14px;
+    border-right: 2px solid var(--border);
+    text-align: right;
+    flex-shrink: 0;
   }
   .hn-body { flex: 1; }
   .hn-title { font-size: 12.5px; font-weight: 500; color: var(--text); line-height: 1.45; margin-bottom: 3px; }
@@ -491,6 +610,7 @@
   .hn-pts { color: var(--coral); font-weight: 600; }
 </style>
 
+
 <div class="card">
   <div class="card-header">
     <h2>HackerNews AI 热议</h2>
@@ -498,7 +618,7 @@
   </div>
   
   <div class="hn-item">
-    <div class="hn-rank">1</div>
+    <div class="hn-rank">I</div>
     <div class="hn-body">
       <div class="hn-title"><a href="https://github.com/Andyyyy64/whichllm" target="_blank" rel="noopener">Show HN: Find the best local LLM for your hardware, ranked by benchmarks</a></div>
       <div class="hn-meta">
@@ -509,7 +629,7 @@
   </div>
   
   <div class="hn-item">
-    <div class="hn-rank">2</div>
+    <div class="hn-rank">II</div>
     <div class="hn-body">
       <div class="hn-title"><a href="https://www.seangoedecke.com/steering-vectors/" target="_blank" rel="noopener">DeepSeek-V4-Flash means LLM steering is interesting again</a></div>
       <div class="hn-meta">
@@ -520,18 +640,18 @@
   </div>
   
   <div class="hn-item">
-    <div class="hn-rank">3</div>
+    <div class="hn-rank">III</div>
     <div class="hn-body">
       <div class="hn-title"><a href="https://www.gutenberg.org/" target="_blank" rel="noopener">Project Gutenberg – keeps getting better</a></div>
       <div class="hn-meta">
-        <span class="hn-pts">1204 pts</span>
+        <span class="hn-pts">1205 pts</span>
          &nbsp;·&nbsp; 2026-05-15
       </div>
     </div>
   </div>
   
   <div class="hn-item">
-    <div class="hn-rank">4</div>
+    <div class="hn-rank">IV</div>
     <div class="hn-body">
       <div class="hn-title"><a href="https://arkadiyt.com/2026/05/13/removing-the-modem-and-gps-from-my-rav4/" target="_blank" rel="noopener">Removing the modem and GPS from my 2024 RAV4 hybrid</a></div>
       <div class="hn-meta">
@@ -542,7 +662,7 @@
   </div>
   
   <div class="hn-item">
-    <div class="hn-rank">5</div>
+    <div class="hn-rank">V</div>
     <div class="hn-body">
       <div class="hn-title"><a href="https://relax.ai/docs" target="_blank" rel="noopener">UK sovereign LLM inference</a></div>
       <div class="hn-meta">
@@ -553,7 +673,7 @@
   </div>
   
   <div class="hn-item">
-    <div class="hn-rank">6</div>
+    <div class="hn-rank">VI</div>
     <div class="hn-body">
       <div class="hn-title"><a href="https://github.com/rust-lang/rust-forge/pull/1040" target="_blank" rel="noopener">LLM Policy for Rust Compiler</a></div>
       <div class="hn-meta">
@@ -564,18 +684,18 @@
   </div>
   
   <div class="hn-item">
-    <div class="hn-rank">7</div>
+    <div class="hn-rank">VII</div>
     <div class="hn-body">
       <div class="hn-title"><a href="https://www.anthropic.com/news/claude-for-small-business" target="_blank" rel="noopener">Claude for Small Business</a></div>
       <div class="hn-meta">
-        <span class="hn-pts">538 pts</span>
+        <span class="hn-pts">539 pts</span>
          &nbsp;·&nbsp; 2026-05-14
       </div>
     </div>
   </div>
   
   <div class="hn-item">
-    <div class="hn-rank">8</div>
+    <div class="hn-rank">VIII</div>
     <div class="hn-body">
       <div class="hn-title"><a href="https://www.tomshardware.com/tech-industry/cryptocurrency/bitcoin-trader-recovers-usd400-000-using-claude-ai-after-losing-wallet-password-11-years-ago-bot-tried-3-5-trillion-passwords-before-decrypting-an-old-wallet-backup" target="_blank" rel="noopener">Bitcoin trader recovers wallet with help of Claude</a></div>
       <div class="hn-meta">
@@ -611,7 +731,7 @@
     <span class="card-badge badge-gold">人工智能分区</span>
   </div>
   
-  <div class="job-item" style="color:var(--text3);font-size:12px;">RSSHub 今日无 nowcoder 数据（公共实例可能暂时不可用，明日自动重试）</div>
+  <div class="card-empty">—— 本期暂无来稿 ——</div>
   
 </div>
         
@@ -625,7 +745,7 @@
     <span class="card-badge badge-gold">官博 / 媒体</span>
   </div>
   
-  <div class="job-item" style="color:var(--text3);font-size:12px;">今日聚合器未匹配到目标公司动态</div>
+  <div class="card-empty">—— 本期暂无来稿 ——</div>
   
 </div>
         
@@ -645,7 +765,7 @@
       来源: hackernews
        &nbsp;·&nbsp; 252 pts
     </div>
-    <div class="job-body">这是一个基于Claude Code和Codex的技能开发工具，专注于通过刻意练习提升编程能力。它利用AI辅助生成个性化练习任务，提供实时反馈和难度自适应调整。关键亮点是支持多语言代码生成与错误分析，能显著缩短技能掌握周期。该工具与Agent方向紧密相关，通过智能体协作实现个性化学习路径规划，为RAG系统在技能知识库的检索与生成提供了实践参考。</div>
+    <div class="job-body">A Claude Code and Codex Skill for Deliberate Skill Development</div>
     <div class="job-footer">
       <span class="tag">Claude Code</span><span class="tag">来源: hackernews</span>
     </div>
@@ -657,7 +777,7 @@
       来源: hackernews
        &nbsp;·&nbsp; 241 pts
     </div>
-    <div class="job-body">Claude Code 是一种面向大型代码库的智能编程助手，通过上下文感知和增量分析技术高效处理复杂项目。其关键亮点在于能自动识别代码依赖关系、模块结构及变更影响范围，显著提升代码导航与重构效率。该工具与Agent方向紧密相关，通过自主理解代码库上下文，辅助开发者进行智能代码生成与调试，减少手动搜索时间。</div>
+    <div class="job-body">How Claude Code works in large codebases</div>
     <div class="job-footer">
       <span class="tag">Claude Code</span><span class="tag">来源: hackernews</span>
     </div>
@@ -782,8 +902,8 @@ window.__TREND__ = {
 
 <div class="footer">
   
-  AI Pipeline 自动生成 &nbsp;·&nbsp; 2026-05-17 23:51 &nbsp;·&nbsp; <a href="./archive.html">归档</a> &nbsp;·&nbsp; <a href="https://github.com/Diezqu/getnews" target="_blank">GitHub 仓库</a>
-  
+EDITION &nbsp;·&nbsp; 2026-05-17 &nbsp;·&nbsp; AI INTELLIGENCE BRIEF &nbsp;·&nbsp; <a href="./archive.html">归档</a> &nbsp;·&nbsp; <a href="https://github.com/Diezqu/getnews" target="_blank">GitHub 仓库</a>
+
 </div>
 
 
@@ -793,10 +913,10 @@ window.__TREND__ = {
   if (!t) return;
   const ctx = document.getElementById('trendChart').getContext('2d');
   const colors = {
-    agent: '#1e3557', mcp: '#c94428', rag: '#2a7d4f',
+    agent: '#1e3557', mcp: '#c94428', rag: '#7c8b2a',
   };
   const fillColors = {
-    agent: 'rgba(30,53,87,0.06)', mcp: 'rgba(201,68,40,0.05)', rag: 'rgba(42,125,79,0.05)',
+    agent: 'rgba(30,53,87,0.06)', mcp: 'rgba(201,68,40,0.05)', rag: 'rgba(124,139,42,0.05)',
   };
   const datasets = Object.keys(t.series).map(k => ({
     label: k.toUpperCase(),

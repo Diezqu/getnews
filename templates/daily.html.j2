@@ -31,6 +31,7 @@
 
 {% block masthead_right %}
   <div class="masthead-right">
+    <div class="masthead-vol">VOL. I &nbsp;&nbsp; NO. {{ date_str[5:7] }}{{ date_str[8:10] }}</div>
     <div class="masthead-weekday-deco">{{ weekday_str }}</div>
     <div class="masthead-sources-row">arXiv · HF · GitHub · HN · 牛客 · AI</div>
   </div>
@@ -39,6 +40,19 @@
 {% block body %}
   {# ─── Today's Summary ─── #}
   {% include "partials/summary_block.html.j2" %}
+
+  {# ─── Weather Strip ─── #}
+  <div class="weather-strip">
+    <span>📄 <span class="ws-count">{{ (arxiv_items|length) + (hf_items|length) }}</span> 论文</span>
+    <span class="ws-sep">·</span>
+    <span>🚀 <span class="ws-count">{{ github_items|length }}</span> 仓库</span>
+    <span class="ws-sep">·</span>
+    <span>💬 <span class="ws-count">{{ hn_items|length }}</span> HN</span>
+    <span class="ws-sep">·</span>
+    <span>💼 <span class="ws-count">{{ nowcoder_items|length }}</span> 面经</span>
+    <span class="ws-sep">·</span>
+    <span class="ws-kw">关键词: {% for k in trend_series.keys() %}{{ k | upper }}{% if not loop.last %} · {% endif %}{% endfor %}</span>
+  </div>
 
   <div class="main-wrap">
     <div class="main-grid">
@@ -108,6 +122,10 @@
   </div>
 {% endblock %}
 
+{% block footer %}
+EDITION &nbsp;·&nbsp; {{ date_str }} &nbsp;·&nbsp; AI INTELLIGENCE BRIEF &nbsp;·&nbsp; <a href="./archive.html">归档</a> &nbsp;·&nbsp; <a href="https://github.com/Diezqu/getnews" target="_blank">GitHub 仓库</a>
+{% endblock %}
+
 {% block scripts %}
 <script>
 (function() {
@@ -115,10 +133,10 @@
   if (!t) return;
   const ctx = document.getElementById('trendChart').getContext('2d');
   const colors = {
-    agent: '#1e3557', mcp: '#c94428', rag: '#2a7d4f',
+    agent: '#1e3557', mcp: '#c94428', rag: '#7c8b2a',
   };
   const fillColors = {
-    agent: 'rgba(30,53,87,0.06)', mcp: 'rgba(201,68,40,0.05)', rag: 'rgba(42,125,79,0.05)',
+    agent: 'rgba(30,53,87,0.06)', mcp: 'rgba(201,68,40,0.05)', rag: 'rgba(124,139,42,0.05)',
   };
   const datasets = Object.keys(t.series).map(k => ({
     label: k.toUpperCase(),

@@ -15,7 +15,7 @@
       "ai-agent",
       "ai-coding"
     ],
-    "stars": 3733,
+    "stars": 3740,
     "authors": [],
     "published_at": "2026-05-17T15:55:14Z"
   },
@@ -34,7 +34,7 @@
       "ai-assistant",
       "llm"
     ],
-    "stars": 2244,
+    "stars": 2245,
     "authors": [],
     "published_at": "2026-05-10T16:32:16Z"
   },
@@ -54,7 +54,7 @@
       "ai-agents",
       "claude-code"
     ],
-    "stars": 1746,
+    "stars": 1748,
     "authors": [],
     "published_at": "2026-04-23T05:48:48Z"
   },
@@ -74,7 +74,7 @@
       "awesome-list",
       "claude-code"
     ],
-    "stars": 1507,
+    "stars": 1510,
     "authors": [],
     "published_at": "2026-05-17T19:43:48Z"
   },
@@ -90,7 +90,7 @@
     "tags": [
       "C#"
     ],
-    "stars": 1103,
+    "stars": 1104,
     "authors": [],
     "published_at": "2026-05-15T18:30:00Z"
   },
@@ -460,7 +460,7 @@
       "ai-agents",
       "deep-learning"
     ],
-    "stars": 974,
+    "stars": 977,
     "authors": [],
     "published_at": "2026-05-15T20:52:39Z"
   },
@@ -472,11 +472,11 @@
     "category": "learning",
     "summary": "",
     "raw_content": "MoshiRAG is a compact full-duplex speech language model augmented with asynchronous knowledge retrieval to improve factuality without sacrificing real-time interactivity.",
-    "score": 9.22,
+    "score": 9.23,
     "tags": [
       "Rust"
     ],
-    "stars": 84,
+    "stars": 85,
     "authors": [],
     "published_at": "2026-04-28T16:18:06Z"
   },
@@ -659,7 +659,7 @@
     "raw_content": "Project Gutenberg – keeps getting better",
     "score": 6.55,
     "tags": [],
-    "stars": 1204,
+    "stars": 1205,
     "authors": [],
     "published_at": "2026-05-15T16:15:36Z"
   },
@@ -713,9 +713,9 @@
     "category": "learning",
     "summary": "",
     "raw_content": "Claude for Small Business",
-    "score": 6.14,
+    "score": 6.15,
     "tags": [],
-    "stars": 538,
+    "stars": 539,
     "authors": [],
     "published_at": "2026-05-14T03:59:35Z"
   },
@@ -743,7 +743,7 @@
     "raw_content": "Apple Silicon costs more than OpenRouter",
     "score": 5.84,
     "tags": [],
-    "stars": 290,
+    "stars": 293,
     "authors": [],
     "published_at": "2026-05-17T12:09:23Z"
   },

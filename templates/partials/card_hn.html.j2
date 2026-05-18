@@ -2,15 +2,20 @@
 <style>
   .hn-item {
     padding: 10px 18px; border-bottom: 1px solid var(--paper3);
-    display: flex; gap: 12px; align-items: baseline;
+    display: flex; gap: 0; align-items: baseline;
     transition: background 0.15s;
   }
   .hn-item:hover { background: rgba(30,53,87,0.02); }
   .hn-item:last-child { border-bottom: none; }
   .hn-rank {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px; font-weight: 700;
-    color: var(--border2); min-width: 22px; line-height: 1; padding-top: 1px;
+    font-size: 20px; font-weight: 600; font-style: italic;
+    color: var(--navy2);
+    min-width: 46px; line-height: 1; padding-top: 2px;
+    padding-right: 14px; margin-right: 14px;
+    border-right: 2px solid var(--border);
+    text-align: right;
+    flex-shrink: 0;
   }
   .hn-body { flex: 1; }
   .hn-title { font-size: 12.5px; font-weight: 500; color: var(--text); line-height: 1.45; margin-bottom: 3px; }
@@ -20,6 +25,7 @@
   .hn-pts { color: var(--coral); font-weight: 600; }
 </style>
 
+{% set roman_nums = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'] %}
 <div class="card">
   <div class="card-header">
     <h2>HackerNews AI 热议</h2>
@@ -27,7 +33,7 @@
   </div>
   {% for item in items %}
   <div class="hn-item">
-    <div class="hn-rank">{{ loop.index }}</div>
+    <div class="hn-rank">{{ roman_nums[loop.index] if loop.index <= 10 else loop.index }}</div>
     <div class="hn-body">
       <div class="hn-title"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></div>
       <div class="hn-meta">
@@ -37,6 +43,6 @@
     </div>
   </div>
   {% else %}
-  <div class="hn-item" style="color:var(--text3);font-size:12px;">今日暂无 HackerNews 数据</div>
+  <div class="card-empty">—— 本期暂无来稿 ——</div>
   {% endfor %}
 </div>

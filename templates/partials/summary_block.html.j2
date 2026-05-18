@@ -11,8 +11,9 @@
   }
   .today-summary .headline {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-weight: 700;
-    color: var(--coral); line-height: 1.35;
+    font-size: 28px; font-weight: 600;
+    font-style: italic;
+    color: var(--coral); line-height: 1.3;
     margin-bottom: 14px;
   }
   .today-summary .divider {
@@ -28,32 +29,36 @@
   }
   .today-summary .ts-col h3.learn { border-bottom: 2px solid var(--green); padding-bottom: 4px; display: inline-block; }
   .today-summary .ts-col h3.job   { border-bottom: 2px solid var(--gold);  padding-bottom: 4px; display: inline-block; }
-  .today-summary .ts-col ul { list-style: none; }
+  .today-summary .ts-col ul { list-style: none; counter-reset: ts-row; }
   .today-summary .ts-col li {
     font-size: 13px; color: var(--text);
-    padding: 6px 0 6px 16px; position: relative;
-    border-bottom: 1px dashed var(--paper3);
+    padding: 6px 0 6px 30px; position: relative;
+    border-bottom: 1px solid var(--paper3);
     line-height: 1.5;
+    counter-increment: ts-row;
   }
   .today-summary .ts-col li:last-child { border-bottom: none; }
   .today-summary .ts-col li::before {
-    content: '▸'; position: absolute; left: 0; top: 5px;
-    color: var(--coral); font-size: 11px;
+    content: counter(ts-row, upper-roman) ".";
+    position: absolute; left: 0; top: 6px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px; font-style: italic;
+    color: var(--text3); min-width: 26px;
   }
 </style>
 
 <section class="today-summary">
-  <div class="headline">💡 {{ summary.headline }}</div>
+  <div class="headline">{{ summary.headline }}</div>
   <div class="divider"></div>
   <div class="ts-grid">
     <div class="ts-col">
-      <h3 class="learn">📚 AI 趋势</h3>
+      <h3 class="learn">AI 趋势</h3>
       <ul>
         {% for line in summary.ai_trends %}<li>{{ line }}</li>{% endfor %}
       </ul>
     </div>
     <div class="ts-col">
-      <h3 class="job">💼 求职信号</h3>
+      <h3 class="job">求职信号</h3>
       <ul>
         {% for line in summary.job_signals %}<li>{{ line }}</li>{% endfor %}
       </ul>
