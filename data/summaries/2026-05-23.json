@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-23",
+  "generated_at": "2026-05-24T00:02:11+00:00",
+  "headline": "DeepSeek V4大幅降价，AI Agent学习路线图与工具密集发布",
+  "ai_trends": [
+    "中文AI Agent学习路线图发布，覆盖8阶段145+资源",
+    "令牌高效智能体与小型模型编程代理成为热点",
+    "多智能体协作与持久化AI伴侣引擎技术涌现"
+  ],
+  "job_signals": [
+    "微软取消Claude Code许可证，企业AI合规风险凸显",
+    "DeepSeek V4降价获企业合作，目标AGI",
+    "DeepSeek获700亿融资推代码工具，智谱创推理速度纪录"
+  ],
+  "stats": {
+    "total_items": 80,
+    "learning_count": 76,
+    "job_count": 4,
+    "top_score": 10.0,
+    "top_item_title": "WenyuChiou/awesome-agentic-ai-zh"
+  }
+}
