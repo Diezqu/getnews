@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-25",
+  "generated_at": "2026-05-25T00:03:28+00:00",
+  "headline": "Agent框架与编码智能体密集发布，DeepSeek V4降价引企业抢入",
+  "ai_trends": [
+    "高效Agent框架涌现，OpenSquilla提升智能密度",
+    "小型模型编码智能体突破，4B参数达87%基准",
+    "AI伴侣与自进化智能体实现长期记忆与动态技能"
+  ],
+  "job_signals": [
+    "微软取消Claude Code许可，企业Agent合规挑战",
+    "DeepSeek V4大幅降价，宁德时代京东等企业入场",
+    "今日数据较少"
+  ],
+  "stats": {
+    "total_items": 55,
+    "learning_count": 53,
+    "job_count": 2,
+    "top_score": 10.0,
+    "top_item_title": "opensquilla/opensquilla"
+  }
+}

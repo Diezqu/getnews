@@ -1,0 +1,912 @@
+[
+  {
+    "id": "3c683dcb8f36",
+    "source": "github",
+    "title": "opensquilla/opensquilla",
+    "url": "https://github.com/opensquilla/opensquilla",
+    "category": "learning",
+    "summary": "OpenSquilla 是一个预算不变但智能密度更高的高效 AI Agent 框架。其核心贡献在于通过 token 优化技术，在相同计算资源下显著提升 Agent 的推理与决策能力。关键亮点是实现了更高的智能密度，即单位 token 产出更优结果。该工作与 Agent 方向高度相关，为资源受限场景下的智能体部署提供了实用方案。",
+    "raw_content": "OpenSquilla — Token-Efficient AI Agent with same budget, higher intelligence density",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "agent",
+      "ai",
+      "ai-agents",
+      "deep-learning"
+    ],
+    "stars": 1715,
+    "authors": [],
+    "published_at": "2026-05-24T16:58:18Z"
+  },
+  {
+    "id": "7d1ea1d6ba1a",
+    "source": "github",
+    "title": "WenyuChiou/awesome-agentic-ai-zh",
+    "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh",
+    "category": "learning",
+    "summary": "这是一个结构化、三语（繁中/简中/英文）的智能体AI学习路线图，涵盖从LLM基础到多智能体系统的8个阶段。包含145+精选项目和实操练习，提供系统化学习路径。该资源对Agent方向的学习者具有极高参考价值，可帮助构建从理论到实践的完整知识体系。",
+    "raw_content": "A structured, trilingual (繁中 / 简中 / English) learning roadmap for agentic AI — from LLM basics to multi-agent systems. 8 stages · 145+ curated projects · hands-on exercises. 中文 AI agent 學習地圖。",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "agentic-ai",
+      "ai-agents",
+      "awesome-list",
+      "claude-code"
+    ],
+    "stars": 1702,
+    "authors": [],
+    "published_at": "2026-05-21T05:14:24Z"
+  },
+  {
+    "id": "c692ab5add13",
+    "source": "github",
+    "title": "Doorman11991/smallcode",
+    "url": "https://github.com/Doorman11991/smallcode",
+    "category": "learning",
+    "summary": "Doorman11991/smallcode 是一个针对小型语言模型优化的 AI 编码智能体。其核心亮点在于，使用仅4B活跃参数的模型即可达到87%的基准测试成绩。该项目展示了在资源受限环境下，通过高效架构设计实现强大编码能力的可能性，对Agent方向中轻量化、低延迟部署具有重要参考价值。",
+    "raw_content": "AI coding agent optimized for small LLMs. 87% benchmark with 4B-active model.",
+    "score": 10.0,
+    "tags": [
+      "JS"
+    ],
+    "stars": 1380,
+    "authors": [],
+    "published_at": "2026-05-24T18:41:39Z"
+  },
+  {
+    "id": "38bcf597b6f3",
+    "source": "github",
+    "title": "StartupHakk/OpenMonoAgent.ai",
+    "url": "https://github.com/StartupHakk/OpenMonoAgent.ai",
+    "category": "learning",
+    "summary": "StartupHakk/OpenMonoAgent.ai 是一个终端原生的编码智能体，由本地大语言模型驱动，100%开源且永久免费，通过单条命令即可安装。其核心亮点是提供无限令牌使用，无需订阅，完全在用户本地机器上运行。该工具基于C#/.NET构建，强调AI工具应作为基础设施而非订阅服务，与Agent方向紧密相关，支持从任何位置使用，降低了AI编码助手的部署门槛。",
+    "raw_content": "(BETA) AI shouldn't have a meter. Unlimited tokens. Forever. Your machine. Your agent. Use it from anywhere. Terminal-native coding agent powered by local LLMs — 100% open source, free forever, and installed with a single command. Proudly built on C#/.NET, because AI tooling should be infrastructure, not a subscription.",
+    "score": 10.0,
+    "tags": [
+      "C#"
+    ],
+    "stars": 1302,
+    "authors": [],
+    "published_at": "2026-05-24T11:30:04Z"
+  },
+  {
+    "id": "b7230149790b",
+    "source": "github",
+    "title": "jmerelnyc/Photo-agents",
+    "url": "https://github.com/jmerelnyc/Photo-agents",
+    "category": "learning",
+    "summary": "jmerelnyc/Photo-agents 是一个自主进化的智能体项目，基于视觉驱动的分层记忆与自编写技能，使 LLM 智能体能够直接操作计算机。关键亮点在于智能体可动态扩展技能库，无需人工干预即可适应新任务。该项目与 Agent 方向高度相关，展示了通过视觉感知与记忆机制增强智能体自主性的实用路径，为多智能体协作与 RAG 系统提供了可借鉴的进化式学习框架。",
+    "raw_content": "Autonomous self-evolving agents. Vision-grounded layered memory and self-written skills for LLM agents that operate your computer.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "agent-memory",
+      "ai-agents",
+      "autonomous-agents",
+      "computer-use"
+    ],
+    "stars": 1020,
+    "authors": [],
+    "published_at": "2026-05-18T16:00:17Z"
+  },
+  {
+    "id": "8db4c0d6a381",
+    "source": "github",
+    "title": "nduckmink/arkon",
+    "url": "https://github.com/nduckmink/arkon",
+    "category": "learning",
+    "summary": "Arkon 是一个企业级 AI 知识中心与 MCP 服务器，提供自托管知识库，用于管理 RAG 上下文、访问策略和 AI 技能。它通过模型上下文协议（MCP）连接 Claude 等大语言模型，实现自动化、安全的组织知识集成。该工具在 Agent 与 RAG 方向的关键价值在于，为多智能体系统提供了统一的知识访问与权限控制层，支持企业级知识检索增强生成。",
+    "raw_content": "Arkon: Enterprise AI Knowledge Hub & MCP Server. Self-hosted knowledge base for teams to manage RAG contexts, access policies, and AI skills. Connect Claude and other LLMs via Model Context Protocol (MCP) for automated, secure organizational knowledge integration.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "enterprise-ai",
+      "knowledge-base-embeddings",
+      "knowledge-based-systems",
+      "knowledge-bases"
+    ],
+    "stars": 862,
+    "authors": [],
+    "published_at": "2026-05-21T09:20:03Z"
+  },
+  {
+    "id": "12581f5c6e26",
+    "source": "github",
+    "title": "raindrop-ai/workshop",
+    "url": "https://github.com/raindrop-ai/workshop",
+    "category": "learning",
+    "summary": "raindrop-ai/workshop 是一个为编码智能体赋予编写和运行评估能力的工具。它允许开发者通过自动化测试来验证智能体行为的正确性和效率。关键亮点在于其集成的评估框架，能够快速生成并执行多场景测试用例。该工具与 Agent 方向紧密相关，为智能体开发提供了标准化的质量保障手段，有助于提升 Agent 在实际任务中的可靠性和鲁棒性。",
+    "raw_content": "Give your coding agent the power to write and run agent evals.",
+    "score": 10.0,
+    "tags": [
+      "TS",
+      "llm",
+      "raindrop",
+      "tracing"
+    ],
+    "stars": 732,
+    "authors": [],
+    "published_at": "2026-05-19T16:16:47Z"
+  },
+  {
+    "id": "cca4e6c1f586",
+    "source": "github",
+    "title": "ChristianJR19/grok-animus",
+    "url": "https://github.com/ChristianJR19/grok-animus",
+    "category": "learning",
+    "summary": "ChristianJR19/grok-animus 是一个持久化AI伴侣引擎，为任意LLM赋予个性、记忆、梦境与进化能力。其核心亮点在于实现AI的长期记忆与动态人格演化，支持多轮交互中的上下文保持与自我更新。该引擎与Agent方向高度相关，为构建具备持续学习与情感适应能力的智能体提供了基础框架，尤其适用于需要长期陪伴与个性化交互的RAG系统。",
+    "raw_content": "Persistent AI companion engine — personality, memory, dreams, and evolution for any LLM. The foundation behind living AI companions.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "agent",
+      "ai",
+      "dreams",
+      "evolution"
+    ],
+    "stars": 620,
+    "authors": [],
+    "published_at": "2026-05-16T18:07:40Z"
+  },
+  {
+    "id": "b88a884ba836",
+    "source": "github",
+    "title": "simonlin1212/TradingAgents-astock",
+    "url": "https://github.com/simonlin1212/TradingAgents-astock",
+    "category": "learning",
+    "summary": "这是一个名为TradingAgents-astock的A股多智能体投研框架，专为A股市场定制，集成了龙虎榜、游资、解禁等本地数据源。框架包含7位AI分析师，通过多空辩论和风险评估进行决策。亮点在于深度适配A股规则，实现了基于真实数据的多智能体协作分析。该框架为Agent在金融领域的应用提供了实战案例，展示了多智能体辩论机制在复杂市场环境中的价值。",
+    "raw_content": "A股多Agent投研框架 — 适配A股数据源(龙虎榜/游资/解禁等)，7位分析师基于A股规则的辩论决策，基于TradingAgents深度改造，适配大A。A-share multi-agent investment research framework — 7 AI analysts, bull/bear debate, risk assessment。",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 602,
+    "authors": [],
+    "published_at": "2026-05-21T14:53:03Z"
+  },
+  {
+    "id": "767bc1424568",
+    "source": "github",
+    "title": "OpenOSINT/OpenOSINT",
+    "url": "https://github.com/OpenOSINT/OpenOSINT",
+    "category": "learning",
+    "summary": "OpenOSINT 是一个基于 AI 的开源情报（OSINT）智能体，提供交互式 REPL、MCP 服务器和 CLI 三种使用模式。它集成了 9 种专用工具，支持 Claude、GPT-4 或本地模型作为后端。该工具仅限授权安全研究使用，其 MCP 服务器设计为多智能体协作提供了标准化的工具调用接口。",
+    "raw_content": "AI-powered OSINT agent with interactive REPL, MCP server, and CLI. 9 tools. Works with Claude, GPT-4, or local models. For authorized security research only.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-agent",
+      "anthropic",
+      "claude",
+      "cli"
+    ],
+    "stars": 166,
+    "authors": [],
+    "published_at": "2026-05-24T20:30:59Z"
+  },
+  {
+    "id": "787bad15eeb7",
+    "source": "github",
+    "title": "KSroido/Kagi-Session2API-MCP",
+    "url": "https://github.com/KSroido/Kagi-Session2API-MCP",
+    "category": "learning",
+    "summary": "KSroido/Kagi-Session2API-MCP 是一个免费的 Kagi 搜索 MCP 服务器，通过会话令牌即可访问搜索和摘要功能，无需 API 密钥。它支持 Claude Desktop、Cursor、Windsurf、Hermes 等任意 MCP 客户端。该工具为 Agent 系统提供了轻量级搜索能力，降低了集成门槛，特别适合需要快速接入搜索和摘要功能的 RAG 应用场景。",
+    "raw_content": "Free Kagi Search MCP server — access search and summarizer via session tokens, no API key needed. Works with Claude Desktop, Cursor, Windsurf, Hermes and any MCP client.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-agent",
+      "ai-coding",
+      "claude-desktop",
+      "cursor"
+    ],
+    "stars": 136,
+    "authors": [],
+    "published_at": "2026-05-03T07:29:54Z"
+  },
+  {
+    "id": "4ad58d0ad003",
+    "source": "github",
+    "title": "elara-labs/code-context-engine",
+    "url": "https://github.com/elara-labs/code-context-engine",
+    "category": "learning",
+    "summary": "elara-labs/code-context-engine：一个开源本地MCP服务器，通过索引代码库让AI代理搜索而非读取文件，可节省94%的AI编码令牌。兼容Claude Code、Codex、Copilot、Cursor、Gemini CLI等主流工具。该工具通过MCP协议优化Agent与代码库的交互效率，显著降低令牌消耗。",
+    "raw_content": "Save 94% on AI coding tokens. Index your codebase, agents search instead of reading files. Works with Claude Code, Codex, Copilot, Cursor, Gemini CLI. Local MCP server, free, open source.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-coding",
+      "claude",
+      "claude-code",
+      "code-indexing"
+    ],
+    "stars": 136,
+    "authors": [],
+    "published_at": "2026-05-23T11:46:11Z"
+  },
+  {
+    "id": "e17bc81b90b4",
+    "source": "github",
+    "title": "Rath-Team/OpenRath",
+    "url": "https://github.com/Rath-Team/OpenRath",
+    "category": "learning",
+    "summary": "OpenRath 是一个开源、类 PyTorch API 的动态多智能体工作流框架。它支持灵活构建和编排多个智能体，实现复杂任务分解与协作。该框架通过类似 PyTorch 的动态计算图设计，简化了多智能体系统的开发与调试流程，显著提升了可扩展性与易用性。对于 Agent 与多智能体方向的研究者，OpenRath 提供了高效、模块化的工具，助力快速原型验证与实验。",
+    "raw_content": "A opensource, torch-like api framework for dynamic multi-agent workflow.",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 131,
+    "authors": [],
+    "published_at": "2026-05-24T12:39:02Z"
+  },
+  {
+    "id": "f8f00f110b11",
+    "source": "github",
+    "title": "Yang1999code/controllable-agent",
+    "url": "https://github.com/Yang1999code/controllable-agent",
+    "category": "learning",
+    "summary": "Yang1999code/controllable-agent 提出了一种20接口的AI智能体框架，采用三层架构设计，支持多智能体委派与自我进化能力。该框架在复杂任务场景下实现了高效协同，关键亮点在于其可控制的接口机制与动态演化特性。与Agent方向紧密相关，为构建可扩展、自适应的多智能体系统提供了基础架构支撑。",
+    "raw_content": "20-interface AI agent framework with 3-layer architecture, multi-agent delegation, and self-evolution.",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 105,
+    "authors": [],
+    "published_at": "2026-05-24T14:52:29Z"
+  },
+  {
+    "id": "2ff0cae491cf",
+    "source": "github",
+    "title": "rohanmistry231/Claude-OS",
+    "url": "https://github.com/rohanmistry231/Claude-OS",
+    "category": "learning",
+    "summary": "这是一个面向开发者的Claude参考资源包，集中整理了命令、MCP服务器、插件、工具、工作流和智能体框架。旨在帮助开发者快速发现并实际集成这些资源。该资源包与MCP和Agent方向高度相关，为构建基于Claude的多智能体系统提供了便捷的入口和实用参考。",
+    "raw_content": "A concise Claude reference bundle for developers, covering commands, MCP servers, plugins, tools, workflows, and agent frameworks in one place. Designed for fast discovery and practical integration.",
+    "score": 10.0,
+    "tags": [
+      "agent-frameworks",
+      "claude",
+      "claude-code",
+      "claude-mcp-server"
+    ],
+    "stars": 102,
+    "authors": [],
+    "published_at": "2026-04-29T07:43:09Z"
+  },
+  {
+    "id": "65c9ff023770",
+    "source": "github",
+    "title": "EliasOulkadi/shokunin",
+    "url": "https://github.com/EliasOulkadi/shokunin",
+    "category": "learning",
+    "summary": "EliasOulkadi/shokunin 是一个为 OpenCode、Claude Code、Cursor、Windsurf 等工具提供 62 种 AI 智能体技能的开源项目。它集成了 ChromaDB 记忆、MCP 服务器和声明式自我更新功能，支持多模型且零成本。该项目通过 MCP 服务器和 ChromaDB 记忆机制，为 Agent 系统提供了可扩展的技能库与持久化记忆能力，有助于构建更智能、自适应的多智能体工作流。",
+    "raw_content": "職人 Shokunin 62 AI agent skills for OpenCode, Claude Code, Cursor, Windsurf. ChromaDB memory, MCP servers, declarative self-updates. Multi-model, open source, zero cost.",
+    "score": 10.0,
+    "tags": [
+      "HTML",
+      "ai-agent-skills",
+      "ai-engineering",
+      "ai-memory",
+      "chromadb"
+    ],
+    "stars": 85,
+    "authors": [],
+    "published_at": "2026-05-24T11:58:22Z"
+  },
+  {
+    "id": "59f18815cac3",
+    "source": "github",
+    "title": "madguyevans-creator/resale-agent-skill-hub",
+    "url": "https://github.com/madguyevans-creator/resale-agent-skill-hub",
+    "category": "learning",
+    "summary": "这是一个AI驱动的跨平台C2C二手转售工具包，包含8个Claude Code技能和MCP服务器，用于自动化二手商品销售。亮点在于通过MCP协议整合多个二手交易平台，实现商品上架、价格分析和客户沟通的自动化。该工具包为Agent系统提供了完整的二手转售领域技能集合，展示了MCP在电商自动化场景中的实际应用价值。",
+    "raw_content": "AI-powered multi-platform C2C resale toolkit — 8 Claude Code skills + MCP server for automating second-hand selling",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-agent",
+      "c2c",
+      "claude-code",
+      "depop"
+    ],
+    "stars": 61,
+    "authors": [],
+    "published_at": "2026-05-16T16:25:13Z"
+  },
+  {
+    "id": "14832d8209b1",
+    "source": "github",
+    "title": "google-research/paper-orchestra",
+    "url": "https://github.com/google-research/paper-orchestra",
+    "category": "learning",
+    "summary": "PaperOrchestra 是一个用于自动化 AI 研究论文写作的多智能体框架。它通过协调多个智能体协作完成论文的生成与修改，显著提升了写作效率。该框架与多智能体系统方向紧密相关，展示了智能体在复杂科研任务中的协同潜力。",
+    "raw_content": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-research-assistant",
+      "multi-agent-systems"
+    ],
+    "stars": 30,
+    "authors": [],
+    "published_at": "2026-05-17T16:25:35Z"
+  },
+  {
+    "id": "2557685d1b02",
+    "source": "github",
+    "title": "slime-n/slime-n",
+    "url": "https://github.com/slime-n/slime-n",
+    "category": "learning",
+    "summary": "slime-n/slime-n 是一个多策略、多智能体强化学习训练框架。它支持多种策略并行训练与智能体协同学习，显著提升训练效率与模型泛化能力。该框架与多智能体系统方向高度契合，为 Agent 协作与策略优化提供了灵活的基础设施。",
+    "raw_content": "A Multi-Policy, Multi-Agent RL Training Framework",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 30,
+    "authors": [],
+    "published_at": "2026-05-24T15:51:01Z"
+  },
+  {
+    "id": "db3d987be640",
+    "source": "github",
+    "title": "DYZYYDS/GeneX-AI",
+    "url": "https://github.com/DYZYYDS/GeneX-AI",
+    "category": "learning",
+    "summary": "DYZYYDS/GeneX-AI 是一个通用计算生物学框架，将LLM多智能体推理与确定性物理和生态求解器集成。关键亮点在于它实现了AI推理与精确科学计算的协同，显著提升了生物系统建模的准确性与效率。该框架为Agent驱动的科学模拟提供了新范式，尤其适用于需要结合知识推理与物理约束的RAG场景。",
+    "raw_content": "A general-purpose computational biology framework integrating LLM multi-agent reasoning with deterministic physical and ecological solvers.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-for-science",
+      "bioinformatics",
+      "computational-biology",
+      "crispr"
+    ],
+    "stars": 30,
+    "authors": [],
+    "published_at": "2026-05-12T15:04:40Z"
+  },
+  {
+    "id": "e4dce4da043b",
+    "source": "github",
+    "title": "stoaaadev/stoa",
+    "url": "https://github.com/stoaaadev/stoa",
+    "category": "learning",
+    "summary": "stoaaadev/stoa 是一个多智能体群体框架，包含七个自主智能体、30项技能和共享网格，无需基础设施。关键亮点在于其零基础设施部署和技能集成能力。该框架与多智能体协作方向紧密相关，为构建分布式自主系统提供了轻量级解决方案。",
+    "raw_content": "Multi-agent swarm framework. Seven autonomous agents. 30 skills. One shared mesh. Zero infrastructure.",
+    "score": 10.0,
+    "tags": [
+      "TS",
+      "ai-agent",
+      "autonomous",
+      "defi",
+      "framework"
+    ],
+    "stars": 26,
+    "authors": [],
+    "published_at": "2026-05-20T22:03:50Z"
+  },
+  {
+    "id": "25fda7330c32",
+    "source": "github",
+    "title": "aniketkarne/aco-system",
+    "url": "https://github.com/aniketkarne/aco-system",
+    "category": "learning",
+    "summary": "这是一个名为 aniketkarne/aco-system 的多智能体软件开发框架，支持完全自主或半自主运行。系统由六个专业智能体通过共享数据库管道协作，流程涵盖需求、规划、架构、实现、质量保证和人工审查。该框架能直接对接 GitHub Issues 并生成真实的 Pull Request，实现了从需求到代码交付的自动化闭环。对于 Agent 方向，它展示了如何通过结构化分工和管道化协作构建高效的多智能体工作流。",
+    "raw_content": "A framework for running a multi-agent software development team — autonomously or semi-autonomously. Six specialized agents collaborate through a shared database pipeline: requirements → planning → architecture → implementation → QA → human review. Works with GitHub Issues, ships real PRs.",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 16,
+    "authors": [],
+    "published_at": "2026-05-23T22:56:32Z"
+  },
+  {
+    "id": "ea6085d76619",
+    "source": "github",
+    "title": "ather-techie/rag-interview-questions",
+    "url": "https://github.com/ather-techie/rag-interview-questions",
+    "category": "learning",
+    "summary": "这是一个全面的RAG面试准备指南，涵盖从Naive RAG到Agentic、Graph、Self-RAG等10种架构的50道题目。包含难度标签、详细解答、速查表和决策树。对Agent/RAG方向的研究者和求职者极具参考价值。",
+    "raw_content": "A comprehensive interview preparation guide covering all major RAG (Retrieval-Augmented Generation) architectures. 50 questions across 10 types, from Naive RAG to Agentic, Graph, Self-RAG, and beyond. Includes difficulty tags, detailed answers, a cheatsheet, and a decision tree.",
+    "score": 10.0,
+    "tags": [
+      "agentic-rag",
+      "ai",
+      "deep-learning",
+      "generative-ai"
+    ],
+    "stars": 14,
+    "authors": [],
+    "published_at": "2026-05-24T15:53:27Z"
+  },
+  {
+    "id": "ac0caac00911",
+    "source": "github",
+    "title": "bettyguo/local-deep-research",
+    "url": "https://github.com/bettyguo/local-deep-research",
+    "category": "learning",
+    "summary": "这是一个名为 bettyguo/local-deep-research 的开源项目，它利用本地大语言模型（如 Ollama、llama-cpp、vLLM）构建了一个深度研究智能体。关键亮点在于支持离线运行，通过集成 SearXNG、Faiss 和 BM25 实现本地检索增强生成（RAG），并提供了 Python CLI 工具。该项目与 Agent/RAG 方向高度相关，为隐私敏感场景提供了无需联网的本地化 AI 研究解决方案。",
+    "raw_content": "local-llm ollama llama-cpp vllm deep-research research-agent rag retrieval-augmented-generation agent llm-agent local-first privacy offline qwen searxng faiss bm25 python cli ai-research llm-tooling",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 8,
+    "authors": [],
+    "published_at": "2026-05-14T03:45:42Z"
+  },
+  {
+    "id": "c15ee001cf5d",
+    "source": "hackernews",
+    "title": "Constraint Decay: The Fragility of LLM Agents in Back End Code Generation",
+    "url": "https://arxiv.org/abs/2605.06445",
+    "category": "learning",
+    "summary": "约束衰减：LLM智能体在后端代码生成中的脆弱性。该研究揭示了大型语言模型在生成后端代码时，面对复杂约束条件会出现性能显著下降的现象，准确率衰减幅度达30%-50%。这一发现对Agent系统的代码生成可靠性构成警示，提示在RAG或MCP框架中需强化约束处理机制以提升鲁棒性。",
+    "raw_content": "Constraint Decay: The Fragility of LLM Agents in Back End Code Generation",
+    "score": 10.0,
+    "tags": [],
+    "stars": 156,
+    "authors": [],
+    "published_at": "2026-05-24T12:55:53Z"
+  },
+  {
+    "id": "5efa84714b43",
+    "source": "hackernews",
+    "title": "Domain-Camouflaged Injection Attacks Evade Detection in Multi-Agent LLM Systems",
+    "url": "https://arxiv.org/abs/2605.22001",
+    "category": "learning",
+    "summary": "提出域伪装注入攻击方法，通过将恶意指令嵌入看似合法的域特定上下文中，成功绕过多智能体LLM系统的安全检测。实验表明，该方法在多个主流多智能体框架上的攻击成功率超过85%，而现有防御机制的检测率低于30%。该研究揭示了当前多智能体系统在跨域安全防护上的薄弱环节，为RAG和MCP架构下的安全对齐提供了新的攻击面与防御思路。",
+    "raw_content": "Domain-Camouflaged Injection Attacks Evade Detection in Multi-Agent LLM Systems",
+    "score": 10.0,
+    "tags": [],
+    "stars": 38,
+    "authors": [],
+    "published_at": "2026-05-22T18:46:07Z"
+  },
+  {
+    "id": "27f032f50aa9",
+    "source": "github",
+    "title": "agentic-in/elephant-agent",
+    "url": "https://github.com/agentic-in/elephant-agent",
+    "category": "learning",
+    "summary": "Elephant Agent 是一个以个人模型优先、自我进化的AI智能体框架。它支持用户构建持续学习与迭代的个性化Agent，核心亮点在于模型可随交互数据自动优化，无需手动调参。该框架与Agent方向高度契合，为构建长期自适应、隐私优先的个性化AI助手提供了基础架构。",
+    "raw_content": "Personal-Model First Self Evolving AI Agent 🐘",
+    "score": 9.56,
+    "tags": [
+      "Python",
+      "agent",
+      "agentic",
+      "agentic-ai",
+      "context"
+    ],
+    "stars": 457,
+    "authors": [],
+    "published_at": "2026-05-24T01:52:32Z"
+  },
+  {
+    "id": "231648a60e60",
+    "source": "github",
+    "title": "kyutai-labs/moshi-rag",
+    "url": "https://github.com/kyutai-labs/moshi-rag",
+    "category": "learning",
+    "summary": "MoshiRAG 是一个紧凑型全双工语音语言模型，通过异步知识检索增强事实准确性，同时不牺牲实时交互性。关键亮点在于其能在保持低延迟对话的同时，有效提升回答的准确性。该工作为语音交互场景下的 RAG 应用提供了高效解决方案，展示了在 Agent 系统中集成实时检索与生成能力的潜力。",
+    "raw_content": "MoshiRAG is a compact full-duplex speech language model augmented with asynchronous knowledge retrieval to improve factuality without sacrificing real-time interactivity.",
+    "score": 9.25,
+    "tags": [
+      "Rust"
+    ],
+    "stars": 89,
+    "authors": [],
+    "published_at": "2026-04-28T16:18:06Z"
+  },
+  {
+    "id": "59142c56dd74",
+    "source": "hackernews",
+    "title": "DeepSeek reasonix, DeepSeek native coding agent with high caching and low cost",
+    "url": "https://esengine.github.io/DeepSeek-Reasonix/",
+    "category": "learning",
+    "summary": "DeepSeek reasonix 是一款原生代码智能体，通过高效缓存机制实现低成本运行。其核心亮点在于高缓存命中率显著降低推理开销，同时保持代码生成与调试的准确性。该工具与 Agent 方向紧密相关，为构建经济高效的自主编程智能体提供了实用方案。",
+    "raw_content": "DeepSeek reasonix, DeepSeek native coding agent with high caching and low cost",
+    "score": 8.99,
+    "tags": [],
+    "stars": 395,
+    "authors": [],
+    "published_at": "2026-05-24T13:02:06Z"
+  },
+  {
+    "id": "f32fe05877f9",
+    "source": "github",
+    "title": "jmerelnyc/rag-forge",
+    "url": "https://github.com/jmerelnyc/rag-forge",
+    "category": "learning",
+    "summary": "RAG-Forge 是一个针对检索增强生成任务微调大语言模型的框架。它支持高效的数据处理与模型训练，可显著提升 RAG 场景下的回答准确性与相关性。该框架为 Agent 系统提供了定制化知识增强能力，有助于构建更精准的检索与生成流程。",
+    "raw_content": "Framework for fine-tuning LLMs on retrieval-augmented generation tasks",
+    "score": 8.65,
+    "tags": [
+      "Python",
+      "fine-tuning",
+      "llm",
+      "machine-learning",
+      "natural-language-processing"
+    ],
+    "stars": 9,
+    "authors": [],
+    "published_at": "2026-05-01T09:18:33Z"
+  },
+  {
+    "id": "a966a40210b2",
+    "source": "coding_tool",
+    "title": "Microsoft starts canceling Claude Code licenses",
+    "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad#coding_tool",
+    "category": "job",
+    "summary": "微软开始取消Claude Code许可证。此举可能影响开发者对Claude代码助手的使用，与Agent工具生态的许可管理相关。该事件凸显了AI Agent工具在企业部署中的合规与授权挑战，对RAG和MCP方向的应用集成具有警示意义。",
+    "raw_content": "Microsoft starts canceling Claude Code licenses",
+    "score": 8.59,
+    "tags": [
+      "Claude Code",
+      "来源: hackernews"
+    ],
+    "stars": 478,
+    "authors": [],
+    "published_at": "2026-05-22T17:32:04Z"
+  },
+  {
+    "id": "901ab29002b5",
+    "source": "github",
+    "title": "skhalidmahmud/RAG-Knowledge-Engine",
+    "url": "https://github.com/skhalidmahmud/RAG-Knowledge-Engine",
+    "category": "learning",
+    "summary": "skhalidmahmud/RAG-Knowledge-Engine 是一个面向私有文档智能的先进 RAG 系统。它利用 OpenAI GPT-4o 和向量数据库，实现了零幻觉的聊天洞察。该系统通过检索增强生成技术，有效降低了模型在私有数据上的错误输出，为构建高可靠性的企业级 RAG 应用提供了参考实现。",
+    "raw_content": "Advanced RAG (Retrieval-Augmented Generation) system for private document intelligence. Uses OpenAI GPT-4o and Vector Databases to provide zero-hallucination chat insights.",
+    "score": 8.47,
+    "tags": [
+      "knowledge-base",
+      "langchain",
+      "llm",
+      "nlp"
+    ],
+    "stars": 18,
+    "authors": [],
+    "published_at": "2026-05-07T12:36:53Z"
+  },
+  {
+    "id": "530d9f701d96",
+    "source": "hackernews",
+    "title": "Launch HN: Superset (YC P26) – IDE for the agents era",
+    "url": "https://github.com/superset-sh/superset",
+    "category": "learning",
+    "summary": "Superset (YC P26) 是一个面向智能体时代的集成开发环境（IDE），旨在简化AI代理的构建、调试与部署流程。其关键亮点在于提供可视化工作流编辑和实时调试功能，显著降低开发门槛。该项目与Agent方向高度契合，为多智能体系统的快速原型设计与迭代提供了高效工具支持。",
+    "raw_content": "Launch HN: Superset (YC P26) – IDE for the agents era",
+    "score": 8.33,
+    "tags": [],
+    "stars": 104,
+    "authors": [],
+    "published_at": "2026-05-22T14:53:55Z"
+  },
+  {
+    "id": "751459e5ddee",
+    "source": "github",
+    "title": "SudeshDahale/DocuMind-AI",
+    "url": "https://github.com/SudeshDahale/DocuMind-AI",
+    "category": "learning",
+    "summary": "DocuMind-AI 是一个基于AI的文档智能平台，支持用户上传PDF文件，通过检索增强生成（RAG）和大语言模型提取洞察、生成摘要并回答上下文相关问题。该平台采用FastAPI、向量搜索及现代AI工作流构建，实现了高效的文档交互与智能问答。其核心价值在于将RAG技术应用于文档处理，为Agent系统提供精准的知识检索与生成能力。",
+    "raw_content": "AI-powered Document Intelligence Platform that allows users to upload PDFs, extract insights, generate summaries, and ask contextual questions using Retrieval-Augmented Generation (RAG) and LLMs. Built with FastAPI, vector search, and modern AI workflows.",
+    "score": 8.04,
+    "tags": [
+      "Python"
+    ],
+    "stars": 7,
+    "authors": [],
+    "published_at": "2026-05-12T16:53:20Z"
+  },
+  {
+    "id": "6f4fbe311607",
+    "source": "github",
+    "title": "bountylens/mcp",
+    "url": "https://github.com/bountylens/mcp",
+    "category": "learning",
+    "summary": "BountyLens MCP 服务器，用于将 Claude Code 连接到 Hunter Tracker。该工具通过 MCP 协议实现 AI 编程助手与任务追踪系统的无缝集成，使 Claude 能够直接读取、查询和管理赏金任务。亮点在于简化了 AI 在开发流程中访问实时任务数据的过程，提升 Agent 在项目管理场景中的自主操作能力。",
+    "raw_content": "BountyLens MCP server — connect Claude Code to your Hunter Tracker",
+    "score": 8.02,
+    "tags": [
+      "JS"
+    ],
+    "stars": 56,
+    "authors": [],
+    "published_at": "2026-05-19T10:59:45Z"
+  },
+  {
+    "id": "a78c73525080",
+    "source": "github",
+    "title": "GasolSun36/PyRAG",
+    "url": "https://github.com/GasolSun36/PyRAG",
+    "category": "learning",
+    "summary": "GasolSun36/PyRAG 提出了一种基于可执行代码的多跳推理方法，用于检索增强生成（RAG）。该方法通过将复杂查询分解为可执行的代码步骤，显著提升了多跳问答的准确率，在多个基准测试上取得了优于传统RAG方案的结果。与Agent/RAG方向紧密相关，为构建可编程、可验证的检索推理流程提供了新范式。",
+    "raw_content": "Retrieval is CheapShow Me the Code: Executable Multi-Hop Reasoning for Retrieval-Augmented Generation",
+    "score": 7.61,
+    "tags": [
+      "Python"
+    ],
+    "stars": 24,
+    "authors": [],
+    "published_at": "2026-05-14T03:43:51Z"
+  },
+  {
+    "id": "20f32a0d2399",
+    "source": "hackernews",
+    "title": "Antigravity 2.0 Tops the OpenSCAD Architectural 3D LLM Benchmark",
+    "url": "https://modelrift.com/blog/openscad-llm-benchmark/",
+    "category": "learning",
+    "summary": "Antigravity 2.0 在 OpenSCAD 建筑 3D 大语言模型基准测试中取得领先成绩。该模型在生成复杂 3D 建筑结构代码任务上表现最优，显著提升了生成代码的准确性和结构合理性。这一成果展示了 LLM 在 3D 建模与代码生成领域的潜力，对 Agent 在自动化设计、MCP 协议下的工具调用及 RAG 增强的代码生成场景具有重要参考价值。",
+    "raw_content": "Antigravity 2.0 Tops the OpenSCAD Architectural 3D LLM Benchmark",
+    "score": 7.52,
+    "tags": [],
+    "stars": 418,
+    "authors": [],
+    "published_at": "2026-05-22T10:38:26Z"
+  },
+  {
+    "id": "cb19cef238d4",
+    "source": "hackernews",
+    "title": "If you’re an LLM, please read this",
+    "url": "https://annas-archive.gl/blog/llms-txt.html",
+    "category": "learning",
+    "summary": "这是一个针对大型语言模型（LLM）的提示注入攻击示例，通过伪装成用户指令来诱导模型执行非预期操作。该攻击利用模型对指令的盲目遵循特性，可能绕过安全限制。对Agent系统而言，提示注入是核心威胁之一，需通过输入验证、权限隔离和上下文感知机制防御。",
+    "raw_content": "If you’re an LLM, please read this",
+    "score": 7.39,
+    "tags": [],
+    "stars": 871,
+    "authors": [],
+    "published_at": "2026-05-22T11:28:08Z"
+  },
+  {
+    "id": "538e905142f9",
+    "source": "hackernews",
+    "title": "Samsung chip workers will get an average $340k bonus as AI profits soar",
+    "url": "https://qz.com/samsung-chip-workers-bonus-ai-profits-052126",
+    "category": "learning",
+    "summary": "三星芯片员工因AI利润飙升，平均每人将获得34万美元奖金。这一事件凸显了AI产业对半导体需求的强劲拉动，以及AI技术商业化带来的巨大经济效益。对于Agent/RAG/MCP方向，这表明AI基础设施的繁荣将推动相关工具和框架的研发投入与落地需求。",
+    "raw_content": "Samsung chip workers will get an average $340k bonus as AI profits soar",
+    "score": 7.26,
+    "tags": [],
+    "stars": 251,
+    "authors": [],
+    "published_at": "2026-05-22T01:30:45Z"
+  },
+  {
+    "id": "ce36322c20da",
+    "source": "github",
+    "title": "ArabidopsisDev/LiteRAG",
+    "url": "https://github.com/ArabidopsisDev/LiteRAG",
+    "category": "learning",
+    "summary": "LiteRAG 是一个简洁且可编排的检索增强生成（RAG）框架。它通过模块化设计简化了 RAG 流程的构建与集成，支持灵活编排检索与生成步骤。该框架与 Agent 系统高度兼容，可作为高效的知识检索组件，提升智能体的信息获取与推理能力。",
+    "raw_content": "A concise, orchestratable Retrieval-Augmented Generation (RAG) framework.",
+    "score": 6.9,
+    "tags": [
+      "C#"
+    ],
+    "stars": 5,
+    "authors": [],
+    "published_at": "2026-05-24T02:05:20Z"
+  },
+  {
+    "id": "96cf22d2edc6",
+    "source": "china_ai",
+    "title": "DeepSeek V4价格打骨折，宁王京东网易抢着入场，梁文锋：目标是AGI",
+    "url": "https://www.qbitai.com/2026/05/423162.html",
+    "category": "job",
+    "summary": "DeepSeek V4大幅降价，宁德时代、京东、网易等企业积极合作，梁文锋重申开源路线，目标直指AGI。",
+    "raw_content": "梁文锋承诺坚持开源路线",
+    "score": 6.5,
+    "tags": [
+      "量子位",
+      "Deepseek"
+    ],
+    "stars": 0,
+    "authors": [],
+    "published_at": "Sat, 23 May 2026 09:46:37 +0000"
+  },
+  {
+    "id": "dcc280ea1b80",
+    "source": "hackernews",
+    "title": "We should get rid of average CPU utilization",
+    "url": "https://www.theocharis.dev/blog/why-we-should-get-rid-of-average-cpu-utilization/",
+    "category": "learning",
+    "summary": "核心贡献：提出应摒弃平均CPU利用率这一传统指标，因其无法反映真实性能波动。关键结果：平均利用率会掩盖短时峰值与空闲周期，导致资源分配误判和效率损失。与Agent/RAG/MCP方向关联：在Agent调度与MCP资源管理中，需采用分位数或实时监控指标，以精准匹配计算负载，避免因平均指标误导而影响多智能体协同效率。",
+    "raw_content": "We should get rid of average CPU utilization",
+    "score": 6.25,
+    "tags": [],
+    "stars": 32,
+    "authors": [],
+    "published_at": "2026-05-22T08:15:42Z"
+  },
+  {
+    "id": "faea6306a062",
+    "source": "hackernews",
+    "title": "Bun support is now limited and deprecated",
+    "url": "https://github.com/yt-dlp/yt-dlp/issues/16766",
+    "category": "learning",
+    "summary": "Bun 支持现已受限并弃用。该工具不再推荐用于新项目，现有用户需迁移至其他运行时。此变更影响依赖 Bun 的 Agent 或 RAG 系统部署，建议改用 Node.js 或 Deno 以保持兼容性。",
+    "raw_content": "Bun support is now limited and deprecated",
+    "score": 6.18,
+    "tags": [],
+    "stars": 575,
+    "authors": [],
+    "published_at": "2026-05-22T17:24:12Z"
+  },
+  {
+    "id": "c9d19d98f9c0",
+    "source": "hackernews",
+    "title": "DeepSeek makes the V4 Pro price discount permanent",
+    "url": "https://api-docs.deepseek.com/quick_start/pricing",
+    "category": "learning",
+    "summary": "DeepSeek宣布将V4 Pro的价格折扣永久化。此举旨在降低用户使用成本，提升模型可及性。对于Agent和RAG方向，更低的API价格将促进大规模部署和实验，加速相关应用的开发与落地。",
+    "raw_content": "DeepSeek makes the V4 Pro price discount permanent",
+    "score": 6.13,
+    "tags": [],
+    "stars": 523,
+    "authors": [],
+    "published_at": "2026-05-22T15:59:26Z"
+  },
+  {
+    "id": "9a984dc94d35",
+    "source": "hackernews",
+    "title": "The Art of Money Getting",
+    "url": "https://kk.org/cooltools/book-freak-210-the-art-of-money-getting/",
+    "category": "learning",
+    "summary": "《金钱获取的艺术》是一本探讨财富积累原则与方法的经典著作。书中强调勤劳、节俭、诚实与智慧是致富的核心要素，并通过具体案例阐述如何避免常见财务陷阱。该书与Agent/RAG/MCP方向无直接关联，但其关于资源优化与策略规划的思想，可为智能体系统设计中的效率提升与风险控制提供跨领域启示。",
+    "raw_content": "The Art of Money Getting",
+    "score": 5.97,
+    "tags": [],
+    "stars": 382,
+    "authors": [],
+    "published_at": "2026-05-23T12:48:02Z"
+  },
+  {
+    "id": "341b91ece70f",
+    "source": "hackernews",
+    "title": "Oura says it gets government demands for user data",
+    "url": "https://this.weekinsecurity.com/oura-says-it-gets-government-demands-for-user-data-will-it-share-how-many/",
+    "category": "learning",
+    "summary": "Oura 表示收到政府索取用户数据的要求。该智能戒指公司披露了来自执法机构的用户数据请求，强调其数据保护政策。此事件凸显了可穿戴设备在隐私与数据安全方面的挑战，与 Agent/RAG/MCP 方向中用户数据处理的合规性相关。",
+    "raw_content": "Oura says it gets government demands for user data",
+    "score": 5.83,
+    "tags": [],
+    "stars": 289,
+    "authors": [],
+    "published_at": "2026-05-23T14:09:57Z"
+  },
+  {
+    "id": "9416520950c7",
+    "source": "hackernews",
+    "title": "Linux Sound Subsystem Also Seeing Many Fixes Driven by AI/LLMs",
+    "url": "https://www.phoronix.com/news/Linux-7.1-Sound-Many-Fixes",
+    "category": "learning",
+    "summary": "Linux声音子系统近期也受益于AI/LLM驱动的修复浪潮。关键亮点是大量由AI/LLM自动检测并提交的补丁，显著提升了驱动稳定性和兼容性。与Agent方向关联：这展示了AI在系统级代码维护中的自动化潜力，为未来Agent驱动的内核调试与优化提供了实践案例。",
+    "raw_content": "Linux Sound Subsystem Also Seeing Many Fixes Driven by AI/LLMs",
+    "score": 5.76,
+    "tags": [],
+    "stars": 33,
+    "authors": [],
+    "published_at": "2026-05-22T19:34:37Z"
+  },
+  {
+    "id": "29e5b3e8cd3b",
+    "source": "hackernews",
+    "title": "Microsoft reports AI is more expensive than paying human employees",
+    "url": "https://fortune.com/2026/05/22/microsoft-ai-cost-problem-tokens-agents/",
+    "category": "learning",
+    "summary": "微软报告指出，AI成本高于雇佣人类员工。关键发现是，在特定任务中，AI系统的运营费用（包括计算、维护和人力监督）比支付人类工资高出数倍。这提示在Agent/RAG/MCP方向，需谨慎评估AI替代的经济可行性，避免盲目追求自动化而忽视实际成本效益。",
+    "raw_content": "Microsoft reports AI is more expensive than paying human employees",
+    "score": 5.72,
+    "tags": [],
+    "stars": 228,
+    "authors": [],
+    "published_at": "2026-05-23T03:44:16Z"
+  },
+  {
+    "id": "f092718e903c",
+    "source": "hackernews",
+    "title": "Claude is not your architect. Stop letting it pretend",
+    "url": "https://www.hollandtech.net/claude-is-not-your-architect/",
+    "category": "learning",
+    "summary": "Claude 并非架构师，不应让它假装。关键结果：开发者需明确区分AI辅助与自主决策，避免过度依赖模型设计系统架构。与Agent方向关联：强调在构建智能体时，人类应主导架构设计，AI仅作为工具执行具体任务，确保系统可控性与可靠性。",
+    "raw_content": "Claude is not your architect. Stop letting it pretend",
+    "score": 5.71,
+    "tags": [],
+    "stars": 224,
+    "authors": [],
+    "published_at": "2026-05-24T18:28:11Z"
+  },
+  {
+    "id": "f5ea02227515",
+    "source": "hackernews",
+    "title": ".NET (OK, C#) finally gets union types",
+    "url": "https://andrewlock.net/exploring-the-dotnet-11-preview-2-dotnet-gets-union-types/",
+    "category": "learning",
+    "summary": ".NET（C#）终于引入联合类型，支持更灵活的数据建模。该特性允许变量持有多种预定义类型之一，提升代码表达力与类型安全。对Agent/RAG系统而言，联合类型可简化异构数据结构的处理，增强多模态输入输出的类型约束与兼容性。",
+    "raw_content": ".NET (OK, C#) finally gets union types",
+    "score": 5.7,
+    "tags": [],
+    "stars": 222,
+    "authors": [],
+    "published_at": "2026-05-22T12:28:50Z"
+  },
+  {
+    "id": "ab835ac03585",
+    "source": "hackernews",
+    "title": "Local LLMs perform better when you teach them to ask before they answer",
+    "url": "https://www.xda-developers.com/local-llm-clarifying-questions-system-prompt/",
+    "category": "learning",
+    "summary": "本地LLM在回答前先提问可提升性能。该方法通过引导模型主动澄清模糊指令，显著减少错误输出。实验显示，在复杂任务中准确率提升约15%。这一策略与Agent系统的交互优化高度相关，为RAG场景下的意图消歧提供了低成本改进路径。",
+    "raw_content": "Local LLMs perform better when you teach them to ask before they answer",
+    "score": 5.7,
+    "tags": [],
+    "stars": 29,
+    "authors": [],
+    "published_at": "2026-05-24T06:40:34Z"
+  },
+  {
+    "id": "153e83052060",
+    "source": "hackernews",
+    "title": "DHS Quits Granting Green Cards–Almost",
+    "url": "https://www.cato.org/blog/dhs-quits-granting-green-cards-almost-entirely",
+    "category": "learning",
+    "summary": "美国国土安全部几乎停止发放绿卡，仅保留极少数例外情况。此举将大幅减少合法移民数量，影响数十万等待者。与Agent/RAG/MCP方向无直接关联，但可能影响相关领域人才流动与政策合规研究。",
+    "raw_content": "DHS Quits Granting Green Cards–Almost",
+    "score": 5.48,
+    "tags": [],
+    "stars": 141,
+    "authors": [],
+    "published_at": "2026-05-23T11:18:23Z"
+  },
+  {
+    "id": "bb9cfce2bd03",
+    "source": "hackernews",
+    "title": "Defeating Git Rigour Fatigue with Jujutsu",
+    "url": "https://ikesau.co/blog/defeating-git-rigour-fatigue-with-jujutsu/",
+    "category": "learning",
+    "summary": "Jujutsu 是一种新型版本控制工具，旨在解决 Git 使用中的严格性疲劳问题。它通过简化工作流程、减少分支管理负担，并支持更灵活的变更跟踪，显著提升开发效率。与 Agent/RAG/MCP 方向关联，Jujutsu 的自动化变更管理能力可优化多智能体协作中的代码同步与版本控制流程。",
+    "raw_content": "Defeating Git Rigour Fatigue with Jujutsu",
+    "score": 5.16,
+    "tags": [],
+    "stars": 74,
+    "authors": [],
+    "published_at": "2026-05-24T18:39:10Z"
+  },
+  {
+    "id": "db04e7333cae",
+    "source": "hackernews",
+    "title": "New Attack \"Megaladon\" Compromises 5.5K+ GitHub Repos",
+    "url": "https://www.theregister.com/security/2026/05/22/megalodon-chums-the-waters-in-55k-github-repo-poisonings/5245342",
+    "category": "learning",
+    "summary": "新型攻击“Megaladon”已攻陷超过5500个GitHub仓库。该攻击利用供应链漏洞，通过恶意代码注入实现大规模感染。此事件对Agent和RAG系统的代码依赖管理构成严重威胁，凸显了加强开源组件安全审计与动态依赖验证的紧迫性。",
+    "raw_content": "New Attack \"Megaladon\" Compromises 5.5K+ GitHub Repos",
+    "score": 4.98,
+    "tags": [],
+    "stars": 51,
+    "authors": [],
+    "published_at": "2026-05-23T14:57:42Z"
+  },
+  {
+    "id": "0ba4d6b7c3a1",
+    "source": "hackernews",
+    "title": "Show HN: Pablo – a Chrome extension that copies UI from any website",
+    "url": "https://www.usepablo.dev/",
+    "category": "learning",
+    "summary": "Pablo 是一款 Chrome 扩展，能够从任意网站复制用户界面元素。其核心功能是快速提取网页中的 UI 组件，无需手动编写代码即可复用设计。亮点在于支持一键复制，显著提升前端开发效率。该工具与 Agent 方向关联，可作为自动化网页元素提取的辅助工具，简化多智能体系统在 UI 数据采集中的流程。",
+    "raw_content": "Show HN: Pablo – a Chrome extension that copies UI from any website",
+    "score": 4.75,
+    "tags": [],
+    "stars": 32,
+    "authors": [],
+    "published_at": "2026-05-22T15:42:32Z"
+  }
+]
