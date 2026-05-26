@@ -1,0 +1,21 @@
+{
+  "date": "2026-05-26",
+  "generated_at": "2026-05-26T00:19:51+00:00",
+  "headline": "多智能体协调与诊断记忆框架成今日AI研究焦点",
+  "ai_trends": [
+    "多智能体协调与置信度校准方法提升准确率15%",
+    "经验记忆框架使VLM诊断智能体动态积累专长",
+    "LLM引导残差推理实现表格数据可解释因果机制"
+  ],
+  "job_signals": [
+    "DeepSeek V4缓存命中率99.82%大幅降低推理成本",
+    "今日数据较少"
+  ],
+  "stats": {
+    "total_items": 390,
+    "learning_count": 389,
+    "job_count": 1,
+    "top_score": 10.0,
+    "top_item_title": "MedExpMem: Adapting Experience Memory for Differential Diagnosis"
+  }
+}
