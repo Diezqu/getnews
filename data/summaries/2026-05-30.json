@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-30",
+  "generated_at": "2026-05-30T00:14:47+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 684,
+    "learning_count": 682,
+    "job_count": 2,
+    "top_score": 10.0,
+    "top_item_title": "S3Mem: Structured Spatiotemporal Scene-Event Memory for Long-Horizon Interactive Question Answering"
+  }
+}
