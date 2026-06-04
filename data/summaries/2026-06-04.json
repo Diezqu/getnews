@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-04",
+  "generated_at": "2026-06-04T01:46:45+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 572,
+    "learning_count": 569,
+    "job_count": 3,
+    "top_score": 10.0,
+    "top_item_title": "$\\Psi$-Bench: Evaluating Persona-Sensitive Influencing in Persuasive Dialogues"
+  }
+}
