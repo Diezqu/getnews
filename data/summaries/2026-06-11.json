@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-11",
+  "generated_at": "2026-06-11T00:20:52+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 545,
+    "learning_count": 544,
+    "job_count": 1,
+    "top_score": 10.0,
+    "top_item_title": "Can Multi-Agent LLMs Identify Their Peers? Stylometric Fingerprinting in Role-Constrained Political Analysis"
+  }
+}
