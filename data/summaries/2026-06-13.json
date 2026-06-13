@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-13",
+  "generated_at": "2026-06-13T00:23:35+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 474,
+    "learning_count": 472,
+    "job_count": 2,
+    "top_score": 10.0,
+    "top_item_title": "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs"
+  }
+}
