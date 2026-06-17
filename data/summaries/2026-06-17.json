@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-17",
+  "generated_at": "2026-06-17T00:22:46+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 812,
+    "learning_count": 812,
+    "job_count": 0,
+    "top_score": 10.0,
+    "top_item_title": "MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions"
+  }
+}
