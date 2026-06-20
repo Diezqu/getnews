@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-20",
+  "generated_at": "2026-06-20T00:13:05+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 432,
+    "learning_count": 432,
+    "job_count": 0,
+    "top_score": 10.0,
+    "top_item_title": "Trustworthy Multi-Agent Systems: Mitigating Semantic Drift with the Argent Signaling Protocol"
+  }
+}
