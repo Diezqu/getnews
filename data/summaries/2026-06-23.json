@@ -1,6 +1,6 @@
 {
   "date": "2026-06-23",
-  "generated_at": "2026-06-23T00:08:45+00:00",
+  "generated_at": "2026-06-24T00:05:39+00:00",
   "headline": "今日综合判断暂不可用",
   "ai_trends": [
     "—",
@@ -13,10 +13,10 @@
     "—"
   ],
   "stats": {
-    "total_items": 33,
-    "learning_count": 31,
+    "total_items": 1038,
+    "learning_count": 1036,
     "job_count": 2,
     "top_score": 10.0,
-    "top_item_title": "DietrichGebert/ponytail"
+    "top_item_title": "Less is More: Lightweight Prompt Compression for Question Answering Applications on Edge Devices"
   }
 }
