@@ -1,0 +1,587 @@
+[
+  {
+    "id": "dbd5adafc407",
+    "source": "github",
+    "title": "DietrichGebert/ponytail",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "category": "learning",
+    "summary": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+    "raw_content": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+    "score": 10.0,
+    "tags": [
+      "JS",
+      "agent-skills",
+      "ai-agents",
+      "claude",
+      "claude-code"
+    ],
+    "stars": 61750,
+    "authors": [],
+    "published_at": "2026-06-26T01:28:09Z"
+  },
+  {
+    "id": "2c650dc340b0",
+    "source": "github",
+    "title": "omnigent-ai/omnigent",
+    "url": "https://github.com/omnigent-ai/omnigent",
+    "category": "learning",
+    "summary": "Omnigent is an open-source AI agent framework and meta-harness: orchestrate Claude Code, Codex, Cursor, Pi, and custom agents — swap harnesses without rewriting, enforce policies and sandboxing, and c",
+    "raw_content": "Omnigent is an open-source AI agent framework and meta-harness: orchestrate Claude Code, Codex, Cursor, Pi, and custom agents — swap harnesses without rewriting, enforce policies and sandboxing, and collaborate in real time from any device.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "agent-framework",
+      "agent-governance",
+      "agent-orchestration",
+      "agents"
+    ],
+    "stars": 5128,
+    "authors": [],
+    "published_at": "2026-06-27T23:15:21Z"
+  },
+  {
+    "id": "a559fe40fb26",
+    "source": "github",
+    "title": "cobusgreyling/loop-engineering",
+    "url": "https://github.com/cobusgreyling/loop-engineering",
+    "category": "learning",
+    "summary": "Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, ",
+    "raw_content": "Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost.",
+    "score": 10.0,
+    "tags": [
+      "JS",
+      "agentic-ai",
+      "ai-agents",
+      "ai-coding",
+      "anthropic"
+    ],
+    "stars": 3252,
+    "authors": [],
+    "published_at": "2026-06-27T16:01:54Z"
+  },
+  {
+    "id": "668f8decdaeb",
+    "source": "github",
+    "title": "ClaudioDrews/memory-os",
+    "url": "https://github.com/ClaudioDrews/memory-os",
+    "category": "learning",
+    "summary": "A 7-layer memory operating system for Hermes Agent — persistent memory with Qdrant, structured facts, fabric recall, auto-curated wiki, and surgical context injection. Runs locally, any LLM provider.",
+    "raw_content": "A 7-layer memory operating system for Hermes Agent — persistent memory with Qdrant, structured facts, fabric recall, auto-curated wiki, and surgical context injection. Runs locally, any LLM provider.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-memory",
+      "context-injection",
+      "docker",
+      "ground-truth"
+    ],
+    "stars": 1205,
+    "authors": [],
+    "published_at": "2026-06-10T10:40:43Z"
+  },
+  {
+    "id": "8118ee3e9db4",
+    "source": "github",
+    "title": "superloglabs/superlog",
+    "url": "https://github.com/superloglabs/superlog",
+    "category": "learning",
+    "summary": "Open-source observability tool that uses AI agents to self-heal your software",
+    "raw_content": "Open-source observability tool that uses AI agents to self-heal your software",
+    "score": 10.0,
+    "tags": [
+      "TS",
+      "ai",
+      "llm",
+      "memory",
+      "observability"
+    ],
+    "stars": 950,
+    "authors": [],
+    "published_at": "2026-06-27T20:33:09Z"
+  },
+  {
+    "id": "018f030d8873",
+    "source": "github",
+    "title": "benchflow-ai/awesome-evals",
+    "url": "https://github.com/benchflow-ai/awesome-evals",
+    "category": "learning",
+    "summary": "A curated, non-BS library of the best resources for building and evaluating AI agents — papers, blogs, talks, tools, benchmarks. Maintained by BenchFlow.",
+    "raw_content": "A curated, non-BS library of the best resources for building and evaluating AI agents — papers, blogs, talks, tools, benchmarks. Maintained by BenchFlow.",
+    "score": 10.0,
+    "tags": [
+      "agent-evaluation",
+      "ai-agents",
+      "awesome",
+      "awesome-list"
+    ],
+    "stars": 531,
+    "authors": [],
+    "published_at": "2026-06-27T22:35:28Z"
+  },
+  {
+    "id": "a6108c7eb83e",
+    "source": "github",
+    "title": "tigicion/dao-code",
+    "url": "https://github.com/tigicion/dao-code",
+    "category": "learning",
+    "summary": "Terminal coding agent for DeepSeek V4 — cost-efficient, self-verifying memory, robust long tasks.  MIT",
+    "raw_content": "Terminal coding agent for DeepSeek V4 — cost-efficient, self-verifying memory, robust long tasks.  MIT",
+    "score": 10.0,
+    "tags": [
+      "TS",
+      "ai-agent",
+      "cli",
+      "coding-agent",
+      "deepseek"
+    ],
+    "stars": 519,
+    "authors": [],
+    "published_at": "2026-06-25T15:33:14Z"
+  },
+  {
+    "id": "a4ff8b8e67c4",
+    "source": "github",
+    "title": "dzcmemory-web/bazi-ziwei-skill",
+    "url": "https://github.com/dzcmemory-web/bazi-ziwei-skill",
+    "category": "learning",
+    "summary": "AI 八字 + 紫微斗数排盘与综合印证 Skill：算法精准排盘（不靠 LLM 猜），三种分析模式，一键生成水墨风 HTML 命盘海报。兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent。",
+    "raw_content": "AI 八字 + 紫微斗数排盘与综合印证 Skill：算法精准排盘（不靠 LLM 猜），三种分析模式，一键生成水墨风 HTML 命盘海报。兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent。",
+    "score": 10.0,
+    "tags": [
+      "TS",
+      "ai-agent",
+      "bazi",
+      "bazi-suanming",
+      "chinese-astrology"
+    ],
+    "stars": 519,
+    "authors": [],
+    "published_at": "2026-06-14T03:53:54Z"
+  },
+  {
+    "id": "62f198e884c9",
+    "source": "github",
+    "title": "ruvnet/agent-harness-generator",
+    "url": "https://github.com/ruvnet/agent-harness-generator",
+    "category": "learning",
+    "summary": "🛠️ The meta-harness for AI agents — scaffold your own focused, branded agent harness with its own npx CLI, MCP server, memory, learning loop, and witness-signed releases. Works with Claude Code, Codex",
+    "raw_content": "🛠️ The meta-harness for AI agents — scaffold your own focused, branded agent harness with its own npx CLI, MCP server, memory, learning loop, and witness-signed releases. Works with Claude Code, Codex, pi.dev, Hermes, OpenClaw, and RVM (hardware-isolated sandbox).",
+    "score": 10.0,
+    "tags": [
+      "TS",
+      "agent-harness",
+      "agent-harness-generator",
+      "agent-scaffolding",
+      "agentic-ai"
+    ],
+    "stars": 334,
+    "authors": [],
+    "published_at": "2026-06-27T22:35:30Z"
+  },
+  {
+    "id": "36270374e5a6",
+    "source": "github",
+    "title": "jwangkun/Pi-Multi-Agent",
+    "url": "https://github.com/jwangkun/Pi-Multi-Agent",
+    "category": "learning",
+    "summary": "Production-Grade Multi-Agent Orchestration Framework",
+    "raw_content": "Production-Grade Multi-Agent Orchestration Framework",
+    "score": 10.0,
+    "tags": [
+      "TS"
+    ],
+    "stars": 118,
+    "authors": [],
+    "published_at": "2026-06-06T16:42:29Z"
+  },
+  {
+    "id": "28699c99d59b",
+    "source": "github",
+    "title": "G12789/mcp-quickstart",
+    "url": "https://github.com/G12789/mcp-quickstart",
+    "category": "learning",
+    "summary": "Forge a working, testable, publishable MCP server in 30s. TypeScript or Python, with example tools, the Inspector and tests included.",
+    "raw_content": "Forge a working, testable, publishable MCP server in 30s. TypeScript or Python, with example tools, the Inspector and tests included.",
+    "score": 10.0,
+    "tags": [
+      "JS",
+      "ai-agents",
+      "boilerplate",
+      "claude",
+      "cli"
+    ],
+    "stars": 100,
+    "authors": [],
+    "published_at": "2026-06-14T14:58:47Z"
+  },
+  {
+    "id": "6b8ee1927b9a",
+    "source": "github",
+    "title": "badchars/darknet-mcp-server",
+    "url": "https://github.com/badchars/darknet-mcp-server",
+    "category": "learning",
+    "summary": "66-tool MCP server for dark web intelligence — breach data, ransomware tracking, Tor .onion access, malware analysis, blockchain intel, exploit search, stealer logs",
+    "raw_content": "66-tool MCP server for dark web intelligence — breach data, ransomware tracking, Tor .onion access, malware analysis, blockchain intel, exploit search, stealer logs",
+    "score": 10.0,
+    "tags": [
+      "TS",
+      "ai-agent",
+      "breach",
+      "claude",
+      "cybersecurity"
+    ],
+    "stars": 67,
+    "authors": [],
+    "published_at": "2026-06-24T02:13:37Z"
+  },
+  {
+    "id": "1327095b4ad7",
+    "source": "github",
+    "title": "ziye26/Audio-Oscar",
+    "url": "https://github.com/ziye26/Audio-Oscar",
+    "category": "learning",
+    "summary": "Audio-Oscar is a multi-agent framework for generating long-form, controllable audio from complex audio scene descriptions.",
+    "raw_content": "Audio-Oscar is a multi-agent framework for generating long-form, controllable audio from complex audio scene descriptions.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "audio-generation",
+      "benchmark",
+      "multi-agent-system",
+      "python"
+    ],
+    "stars": 45,
+    "authors": [],
+    "published_at": "2026-06-08T03:52:15Z"
+  },
+  {
+    "id": "8c3c9c92d71b",
+    "source": "github",
+    "title": "Comfy-Org/comfy-skills",
+    "url": "https://github.com/Comfy-Org/comfy-skills",
+    "category": "learning",
+    "summary": "Comfy Cloud product skills: slash commands for generating images, video, audio, and 3D with Comfy Cloud agents. Single source of truth for the installer and MCP server.",
+    "raw_content": "Comfy Cloud product skills: slash commands for generating images, video, audio, and 3D with Comfy Cloud agents. Single source of truth for the installer and MCP server.",
+    "score": 10.0,
+    "tags": [
+      "ai-agents",
+      "claude",
+      "comfyui",
+      "mcp"
+    ],
+    "stars": 43,
+    "authors": [],
+    "published_at": "2026-06-18T04:57:56Z"
+  },
+  {
+    "id": "4bd669b742e2",
+    "source": "github",
+    "title": "CyberTron957/hermes-swarm",
+    "url": "https://github.com/CyberTron957/hermes-swarm",
+    "category": "learning",
+    "summary": "A Multi-Agent Orchestration Framework",
+    "raw_content": "A Multi-Agent Orchestration Framework",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 42,
+    "authors": [],
+    "published_at": "2026-06-27T13:30:20Z"
+  },
+  {
+    "id": "03e5db60ef50",
+    "source": "github",
+    "title": "tsouth89/conduit",
+    "url": "https://github.com/tsouth89/conduit",
+    "category": "learning",
+    "summary": "One local gateway for all your MCP servers, set up once and shared by every AI client (Claude, Cursor, VS Code, Codex). Lazy discovery collapses them to 3 meta-tools the agent searches on demand, ~90%",
+    "raw_content": "One local gateway for all your MCP servers, set up once and shared by every AI client (Claude, Cursor, VS Code, Codex). Lazy discovery collapses them to 3 meta-tools the agent searches on demand, ~90% fewer tokens. Keys in your OS keychain, no cloud.",
+    "score": 10.0,
+    "tags": [
+      "Rust",
+      "ai",
+      "ai-agents",
+      "anthropic",
+      "claude"
+    ],
+    "stars": 41,
+    "authors": [],
+    "published_at": "2026-06-27T22:16:27Z"
+  },
+  {
+    "id": "812db7b245c0",
+    "source": "github",
+    "title": "0x0funky/Agentinel",
+    "url": "https://github.com/0x0funky/Agentinel",
+    "category": "learning",
+    "summary": "A local resource sentinel for the multi-agent era — monitors RAM, processes & disk used by AI agent CLIs (Claude Code, Codex, MCP servers), flags leaks/zombies/runaway caches, and proposes AI-driven c",
+    "raw_content": "A local resource sentinel for the multi-agent era — monitors RAM, processes & disk used by AI agent CLIs (Claude Code, Codex, MCP servers), flags leaks/zombies/runaway caches, and proposes AI-driven cleanup you approve.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "ai-agents",
+      "claude-code",
+      "codex",
+      "cross-platform"
+    ],
+    "stars": 39,
+    "authors": [],
+    "published_at": "2026-06-09T13:47:04Z"
+  },
+  {
+    "id": "be34e1af5dce",
+    "source": "github",
+    "title": "ElliotXie/autozyme",
+    "url": "https://github.com/ElliotXie/autozyme",
+    "category": "learning",
+    "summary": "Autonomous multi-agent framework to optimize scientific software",
+    "raw_content": "Autonomous multi-agent framework to optimize scientific software",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "acceleration",
+      "agentic-ai",
+      "ai-agents",
+      "bioinformatics"
+    ],
+    "stars": 36,
+    "authors": [],
+    "published_at": "2026-06-22T16:50:00Z"
+  },
+  {
+    "id": "81ae74470c96",
+    "source": "github",
+    "title": "KnoxOps/agent-runbook",
+    "url": "https://github.com/KnoxOps/agent-runbook",
+    "category": "learning",
+    "summary": "Contract-based multi-agent skill framework for Claude Code & Codex — compile YAML runbooks into SKILL.md with loop, parallel, and checkpoint support.",
+    "raw_content": "Contract-based multi-agent skill framework for Claude Code & Codex — compile YAML runbooks into SKILL.md with loop, parallel, and checkpoint support.",
+    "score": 10.0,
+    "tags": [
+      "Python",
+      "agent",
+      "claude-code",
+      "codex",
+      "loop-engineering"
+    ],
+    "stars": 24,
+    "authors": [],
+    "published_at": "2026-06-25T12:18:30Z"
+  },
+  {
+    "id": "1a8e43f72a84",
+    "source": "github",
+    "title": "JamalMansuri/fried-catfish",
+    "url": "https://github.com/JamalMansuri/fried-catfish",
+    "category": "learning",
+    "summary": "AI Framework with multi-agent tournament, deterministic Bradley-Terry scorer, human-gated writes — portable across Claude Code and Codex from a single MCP core.",
+    "raw_content": "AI Framework with multi-agent tournament, deterministic Bradley-Terry scorer, human-gated writes — portable across Claude Code and Codex from a single MCP core.",
+    "score": 10.0,
+    "tags": [
+      "Python"
+    ],
+    "stars": 16,
+    "authors": [],
+    "published_at": "2026-06-08T03:21:32Z"
+  },
+  {
+    "id": "e185379a0e7a",
+    "source": "github",
+    "title": "AdilShamim8/RAG-Roadmap-with-Notes-and-Projects",
+    "url": "https://github.com/AdilShamim8/RAG-Roadmap-with-Notes-and-Projects",
+    "category": "learning",
+    "summary": "A comprehensive, end-to-end learning path for Retrieval-Augmented Generation — from core concepts and document processing to agentic RAG systems, evaluation, and production deployment.",
+    "raw_content": "A comprehensive, end-to-end learning path for Retrieval-Augmented Generation — from core concepts and document processing to agentic RAG systems, evaluation, and production deployment.",
+    "score": 10.0,
+    "tags": [
+      "agentic-rag",
+      "chat",
+      "embeddings",
+      "langchain"
+    ],
+    "stars": 7,
+    "authors": [],
+    "published_at": "2026-06-21T06:48:46Z"
+  },
+  {
+    "id": "7c0d0b2b454b",
+    "source": "github",
+    "title": "yaodub/cast",
+    "url": "https://github.com/yaodub/cast",
+    "category": "learning",
+    "summary": "Your agent team, on your machine. Open-source harness for multi-user Claude agents.",
+    "raw_content": "Your agent team, on your machine. Open-source harness for multi-user Claude agents.",
+    "score": 8.33,
+    "tags": [
+      "TS",
+      "agent-orchestration",
+      "agents",
+      "ai",
+      "anthropic"
+    ],
+    "stars": 38,
+    "authors": [],
+    "published_at": "2026-06-11T17:01:25Z"
+  },
+  {
+    "id": "d6ec0e91efba",
+    "source": "github",
+    "title": "Moh4696/50-essential-mcp-servers",
+    "url": "https://github.com/Moh4696/50-essential-mcp-servers",
+    "category": "learning",
+    "summary": "a curated, browsable reference of 50 essential MCP servers for claude, gemini & codex — install commands, official links, and the gotchas that matter",
+    "raw_content": "a curated, browsable reference of 50 essential MCP servers for claude, gemini & codex — install commands, official links, and the gotchas that matter",
+    "score": 8.3,
+    "tags": [],
+    "stars": 98,
+    "authors": [],
+    "published_at": "2026-06-04T16:08:55Z"
+  },
+  {
+    "id": "1044203bdfd1",
+    "source": "github",
+    "title": "qixinhu11/LongLive-RAG",
+    "url": "https://github.com/qixinhu11/LongLive-RAG",
+    "category": "learning",
+    "summary": "Official Implementation of LongLive-RAG: A general retrieval-augmented framework for long video generation.",
+    "raw_content": "Official Implementation of LongLive-RAG: A general retrieval-augmented framework for long video generation.",
+    "score": 8.18,
+    "tags": [
+      "Python",
+      "autoregressive",
+      "diffusion-models",
+      "generative-ai",
+      "long-video-generation"
+    ],
+    "stars": 77,
+    "authors": [],
+    "published_at": "2026-06-04T20:38:36Z"
+  },
+  {
+    "id": "b4ba8d1e7b4d",
+    "source": "github",
+    "title": "southleft/figma-console-mcp-skills",
+    "url": "https://github.com/southleft/figma-console-mcp-skills",
+    "category": "learning",
+    "summary": "The most powerful Figma Console MCP capabilities, repackaged as Markdown skills for the native Figma MCP server — design tokens, variables, component analysis, WCAG lint, a11y audits, version history,",
+    "raw_content": "The most powerful Figma Console MCP capabilities, repackaged as Markdown skills for the native Figma MCP server — design tokens, variables, component analysis, WCAG lint, a11y audits, version history, FigJam & Slides.",
+    "score": 7.99,
+    "tags": [
+      "JS",
+      "accessibility",
+      "ai-tools",
+      "claude",
+      "design-systems"
+    ],
+    "stars": 53,
+    "authors": [],
+    "published_at": "2026-06-01T21:16:24Z"
+  },
+  {
+    "id": "bd0ffea811b1",
+    "source": "github",
+    "title": "Aviral-P/RAG-based-AI-Teaching-Assistant",
+    "url": "https://github.com/Aviral-P/RAG-based-AI-Teaching-Assistant",
+    "category": "learning",
+    "summary": "A Retrieval-Augmented Generation (RAG) based AI Teaching Assistant that delivers accurate, context-aware answers from custom educational resources using LLMs, embeddings and semantic search.",
+    "raw_content": "A Retrieval-Augmented Generation (RAG) based AI Teaching Assistant that delivers accurate, context-aware answers from custom educational resources using LLMs, embeddings and semantic search.",
+    "score": 7.97,
+    "tags": [
+      "Python"
+    ],
+    "stars": 6,
+    "authors": [],
+    "published_at": "2026-06-18T08:18:24Z"
+  },
+  {
+    "id": "5c85b3b9b307",
+    "source": "github",
+    "title": "Ayushgupta2408/NeuraDocs",
+    "url": "https://github.com/Ayushgupta2408/NeuraDocs",
+    "category": "learning",
+    "summary": "The AI RAG PDF App is a cutting-edge AI-powered document interaction tool designed to enhance collaboration, retrieval-augmented generation (RAG), and AI-assisted chat with PDFs. Users can upload PDFs",
+    "raw_content": "The AI RAG PDF App is a cutting-edge AI-powered document interaction tool designed to enhance collaboration, retrieval-augmented generation (RAG), and AI-assisted chat with PDFs. Users can upload PDFs, extract insights using multimodal LLMs, and collaborate in shared spaces.",
+    "score": 7.97,
+    "tags": [],
+    "stars": 6,
+    "authors": [],
+    "published_at": "2026-06-23T07:14:01Z"
+  },
+  {
+    "id": "e241db414879",
+    "source": "github",
+    "title": "anthony80188/medical-rag-chatbot",
+    "url": "https://github.com/anthony80188/medical-rag-chatbot",
+    "category": "learning",
+    "summary": "A medical FAQ chatbot powered by Retrieval-Augmented Generation (RAG) using FastAPI, LangChain, Qdrant, and React.",
+    "raw_content": "A medical FAQ chatbot powered by Retrieval-Augmented Generation (RAG) using FastAPI, LangChain, Qdrant, and React.",
+    "score": 7.45,
+    "tags": [
+      "TS",
+      "chatbot",
+      "docker",
+      "fastapi",
+      "gemini"
+    ],
+    "stars": 17,
+    "authors": [],
+    "published_at": "2026-06-06T05:29:07Z"
+  },
+  {
+    "id": "f21f96988e59",
+    "source": "github",
+    "title": "udityamerit/NeuroLens-Knowledge-Retrieval-Engine",
+    "url": "https://github.com/udityamerit/NeuroLens-Knowledge-Retrieval-Engine",
+    "category": "learning",
+    "summary": "NeuroLens is a premium, state-of-the-art Document Retrieval-Augmented Generation (RAG) system. It combines an immersive, holographic, sci-fi-themed React frontend with a high-performance FastAPI backe",
+    "raw_content": "NeuroLens is a premium, state-of-the-art Document Retrieval-Augmented Generation (RAG) system. It combines an immersive, holographic, sci-fi-themed React frontend with a high-performance FastAPI backend.",
+    "score": 7.28,
+    "tags": [
+      "JS",
+      "embeddings",
+      "rag",
+      "ragchatbot",
+      "ragpipeline"
+    ],
+    "stars": 12,
+    "authors": [],
+    "published_at": "2026-06-25T02:36:57Z"
+  },
+  {
+    "id": "8ef49cce1343",
+    "source": "github",
+    "title": "GhazalT/Retrieval-Augmented-Generation",
+    "url": "https://github.com/GhazalT/Retrieval-Augmented-Generation",
+    "category": "learning",
+    "summary": "i have built a rag with FastApi hope you join it",
+    "raw_content": "i have built a rag with FastApi hope you join it",
+    "score": 6.69,
+    "tags": [
+      "Python"
+    ],
+    "stars": 3,
+    "authors": [],
+    "published_at": "2026-06-17T17:20:36Z"
+  },
+  {
+    "id": "4f57fdd31c7d",
+    "source": "github",
+    "title": "HyeongSubKim/GeneRAG",
+    "url": "https://github.com/HyeongSubKim/GeneRAG",
+    "category": "learning",
+    "summary": "[MICCAI2026] Official Repo of \"GeneRAG: A Retrieval-Augmented Framework for Spatially Resolved Gene Expression Prediction\"",
+    "raw_content": "[MICCAI2026] Official Repo of \"GeneRAG: A Retrieval-Augmented Framework for Spatially Resolved Gene Expression Prediction\"",
+    "score": 6.69,
+    "tags": [
+      "Python",
+      "pathology",
+      "pathology-foundation-model",
+      "retrieval-augmented-generation",
+      "spatial-transcriptomics"
+    ],
+    "stars": 3,
+    "authors": [],
+    "published_at": "2026-06-21T14:11:57Z"
+  }
+]
