@@ -1,6 +1,6 @@
 {
   "date": "2026-07-10",
-  "generated_at": "2026-07-10T00:08:16+00:00",
+  "generated_at": "2026-07-11T00:01:37+00:00",
   "headline": "今日综合判断暂不可用",
   "ai_trends": [
     "—",
@@ -13,10 +13,10 @@
     "—"
   ],
   "stats": {
-    "total_items": 339,
-    "learning_count": 339,
-    "job_count": 0,
+    "total_items": 362,
+    "learning_count": 361,
+    "job_count": 1,
     "top_score": 10.0,
-    "top_item_title": "LLM-powered reasoning in agent-based modeling"
+    "top_item_title": "Context Graphs for Proactive Enterprise Agents"
   }
 }
