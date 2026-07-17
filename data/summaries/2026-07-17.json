@@ -1,6 +1,6 @@
 {
   "date": "2026-07-17",
-  "generated_at": "2026-07-17T00:02:23+00:00",
+  "generated_at": "2026-07-17T23:56:04+00:00",
   "headline": "今日综合判断暂不可用",
   "ai_trends": [
     "—",
@@ -13,10 +13,10 @@
     "—"
   ],
   "stats": {
-    "total_items": 327,
-    "learning_count": 325,
+    "total_items": 423,
+    "learning_count": 421,
     "job_count": 2,
     "top_score": 10.0,
-    "top_item_title": "SPINE: Bridging the Cyber-Physical Gap with Agentic AI"
+    "top_item_title": "RegNetAgents: A Multi-Agent Framework for Cross-Network Regulatory Driver Identification in Cancer Genomics"
   }
 }
