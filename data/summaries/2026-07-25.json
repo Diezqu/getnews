@@ -1,0 +1,22 @@
+{
+  "date": "2026-07-25",
+  "generated_at": "2026-07-25T00:08:09+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 461,
+    "learning_count": 461,
+    "job_count": 0,
+    "top_score": 10.0,
+    "top_item_title": "Human-in-the-Loop Large Language Model Framework for Identification of Cutaneous Immune-Related Adverse Events"
+  }
+}
