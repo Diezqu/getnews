@@ -1,6 +1,6 @@
 {
   "date": "2026-08-07",
-  "generated_at": "2026-08-07T01:43:54+00:00",
+  "generated_at": "2026-08-07T23:37:25+00:00",
   "headline": "今日综合判断暂不可用",
   "ai_trends": [
     "—",
@@ -13,10 +13,10 @@
     "—"
   ],
   "stats": {
-    "total_items": 412,
-    "learning_count": 410,
-    "job_count": 2,
+    "total_items": 422,
+    "learning_count": 422,
+    "job_count": 0,
     "top_score": 10.0,
-    "top_item_title": "Learning Sexism Detection Using Multi-Agent Perspectivist Preference Optimization"
+    "top_item_title": "Agentic Nesting: A New Methodology for Existing Enterprise Application Integration and Services"
   }
 }
