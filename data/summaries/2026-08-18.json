@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-18",
+  "generated_at": "2026-08-18T23:27:22+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 853,
+    "learning_count": 850,
+    "job_count": 3,
+    "top_score": 10.0,
+    "top_item_title": "When to Communicate: Belief Distributions and KL Divergence for Principled Gating in Multi-Agent RL"
+  }
+}
