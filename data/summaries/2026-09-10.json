@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-10",
+  "generated_at": "2026-09-10T00:59:51+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 1038,
+    "learning_count": 1037,
+    "job_count": 1,
+    "top_score": 10.0,
+    "top_item_title": "When Does Memory Help? A Cost-Aware Evaluation of Long-Term Memory in Tool-Using LLM Agents"
+  }
+}
