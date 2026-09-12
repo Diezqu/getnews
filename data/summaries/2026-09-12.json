@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-12",
+  "generated_at": "2026-09-12T00:58:38+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 398,
+    "learning_count": 397,
+    "job_count": 1,
+    "top_score": 10.0,
+    "top_item_title": "Automating Quadratic Unconstrained Binary Optimization (QUBO) Formulation Generation from Natural Language"
+  }
+}
