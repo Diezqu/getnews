@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-25",
+  "generated_at": "2026-09-25T01:15:06+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 474,
+    "learning_count": 471,
+    "job_count": 3,
+    "top_score": 10.0,
+    "top_item_title": "Building Socio-Affective Artificial Intelligence for Interactive Multi-Agent Simulations"
+  }
+}
