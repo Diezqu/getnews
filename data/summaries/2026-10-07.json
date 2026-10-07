@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-07",
+  "generated_at": "2026-10-07T02:15:13+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 1150,
+    "learning_count": 1148,
+    "job_count": 2,
+    "top_score": 10.0,
+    "top_item_title": "Bayes-Sufficient Compression Is Not Enough: How Does Communication Help Multi-Agent Systems?"
+  }
+}
