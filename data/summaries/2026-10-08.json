@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-08",
+  "generated_at": "2026-10-08T02:39:18+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 725,
+    "learning_count": 723,
+    "job_count": 2,
+    "top_score": 10.0,
+    "top_item_title": "Learning from Unreliable Trajectories: Adversarially-Robust Federated Q-Learning"
+  }
+}
