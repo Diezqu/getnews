@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-17",
+  "generated_at": "2026-10-17T01:12:33+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 635,
+    "learning_count": 634,
+    "job_count": 1,
+    "top_score": 10.0,
+    "top_item_title": "PRISM: PRIvileged Sibling-guided Multi-Agent Topology Design"
+  }
+}
