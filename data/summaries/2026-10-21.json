@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-21",
+  "generated_at": "2026-10-21T01:27:30+00:00",
+  "headline": "今日综合判断暂不可用",
+  "ai_trends": [
+    "—",
+    "—",
+    "—"
+  ],
+  "job_signals": [
+    "—",
+    "—",
+    "—"
+  ],
+  "stats": {
+    "total_items": 1046,
+    "learning_count": 1045,
+    "job_count": 1,
+    "top_score": 10.0,
+    "top_item_title": "Modeling Human Behavior in the Prisoner's Dilemma with Large Language Models"
+  }
+}
