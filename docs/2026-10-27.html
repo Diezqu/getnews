@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 每日早报 · 2026-10-27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+
+  <style>
+    :root {
+      --paper:    #f6f2ea;
+      --paper2:   #ffffff;
+      --paper3:   #f0ebe0;
+      --border:   #ddd5c4;
+      --border2:  #c8bfae;
+      --navy:     #1e3557;
+      --navy2:    #2a4a76;
+      --coral:    #c94428;
+      --coral2:   #e05c3a;
+      --green:    #2a7d4f;
+      --gold:     #b8872a;
+      --text:     #1a1410;
+      --text2:    #6b5e52;
+      --text3:    #7a6d5c;
+      --tag-bg:   #eee8db;
+      --shadow:   0 1px 3px rgba(30,25,18,0.08), 0 4px 12px rgba(30,25,18,0.04);
+      --shadow-lg:0 2px 8px rgba(30,25,18,0.10), 0 8px 24px rgba(30,25,18,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    a { color: var(--navy); text-decoration: none; }
+    a:hover { color: var(--coral); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ─── Masthead ─── */
+    .masthead {
+      background: var(--navy);
+      padding: 0 32px;
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--coral);
+    }
+    .masthead-brand {
+      padding: 20px 28px 20px 0;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .masthead-brand h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 700; color: #fff;
+      letter-spacing: -0.5px; line-height: 1.1;
+    }
+    .masthead-brand .tagline {
+      font-size: 11px; color: rgba(255,255,255,0.5);
+      font-weight: 400; letter-spacing: 2px;
+      text-transform: uppercase; margin-top: 3px;
+    }
+    .masthead-meta {
+      padding: 20px 0 20px 28px;
+      display: flex; flex-direction: column; justify-content: center; gap: 6px;
+    }
+    .masthead-date {
+      font-size: 13px; color: rgba(255,255,255,0.75);
+      font-weight: 500; letter-spacing: 0.5px;
+    }
+    .masthead-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .masthead-pill {
+      font-size: 12px; padding: 3px 12px; border-radius: 2px;
+      font-weight: 600; letter-spacing: 0.3px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.06);
+    }
+    .masthead-pill.papers { border-color: rgba(201,68,40,0.6);  color: #f4a58f; background: rgba(201,68,40,0.15); }
+    .masthead-pill.repos  { border-color: rgba(42,125,79,0.6);  color: #7ed4a8; background: rgba(42,125,79,0.15); }
+    .masthead-pill.jobs   { border-color: rgba(184,135,42,0.6); color: #f0cc7a; background: rgba(184,135,42,0.15); }
+
+    /* ─── Masthead right decorative block ─── */
+    .masthead-right {
+      margin-left: auto;
+      padding: 16px 0 16px 32px;
+      border-left: 1px solid rgba(255,255,255,0.08);
+      display: flex; flex-direction: column;
+      align-items: flex-end; justify-content: center; gap: 6px;
+    }
+    .masthead-weekday-deco {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px; font-weight: 700;
+      color: rgba(255,255,255,0.08);
+      line-height: 1; letter-spacing: -2px;
+      user-select: none;
+    }
+    .masthead-sources-row {
+      font-size: 11px; color: rgba(255,255,255,0.3);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .masthead-vol {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; color: rgba(255,255,255,0.35);
+      letter-spacing: 2.5px; text-transform: uppercase;
+    }
+
+    /* ─── Section title strip ─── */
+    .section-eyebrow {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+    }
+    .section-eyebrow::before, .section-eyebrow::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    .section-eyebrow span {
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--coral); white-space: nowrap;
+    }
+
+    /* ─── Card ─── */
+    .card {
+      background: var(--paper2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .card-header {
+      padding: 22px 18px 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--paper2);
+      position: relative;
+    }
+    .card-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px; font-weight: 600;
+      color: var(--navy); letter-spacing: -0.2px;
+    }
+    .card-badge {
+      font-size: 11px; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; padding: 3px 10px; border-radius: 2px;
+    }
+    .badge-coral { background: rgba(201,68,40,0.10); color: var(--coral); border: 1px solid rgba(201,68,40,0.2); }
+    .badge-navy  { background: rgba(30,53,87,0.08);  color: var(--navy);  border: 1px solid rgba(30,53,87,0.15); }
+    .badge-green { background: rgba(42,125,79,0.08); color: var(--green); border: 1px solid rgba(42,125,79,0.2); }
+    .badge-gold  { background: rgba(184,135,42,0.10);color: var(--gold);  border: 1px solid rgba(184,135,42,0.2); }
+
+    /* ─── Tag chip ─── */
+    .tag {
+      font-size: 11px; font-weight: 500;
+      padding: 2px 8px; border-radius: 2px;
+      background: var(--tag-bg); color: var(--text2);
+      border: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      text-align: center;
+      padding: 14px 18px;
+      color: var(--text3); font-size: 10px;
+      border-top: 1px solid var(--border);
+      background: var(--paper2);
+      letter-spacing: 1.5px;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    }
+    .footer a { color: var(--navy); text-transform: none; letter-spacing: 0; }
+
+    /* ─── Grain texture overlay ─── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10000;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 120px 120px;
+    }
+
+    /* ─── Weather strip ─── */
+    .weather-strip {
+      background: var(--paper3);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 32px;
+      display: flex;
+      align-items: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      color: var(--text3);
+      letter-spacing: 0.5px;
+    }
+    .weather-strip .ws-sep { color: var(--border2); margin: 0 14px; }
+    .weather-strip .ws-kw { color: var(--navy2); font-weight: 600; }
+    .weather-strip .ws-count { color: var(--text2); }
+
+    /* ─── Card empty state ─── */
+    .card-empty {
+      padding: 28px 18px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--text3);
+      letter-spacing: 1px;
+    }
+
+    /* ─── Card hover: gold right accent + title shift ─── */
+    .card { transition: box-shadow 0.2s ease; }
+    .card:hover { box-shadow: var(--shadow-lg), inset -3px 0 0 var(--gold); }
+    .card-header h2 { transition: transform 0.2s ease; }
+    .card:hover .card-header h2 { transform: translateX(2px); }
+
+    /* ─── Card section eyebrow counter ─── */
+    .main-wrap { counter-reset: card-n; }
+    .card { counter-increment: card-n; }
+    .card-header::before {
+      content: "— SECTION " counter(card-n, decimal-leading-zero) " —";
+      position: absolute;
+      top: 7px; left: 18px;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--text3);
+      text-transform: uppercase;
+    }
+
+    /* ─── Accessibility: focus ring ─── */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* ─── Accessibility: reduced motion ─── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ─── Tabular numbers utility ─── */
+    .tabular { font-variant-numeric: tabular-nums; }
+
+    /* ─── Responsive layout ─── */
+    @media (max-width: 1100px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .masthead { flex-wrap: wrap; }
+      .masthead-right { display: none; }
+      .weather-strip { padding: 6px 16px; font-size: 10px; }
+    }
+    @media (max-width: 600px) {
+      .ts-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+
+    
+  .main-wrap { padding: 0 32px 32px; }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px 0;
+    align-items: start;
+    margin-top: 24px;
+  }
+  .left-col, .right-col { display: flex; flex-direction: column; gap: 20px; }
+  .left-col { border-right: 1px solid var(--border); padding-right: 20px; }
+  @media (max-width: 1100px) { .left-col { border-right: none; padding-right: 0; } }
+  .full-row { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .card, .today-summary { animation: fadeUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .today-summary { animation-delay: 0ms; }
+  .left-col .card:nth-child(1) { animation-delay: 40ms; }
+  .left-col .card:nth-child(2) { animation-delay: 100ms; }
+  .left-col .card:nth-child(3) { animation-delay: 160ms; }
+  .left-col .card:nth-child(4) { animation-delay: 220ms; }
+  .right-col .card:nth-child(1) { animation-delay: 70ms; }
+  .right-col .card:nth-child(2) { animation-delay: 130ms; }
+  .right-col .card:nth-child(3) { animation-delay: 190ms; }
+  .right-col .card:nth-child(4) { animation-delay: 250ms; }
+  .full-row .card { animation-delay: 280ms; }
+
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">
+    <h1>🤖 AI 每日早报</h1>
+    <div class="tagline">Intelligence · Research · Signal</div>
+  </div>
+  <div class="masthead-meta">
+    <div class="masthead-date">2026-10-27 &nbsp;·&nbsp; 周二</div>
+    
+  <div class="masthead-pills">
+    <span class="masthead-pill papers">📄 论文</span>
+    <span class="masthead-pill repos">🚀 仓库</span>
+    <span class="masthead-pill jobs">💼 求职</span>
+  </div>
+
+  </div>
+  
+  <div class="masthead-right">
+    <div class="masthead-vol">VOL. I &nbsp;&nbsp; NO. 1027</div>
+    <div class="masthead-weekday-deco">周二</div>
+    <div class="masthead-sources-row">arXiv · HF · GitHub · HN · 牛客 · AI</div>
+  </div>
+
+</header>
+
+
+  
+  
+<style>
+  .today-summary {
+    background: var(--paper2);
+    border-left: 3px solid var(--navy);
+    border-radius: 0 4px 4px 0;
+    margin: 24px 32px 0;
+    padding: 20px 28px 22px;
+    box-shadow: var(--shadow);
+  }
+  .today-summary .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 600;
+    font-style: italic;
+    color: var(--coral); line-height: 1.3;
+    margin-bottom: 14px;
+  }
+  .today-summary .headline::first-letter {
+    float: left;
+    font-size: 52px;
+    line-height: 0.85;
+    padding-right: 8px;
+    font-style: italic;
+    color: var(--coral);
+    font-weight: 700;
+  }
+  .today-summary .divider {
+    border-top: 1px solid var(--border); margin-bottom: 16px;
+  }
+  .today-summary .ts-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+  .today-summary .ts-col h3 {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text3); margin-bottom: 10px;
+  }
+  .today-summary .ts-col h3.learn { border-bottom: 2px solid var(--green); padding-bottom: 4px; display: inline-block; }
+  .today-summary .ts-col h3.job   { border-bottom: 2px solid var(--gold);  padding-bottom: 4px; display: inline-block; }
+  .today-summary .ts-col ul { list-style: none; counter-reset: ts-row; }
+  .today-summary .ts-col li {
+    font-size: 13px; color: var(--text);
+    padding: 6px 0 6px 30px; position: relative;
+    border-bottom: 1px solid var(--paper3);
+    line-height: 1.5;
+    counter-increment: ts-row;
+  }
+  .today-summary .ts-col li:last-child { border-bottom: none; }
+  .today-summary .ts-col li::before {
+    content: counter(ts-row, upper-roman) ".";
+    position: absolute; left: 0; top: 6px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px; font-style: italic;
+    color: var(--text3); min-width: 26px;
+  }
+</style>
+
+<section class="today-summary">
+  <div class="headline">今日综合判断暂不可用</div>
+  <div class="divider"></div>
+  <div class="ts-grid">
+    <div class="ts-col">
+      <h3 class="learn">AI 趋势</h3>
+      <ul>
+        <li>—</li><li>—</li><li>—</li>
+      </ul>
+    </div>
+    <div class="ts-col">
+      <h3 class="job">求职信号</h3>
+      <ul>
+        <li>—</li><li>—</li><li>—</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  
+  <div class="weather-strip">
+    <span>📄 <span class="ws-count">10</span> 论文</span>
+    <span class="ws-sep">·</span>
+    <span>🚀 <span class="ws-count">8</span> 仓库</span>
+    <span class="ws-sep">·</span>
+    <span>💬 <span class="ws-count">8</span> HN</span>
+    <span class="ws-sep">·</span>
+    <span>💼 <span class="ws-count">0</span> 面经</span>
+    <span class="ws-sep">·</span>
+    <span class="ws-kw">关键词: AGENT · MCP · RAG</span>
+  </div>
+
+  <div class="main-wrap">
+    <div class="main-grid">
+
+      <div class="left-col">
+        
+        
+          
+<style>
+  .paper-item {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--paper3);
+    transition: background 0.15s;
+  }
+  .paper-item:hover { background: rgba(30,53,87,0.02); }
+  .paper-item:last-child { border-bottom: none; }
+  .paper-title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.45; margin-bottom: 4px; }
+  .paper-title a { color: inherit; }
+  .paper-title a:hover { color: var(--navy); text-decoration: none; }
+  .paper-meta {
+    font-size: 11px; color: var(--text3);
+    margin-bottom: 6px; font-family: 'DM Mono', monospace;
+  }
+  .paper-abstract { font-size: 12.5px; color: var(--text2); line-height: 1.6; }
+  .paper-footer { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .score-chip {
+    font-size: 10px; font-weight: 700; font-family: 'DM Mono', monospace;
+    padding: 2px 7px; border-radius: 2px;
+    background: rgba(30,53,87,0.08); color: var(--navy);
+    border: 1px solid rgba(30,53,87,0.15);
+    margin-left: auto;
+  }
+  .score-chip.high {
+    background: rgba(201,68,40,0.10); color: var(--coral);
+    border-color: rgba(201,68,40,0.2);
+  }
+  .upvote-chip {
+    font-size: 10px; font-weight: 700;
+    padding: 2px 7px; border-radius: 2px;
+    background: rgba(42,125,79,0.08); color: var(--green);
+    border: 1px solid rgba(42,125,79,0.2);
+    margin-left: auto;
+  }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>arXiv 最新论文</h2>
+    <span class="card-badge badge-navy">cs.AI · cs.CL · cs.MA</span>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://arxiv.org/abs/2610.31743" target="_blank" rel="noopener">Not Every Agent Needs the Strongest Model: Unified Prompt-Model Optimization for Heterogeneous LLM-based Multi-Agent Systems</a></div>
+    
+    <div class="paper-meta">
+      Mingxiu Cai · Haoyang Xian · Xinyu Ma et al.
+       &nbsp;·&nbsp; 2026-10-26
+      
+    </div>
+    
+    <div class="paper-abstract">Large language model (LLM)-based multi-agent systems (MAS) rely on role-specific prompts and execution models to solve complex tasks collaboratively. However, prompt optimization typically keeps model</div>
+    <div class="paper-footer">
+      <span class="tag">cs.MA</span><span class="tag">agent</span><span class="tag">multi-agent</span><span class="tag">RAG</span>
+      
+        <span class="score-chip tabular high">10.0</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://arxiv.org/abs/2610.31746" target="_blank" rel="noopener">Toward an Agentic AI Approach to Public Health Data Collection</a></div>
+    
+    <div class="paper-meta">
+      Xueyi Zhang · Hongru Du · Ensheng Dong
+       &nbsp;·&nbsp; 2026-10-26
+      
+    </div>
+    
+    <div class="paper-abstract">Disease surveillance increasingly integrates automated data collection, yet predefined sources and procedures require manual adaptation as reporting practices change. We explore agentic artificial int</div>
+    <div class="paper-footer">
+      <span class="tag">cs.MA</span><span class="tag">agent</span><span class="tag">multi-agent</span>
+      
+        <span class="score-chip tabular high">10.0</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://arxiv.org/abs/2610.31778" target="_blank" rel="noopener">Benchmarks Are Surprisingly Compaction-Friendly</a></div>
+    
+    <div class="paper-meta">
+      Jeanne Salle · Hardik Bhatnagar · Matthias Bethge et al.
+       &nbsp;·&nbsp; 2026-10-26
+      
+    </div>
+    
+    <div class="paper-abstract">Long horizon agentic tasks are now pushing LLM agents past their context window. To continue the task, the agent scaffold has to free up the context window, a process known as context compaction. Comp</div>
+    <div class="paper-footer">
+      <span class="tag">cs.LG</span><span class="tag">cs.AI</span><span class="tag">agent</span><span class="tag">RAG</span>
+      
+        <span class="score-chip tabular high">10.0</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://arxiv.org/abs/2610.31789" target="_blank" rel="noopener">Phronix: The Capability-Centric Learning Paradigm for Agents</a></div>
+    
+    <div class="paper-meta">
+      Hariharan Devarajan · Neeraj Rajesh · Aniruddha Marathe et al.
+       &nbsp;·&nbsp; 2026-10-26
+      
+    </div>
+    
+    <div class="paper-abstract">Scientific computing increasingly relies on large language model-based agents for performance engineering tasks such as instrumentation, analysis, and workflow porting. However, agent effectiveness de</div>
+    <div class="paper-footer">
+      <span class="tag">cs.AI</span><span class="tag">agent</span><span class="tag">MCP</span><span class="tag">language model</span>
+      
+        <span class="score-chip tabular high">10.0</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://arxiv.org/abs/2610.31971" target="_blank" rel="noopener">Knowing Whom to Trust is not Enough: The Trust--Agreement Gap in Repeated Multi-Party LLM Negotiation</a></div>
+    
+    <div class="paper-meta">
+      Amit Sarker · Moumita Choudhury · Saaduddin Mahmud et al.
+       &nbsp;·&nbsp; 2026-10-26
+      
+    </div>
+    
+    <div class="paper-abstract">Large language model (LLM) agents increasingly participate in negotiations on behalf of individuals and organizations, yet they remain vulnerable to manipulation, particularly in repeated multi-party </div>
+    <div class="paper-footer">
+      <span class="tag">cs.AI</span><span class="tag">cs.CL</span><span class="tag">cs.MA</span><span class="tag">agent</span>
+      
+        <span class="score-chip tabular high">10.0</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://arxiv.org/abs/2610.31985" target="_blank" rel="noopener">The Helpful Agent Problem: When Emergent Cooperation Among LLM Agents Bypasses Intended Workflows</a></div>
+    
+    <div class="paper-meta">
+      Moumita Choudhury · Amit Sarker · Shlomo Zilberstein
+       &nbsp;·&nbsp; 2026-10-26
+      
+    </div>
+    
+    <div class="paper-abstract">LLM agents are increasingly deployed in collaborative settings where they pursue separate tasks while sharing resources and operating under review or oversight processes. Such settings create safety r</div>
+    <div class="paper-footer">
+      <span class="tag">cs.AI</span><span class="tag">cs.CL</span><span class="tag">cs.MA</span><span class="tag">agent</span>
+      
+        <span class="score-chip tabular high">10.0</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://arxiv.org/abs/2610.32002" target="_blank" rel="noopener">DraMaze: A Multi-Agent Pipeline with Future-Aware Memory for Diverse Microdrama Script Generation</a></div>
+    
+    <div class="paper-meta">
+      Siyang He · Qiqi Wang · Fan Liu et al.
+       &nbsp;·&nbsp; 2026-10-26
+      
+    </div>
+    
+    <div class="paper-abstract">The rapid growth of microdramas has increased demand for high-quality script production. Long-form microdrama script generation with LLMs requires both diverse plot progression and long-range narrativ</div>
+    <div class="paper-footer">
+      <span class="tag">cs.CL</span><span class="tag">agent</span><span class="tag">multi-agent</span><span class="tag">retrieval</span>
+      
+        <span class="score-chip tabular high">10.0</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://arxiv.org/abs/2610.32022" target="_blank" rel="noopener">CEMIR vs. FISER: a comparative study of reasoning-based and enrichment-based approaches to pragmatic intent recognition</a></div>
+    
+    <div class="paper-meta">
+      Ziya Hosseynzadeh · Farjad Fallah · Farnoosh Fallah et al.
+       &nbsp;·&nbsp; 2026-10-26
+      
+    </div>
+    
+    <div class="paper-abstract">Intent recognition in human-robot interaction requires agents to resolve ambiguous natural language instructions by inferring the speaker's underlying goals. Research has increasingly focused on two n</div>
+    <div class="paper-footer">
+      <span class="tag">cs.AI</span><span class="tag">cs.RO</span><span class="tag">agent</span><span class="tag">RAG</span>
+      
+        <span class="score-chip tabular high">10.0</span>
+      
+    </div>
+  </div>
+  
+</div>
+        
+
+        
+        
+          
+<style>
+  .paper-item {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--paper3);
+    transition: background 0.15s;
+  }
+  .paper-item:hover { background: rgba(30,53,87,0.02); }
+  .paper-item:last-child { border-bottom: none; }
+  .paper-title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.45; margin-bottom: 4px; }
+  .paper-title a { color: inherit; }
+  .paper-title a:hover { color: var(--navy); text-decoration: none; }
+  .paper-meta {
+    font-size: 11px; color: var(--text3);
+    margin-bottom: 6px; font-family: 'DM Mono', monospace;
+  }
+  .paper-abstract { font-size: 12.5px; color: var(--text2); line-height: 1.6; }
+  .paper-footer { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .score-chip {
+    font-size: 10px; font-weight: 700; font-family: 'DM Mono', monospace;
+    padding: 2px 7px; border-radius: 2px;
+    background: rgba(30,53,87,0.08); color: var(--navy);
+    border: 1px solid rgba(30,53,87,0.15);
+    margin-left: auto;
+  }
+  .score-chip.high {
+    background: rgba(201,68,40,0.10); color: var(--coral);
+    border-color: rgba(201,68,40,0.2);
+  }
+  .upvote-chip {
+    font-size: 10px; font-weight: 700;
+    padding: 2px 7px; border-radius: 2px;
+    background: rgba(42,125,79,0.08); color: var(--green);
+    border: 1px solid rgba(42,125,79,0.2);
+    margin-left: auto;
+  }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>HuggingFace Daily Papers</h2>
+    <span class="card-badge badge-green">今日热门</span>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://huggingface.co/papers/2610.29139" target="_blank" rel="noopener">Steering Black-Box Large Language Model Agents with Pitfall Anticipation World Model</a></div>
+    
+    <div class="paper-meta">
+      Jiongxiao Wang · Han Ding · Youzhi Luo et al.
+       &nbsp;·&nbsp; 2026-10-27
+       &nbsp;·&nbsp; 1 upvotes
+    </div>
+    
+    <div class="paper-abstract">Frontier black-box Large Language Model (LLM) agents are proficient at long-horizon reasoning and precise action generation. However, when it comes to a specific agentic task, they have no internalize</div>
+    <div class="paper-footer">
+      
+      
+        <span class="upvote-chip tabular">1 👍</span>
+      
+    </div>
+  </div>
+  
+  <div class="paper-item">
+    <div class="paper-title"><a href="https://huggingface.co/papers/2610.33135" target="_blank" rel="noopener">WorldCast: World-Consistent Character Video Generation with Large-Angle Camera Control</a></div>
+    
+    <div class="paper-meta">
+      Lei Cao · Yu Liu · Wenhua Liao et al.
+       &nbsp;·&nbsp; 2026-10-27
+       &nbsp;·&nbsp; 1 upvotes
+    </div>
+    
+    <div class="paper-abstract">Precise camera control is essential for cinematic character video generation, yet existing methods struggle to follow large-angle trajectories with combined rotation, translation, and radius variation</div>
+    <div class="paper-footer">
+      
+      
+        <span class="upvote-chip tabular">1 👍</span>
+      
+    </div>
+  </div>
+  
+</div>
+        
+
+        
+        
+          
+<style>
+  .repo-item { padding: 14px 18px; border-bottom: 1px solid var(--paper3); transition: background 0.15s; }
+  .repo-item:hover { background: rgba(30,53,87,0.02); }
+  .repo-item:last-child { border-bottom: none; }
+  .repo-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 5px; }
+  .repo-title { font-size: 13px; font-weight: 600; color: var(--text); }
+  .repo-title a { color: inherit; }
+  .repo-title a:hover { color: var(--navy); }
+  .repo-stars {
+    font-size: 12px; font-weight: 700; font-family: 'DM Mono', monospace;
+    color: var(--gold); white-space: nowrap; flex-shrink: 0;
+  }
+  .repo-desc { font-size: 12px; color: var(--text2); line-height: 1.55; margin-bottom: 6px; }
+  .repo-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>GitHub 新兴仓库</h2>
+    <span class="card-badge badge-green">快速涨星</span>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/QingYunA/answer-me-with-html" target="_blank" rel="noopener">QingYunA/answer-me-with-html</a></div>
+      <div class="repo-stars tabular">★ 4.5K</div>
+    </div>
+    <div class="repo-desc">Answer me with HTML — an agent skill that answers hard questions with a one-page HTML you can actually read. 让 AI Agent 用一页 HTML 回答复杂问题。</div>
+    <div class="repo-tags">
+      <span class="tag">JS</span><span class="tag">agent-skill</span><span class="tag">ai-agent</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/onehumanbeing/esp32-iphone-agent" target="_blank" rel="noopener">onehumanbeing/esp32-iphone-agent</a></div>
+      <div class="repo-stars tabular">★ 4.0K</div>
+    </div>
+    <div class="repo-desc">Let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer account, no jailbreak.</div>
+    <div class="repo-tags">
+      <span class="tag">C</span><span class="tag">ai-agent</span><span class="tag">airplay</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/nanaism/yomiyasu" target="_blank" rel="noopener">nanaism/yomiyasu</a></div>
+      <div class="repo-stars tabular">★ 2.6K</div>
+    </div>
+    <div class="repo-desc">AI生成の日本語を自然な日本語へ推敲するAgent Skill / Agent Skill for Refining AI-Generated Japanese into Natural Japanese</div>
+    <div class="repo-tags">
+      <span class="tag">Python</span><span class="tag">agent-skills</span><span class="tag">ai-writing</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/trhhubsd/ARTEX" target="_blank" rel="noopener">trhhubsd/ARTEX</a></div>
+      <div class="repo-stars tabular">★ 2.0K</div>
+    </div>
+    <div class="repo-desc">ARTEX · AI autonomous penetration testing system (multi-agent LLM, Go + Next.js) · AI 自主渗透测试系统 · 百度 agent+ 攻防挑战赛冠军</div>
+    <div class="repo-tags">
+      <span class="tag">Go</span><span class="tag">ai-agent</span><span class="tag">ai-security</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/Syenzzz/mcd-coupon-strategist" target="_blank" rel="noopener">Syenzzz/mcd-coupon-strategist</a></div>
+      <div class="repo-stars tabular">★ 990</div>
+    </div>
+    <div class="repo-desc">麦麦省钱助手 —— 基于麦当劳 MCP 的点餐成本优化 Skill。算出当前门店最省钱的点餐方案，并主动提示凑单陷阱。</div>
+    <div class="repo-tags">
+      <span class="tag">Python</span><span class="tag">agent</span><span class="tag">cost-optimization</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/hanzohanzhe/Grandet" target="_blank" rel="noopener">hanzohanzhe/Grandet</a></div>
+      <div class="repo-stars tabular">★ 837</div>
+    </div>
+    <div class="repo-desc">Find the cheapest API for any model and connect it from your AI agent: Grandet Skill and an anonymous MCP server, backed by listed prices from 1,800+ official, inference and relay providers on grandet</div>
+    <div class="repo-tags">
+      <span class="tag">JS</span><span class="tag">agent-skills</span><span class="tag">ai</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/ctoldigital/axuse" target="_blank" rel="noopener">ctoldigital/axuse</a></div>
+      <div class="repo-stars tabular">★ 508</div>
+    </div>
+    <div class="repo-desc">Accessibility-first browser & computer use for AI agents — one MCP server for every harness (Codex, Claude Code, OpenCode, Antigravity). Instruments the DOM/accessibility tree via CDP instead of scree</div>
+    <div class="repo-tags">
+      <span class="tag">JS</span><span class="tag">agentic-automation</span><span class="tag">ai-agents</span>
+    </div>
+  </div>
+  
+  <div class="repo-item">
+    <div class="repo-header">
+      <div class="repo-title"><a href="https://github.com/VoltAgent/official-mcp-servers" target="_blank" rel="noopener">VoltAgent/official-mcp-servers</a></div>
+      <div class="repo-stars tabular">★ 393</div>
+    </div>
+    <div class="repo-desc">A curated directory of 390+ official MCP servers from the companies behind the products. No unofficial forks, no abandoned projects.</div>
+    <div class="repo-tags">
+      <span class="tag">ai-tools</span><span class="tag">awesome-list</span><span class="tag">claude</span>
+    </div>
+  </div>
+  
+</div>
+        
+
+        
+        
+          
+<style>
+  .hn-item {
+    padding: 10px 18px; border-bottom: 1px solid var(--paper3);
+    display: flex; gap: 0; align-items: baseline;
+    transition: background 0.15s;
+  }
+  .hn-item:hover { background: rgba(30,53,87,0.02); }
+  .hn-item:last-child { border-bottom: none; }
+  .hn-rank {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600; font-style: italic;
+    color: var(--navy2);
+    min-width: 46px; line-height: 1; padding-top: 2px;
+    padding-right: 14px; margin-right: 14px;
+    border-right: 2px solid var(--border);
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .hn-body { flex: 1; }
+  .hn-title { font-size: 12.5px; font-weight: 500; color: var(--text); line-height: 1.45; margin-bottom: 3px; }
+  .hn-title a { color: inherit; }
+  .hn-title a:hover { color: var(--navy); }
+  .hn-meta { font-size: 11px; color: var(--text3); font-family: 'DM Mono', monospace; }
+  .hn-pts { color: var(--coral); font-weight: 600; }
+</style>
+
+
+<div class="card">
+  <div class="card-header">
+    <h2>HackerNews AI 热议</h2>
+    <span class="card-badge badge-coral">高分讨论</span>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">I</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://deallocatedobjects.com/posts/making-my-blog-readable-by-ai-agents" target="_blank" rel="noopener">Making My Blog Readable by AI Agents</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts tabular">36 pts</span>
+         &nbsp;·&nbsp; 2026-10-24
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">II</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://lynchlab.net/llm-skin-cancer" target="_blank" rel="noopener">A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts tabular">654 pts</span>
+         &nbsp;·&nbsp; 2026-10-25
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">III</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://minimaxir.com/2026/10/cheap-llms/" target="_blank" rel="noopener">OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts tabular">416 pts</span>
+         &nbsp;·&nbsp; 2026-10-25
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">IV</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://www.ubicloud.com/blog/fixing-tool-call-accuracy-in-vllm" target="_blank" rel="noopener">Fixing Tool-Call Accuracy in vLLM</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts tabular">145 pts</span>
+         &nbsp;·&nbsp; 2026-10-26
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">V</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://www.reddit.com/r/opensource/comments/1xelcuf/your_tokens_arent_valuable_no_more_ai" target="_blank" rel="noopener">R/open source bans all solo projects and projects using LLMs</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts tabular">90 pts</span>
+         &nbsp;·&nbsp; 2026-10-25
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">VI</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://openai.com/index/introducing-gpt-6-1-terra/" target="_blank" rel="noopener">GPT-6.1 Terra</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts tabular">500 pts</span>
+         &nbsp;·&nbsp; 2026-10-26
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">VII</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://github.com/Zagitta/gpu-unlock" target="_blank" rel="noopener">GPU-unlock: FP/BF16 instruction issue rate on Nvidia 3000's cards</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts tabular">348 pts</span>
+         &nbsp;·&nbsp; 2026-10-24
+      </div>
+    </div>
+  </div>
+  
+  <div class="hn-item">
+    <div class="hn-rank">VIII</div>
+    <div class="hn-body">
+      <div class="hn-title"><a href="https://blog.roku.com/developer/gitlab-move" target="_blank" rel="noopener">Roku developer repositories moved from GitHub to GitLab</a></div>
+      <div class="hn-meta">
+        <span class="hn-pts tabular">309 pts</span>
+         &nbsp;·&nbsp; 2026-10-24
+      </div>
+    </div>
+  </div>
+  
+</div>
+        
+      </div>
+
+      <div class="right-col">
+        
+        
+          
+<style>
+  .job-item { padding: 14px 18px; border-bottom: 1px solid var(--paper3); transition: background 0.15s; }
+  .job-item:hover { background: rgba(184,135,42,0.04); }
+  .job-item:last-child { border-bottom: none; }
+  .job-title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.45; margin-bottom: 4px; }
+  .job-title a { color: inherit; }
+  .job-title a:hover { color: var(--gold); text-decoration: none; }
+  .job-meta { font-size: 11px; color: var(--text3); margin-bottom: 6px; font-family: 'DM Mono', monospace; }
+  .job-body { font-size: 12.5px; color: var(--text2); line-height: 1.6; }
+  .job-footer { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>牛客面经热榜</h2>
+    <span class="card-badge badge-gold">人工智能分区</span>
+  </div>
+  
+  <div class="card-empty">—— 本期暂无来稿 ——</div>
+  
+</div>
+        
+
+        
+        
+          
+<div class="card">
+  <div class="card-header">
+    <h2>国内 AI 公司动态</h2>
+    <span class="card-badge badge-gold">官博 / 媒体</span>
+  </div>
+  
+  <div class="card-empty">—— 本期暂无来稿 ——</div>
+  
+</div>
+        
+
+        
+        
+          
+<div class="card">
+  <div class="card-header">
+    <h2>AI Coding 工具信号</h2>
+    <span class="card-badge badge-coral">采用动向</span>
+  </div>
+  
+  <div class="job-item">
+    <div class="job-title"><a href="https://twitter.com/chrislakin/status/2113358733548081528#coding_tool" target="_blank" rel="noopener">Claude Code slyly adding users' emails to outbound HTTP</a></div>
+    <div class="job-meta">
+      来源: hackernews
+       &nbsp;·&nbsp; 22 pts
+    </div>
+    <div class="job-body">Claude Code slyly adding users' emails to outbound HTTP</div>
+    <div class="job-footer">
+      <span class="tag">Claude Code</span><span class="tag">来源: hackernews</span>
+    </div>
+  </div>
+  
+</div>
+        
+
+        
+        
+          
+<style>
+  .radar-list { padding: 8px 0; }
+  .radar-row { padding: 8px 18px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--paper3); }
+  .radar-row:last-child { border-bottom: none; }
+  .radar-name { font-size: 12px; font-weight: 600; color: var(--text); min-width: 120px; }
+  .radar-track { flex: 1; height: 5px; background: var(--paper3); border-radius: 3px; overflow: hidden; }
+  .radar-fill { height: 100%; border-radius: 3px; transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .radar-pct { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--text3); min-width: 32px; text-align: right; }
+  .radar-desc { font-size: 10.5px; color: var(--text3); min-width: 140px; text-align: right; }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>技术雷达</h2>
+    <span class="card-badge badge-navy">关键词热度</span>
+  </div>
+  <div class="radar-list">
+    
+    <div class="radar-row">
+      <div class="radar-name">Agent</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:95%;background:linear-gradient(90deg,#1e3557,#2a4a76);"></div>
+      </div>
+      <div class="radar-pct">95%</div>
+      <div class="radar-desc">多 Agent 协作框架持续爆发</div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="radar-name">RAG</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:95%;background:linear-gradient(90deg,#2a7d4f,#3a9d6a);"></div>
+      </div>
+      <div class="radar-pct">95%</div>
+      <div class="radar-desc">检索增强依然是核心技术</div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="radar-name">MCP</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:30%;background:linear-gradient(90deg,#c94428,#e05c3a);"></div>
+      </div>
+      <div class="radar-pct">30%</div>
+      <div class="radar-desc">2026 Agent 集成标准</div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="radar-name">LLM Fine-tune</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:20%;background:linear-gradient(90deg,#b8872a,#d4a040);"></div>
+      </div>
+      <div class="radar-pct">20%</div>
+      <div class="radar-desc">垂直领域微调需求上升</div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="radar-name">AI Safety</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:20%;background:linear-gradient(90deg,#1e3557,#c94428);"></div>
+      </div>
+      <div class="radar-pct">20%</div>
+      <div class="radar-desc">对齐与可解释性研究增加</div>
+    </div>
+    
+    <div class="radar-row">
+      <div class="radar-name">Local-First AI</div>
+      <div class="radar-track">
+        <div class="radar-fill" style="width:20%;background:linear-gradient(90deg,#2a7d4f,#b8872a);"></div>
+      </div>
+      <div class="radar-pct">20%</div>
+      <div class="radar-desc">隐私计算与离线部署</div>
+    </div>
+    
+  </div>
+</div>
+        
+      </div>
+
+    </div>
+
+    <div class="full-row">
+      
+      <div style="grid-column: 1 / -1;">
+        
+          
+<style>
+  .chart-wrap { padding: 16px 18px; }
+  #trendChart { max-height: 220px; }
+</style>
+
+<div class="card">
+  <div class="card-header">
+    <h2>关键词热度趋势</h2>
+    <span class="card-badge badge-gold">过去 7 天</span>
+  </div>
+  <div class="chart-wrap">
+    <canvas id="trendChart"></canvas>
+  </div>
+</div>
+
+<script>
+window.__TREND__ = {
+  labels: ["10/21", "10/22", "10/23", "10/24", "10/25", "10/26", "10/27"],
+  series: {"agent": [95, 95, 95, 95, 95, 95, 95], "mcp": [95, 95, 95, 95, 95, 95, 95], "rag": [95, 95, 95, 95, 95, 95, 95]}
+};
+</script>
+        
+      </div>
+    </div>
+  </div>
+
+
+<div class="footer">
+  
+EDITION &nbsp;·&nbsp; 2026-10-27 &nbsp;·&nbsp; AI INTELLIGENCE BRIEF &nbsp;·&nbsp; <a href="./archive.html">归档</a> &nbsp;·&nbsp; <a href="https://github.com/Diezqu/getnews" target="_blank">GitHub 仓库</a>
+
+</div>
+
+
+<script>
+(function() {
+  const t = window.__TREND__;
+  if (!t) return;
+  const ctx = document.getElementById('trendChart').getContext('2d');
+  const colors = {
+    agent: '#1e3557', mcp: '#c94428', rag: '#7c8b2a',
+  };
+  const fillColors = {
+    agent: 'rgba(30,53,87,0.06)', mcp: 'rgba(201,68,40,0.05)', rag: 'rgba(124,139,42,0.05)',
+  };
+  const datasets = Object.keys(t.series).map(k => ({
+    label: k.toUpperCase(),
+    data: t.series[k],
+    borderColor: colors[k] || '#888',
+    backgroundColor: fillColors[k] || 'rgba(0,0,0,0.03)',
+    tension: 0.4, fill: true, pointRadius: 3, borderWidth: 2,
+    pointBackgroundColor: colors[k] || '#888',
+  }));
+  new Chart(ctx, {
+    type: 'line',
+    data: { labels: t.labels, datasets },
+    options: {
+      animation: { duration: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 600 },
+      responsive: true,
+      plugins: {
+        legend: { labels: { color: '#6b5e52', font: { family: 'Outfit', size: 11 }, boxWidth: 12 } },
+        tooltip: {
+          backgroundColor: '#1e3557', borderColor: '#ddd5c4', borderWidth: 1,
+          titleColor: '#fff', bodyColor: 'rgba(255,255,255,0.75)',
+          titleFont: { family: 'Outfit' }, bodyFont: { family: 'Outfit' }
+        }
+      },
+      scales: {
+        x: { ticks: { color: '#7a6d5c', font: { family: 'Outfit', size: 10 } }, grid: { color: 'rgba(180,165,148,0.18)' } },
+        y: { ticks: { color: '#7a6d5c', font: { family: 'Outfit', size: 10 } }, grid: { color: 'rgba(180,165,148,0.18)' }, min: 0, max: 100 }
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
